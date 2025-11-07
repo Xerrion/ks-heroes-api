@@ -1,0 +1,4304 @@
+[
+  {
+    "hero_id": "olive",
+    "conquest_skills": [
+      {
+        "name": "Rain of Arrows",
+        "type": "Active",
+        "description": "Olive launches a hail of arrows, dealing area damage around the target.",
+        "levels": {
+          "1": {
+            "area_damage_pct": 180
+          },
+          "2": {
+            "area_damage_pct": 198
+          },
+          "3": {
+            "area_damage_pct": 216
+          },
+          "4": {
+            "area_damage_pct": 234
+          },
+          "5": {
+            "area_damage_pct": 252
+          }
+        }
+      },
+      {
+        "name": "Target Lock",
+        "type": "Passive",
+        "description": "Marks a target, increasing damage dealt to it.",
+        "levels": {
+          "1": {
+            "damage_increase_pct": 10
+          },
+          "2": {
+            "damage_increase_pct": 15
+          },
+          "3": {
+            "damage_increase_pct": 20
+          },
+          "4": {
+            "damage_increase_pct": 25
+          },
+          "5": {
+            "damage_increase_pct": 30
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Green Thumb",
+        "type": "Expedition",
+        "description": "Increases Town Mill Output.",
+        "levels": {
+          "1": {
+            "mill_income_pct": 5
+          },
+          "2": {
+            "mill_income_pct": 10
+          },
+          "3": {
+            "mill_income_pct": 15
+          },
+          "4": {
+            "mill_income_pct": 20
+          },
+          "5": {
+            "mill_income_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Forager\u2019s Luck",
+        "type": "Expedition",
+        "description": "Increases Bread Gathering Speed in Wilderness.",
+        "levels": {
+          "1": {
+            "bread_gathering_speed_pct": 5
+          },
+          "2": {
+            "bread_gathering_speed_pct": 10
+          },
+          "3": {
+            "bread_gathering_speed_pct": 15
+          },
+          "4": {
+            "bread_gathering_speed_pct": 20
+          },
+          "5": {
+            "bread_gathering_speed_pct": 25
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [],
+    "talent": null
+  },
+  {
+    "hero_id": "forrest",
+    "conquest_skills": [
+      {
+        "name": "Axe Whirl",
+        "type": "Active",
+        "description": "Deals damage every 0.5s to nearby enemies for 3s.",
+        "levels": {
+          "1": {
+            "damage_per_tick_pct": 80
+          },
+          "2": {
+            "damage_per_tick_pct": 88
+          },
+          "3": {
+            "damage_per_tick_pct": 96
+          },
+          "4": {
+            "damage_per_tick_pct": 104
+          },
+          "5": {
+            "damage_per_tick_pct": 110
+          }
+        }
+      },
+      {
+        "name": "Razor Sharp",
+        "type": "Passive",
+        "description": "Increases damage per second.",
+        "levels": {
+          "1": {
+            "damage_increase_pct": 10
+          },
+          "2": {
+            "damage_increase_pct": 15
+          },
+          "3": {
+            "damage_increase_pct": 20
+          },
+          "4": {
+            "damage_increase_pct": 25
+          },
+          "5": {
+            "damage_increase_pct": 30
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Woodland Inheritor",
+        "type": "Expedition",
+        "description": "Forrest's expert lumberjack skills increase the Town's Sawmill Output.",
+        "levels": {
+          "1": {
+            "logging_income_pct": 5
+          },
+          "2": {
+            "logging_income_pct": 10
+          },
+          "3": {
+            "logging_income_pct": 15
+          },
+          "4": {
+            "logging_income_pct": 20
+          },
+          "5": {
+            "logging_income_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Master Woodcutter",
+        "type": "Expedition",
+        "description": "Forrest utilizes his logging expertise, increasing Wood Gathering Speed in the Wilderness.",
+        "levels": {
+          "1": {
+            "wood_gathering_speed_pct": 5
+          },
+          "2": {
+            "wood_gathering_speed_pct": 10
+          },
+          "3": {
+            "wood_gathering_speed_pct": 15
+          },
+          "4": {
+            "wood_gathering_speed_pct": 20
+          },
+          "5": {
+            "wood_gathering_speed_pct": 25
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [],
+    "talent": null
+  },
+  {
+    "hero_id": "seth",
+    "conquest_skills": [
+      {
+        "name": "Hammer Burn",
+        "type": "Active",
+        "description": "Deals heavy damage in an arc.",
+        "levels": {
+          "1": {
+            "damage_pct": 200
+          },
+          "2": {
+            "damage_pct": 220
+          },
+          "3": {
+            "damage_pct": 240
+          },
+          "4": {
+            "damage_pct": 260
+          },
+          "5": {
+            "damage_pct": 280
+          }
+        }
+      },
+      {
+        "name": "Armor Enhancement",
+        "type": "Passive",
+        "description": "Reduces damage taken.",
+        "levels": {
+          "1": {
+            "damage_reduction_pct": 10
+          },
+          "2": {
+            "damage_reduction_pct": 15
+          },
+          "3": {
+            "damage_reduction_pct": 20
+          },
+          "4": {
+            "damage_reduction_pct": 25
+          },
+          "5": {
+            "damage_reduction_pct": 30
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Burnished Iron",
+        "type": "Expedition",
+        "description": "Increases the town's iron mine output.",
+        "levels": {
+          "1": {
+            "iron_mine_income_pct": 5
+          },
+          "2": {
+            "iron_mine_income_pct": 10
+          },
+          "3": {
+            "iron_mine_income_pct": 15
+          },
+          "4": {
+            "iron_mine_income_pct": 20
+          },
+          "5": {
+            "iron_mine_income_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Craftsmanship",
+        "type": "Expedition",
+        "description": "Speeds up iron gathering in the wilderness.",
+        "levels": {
+          "1": {
+            "iron_gathering_speed_pct": 5
+          },
+          "2": {
+            "iron_gathering_speed_pct": 10
+          },
+          "3": {
+            "iron_gathering_speed_pct": 15
+          },
+          "4": {
+            "iron_gathering_speed_pct": 20
+          },
+          "5": {
+            "iron_gathering_speed_pct": 25
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [],
+    "talent": null
+  },
+  {
+    "hero_id": "edwin",
+    "conquest_skills": [
+      {
+        "name": "Shrapnel Load",
+        "type": "Active",
+        "description": "Throws an explosive dealing AoE damage.",
+        "levels": {
+          "1": {
+            "damage_pct": 140
+          },
+          "2": {
+            "damage_pct": 154
+          },
+          "3": {
+            "damage_pct": 168
+          },
+          "4": {
+            "damage_pct": 182
+          },
+          "5": {
+            "damage_pct": 196
+          }
+        }
+      },
+      {
+        "name": "Detonate",
+        "type": "Passive",
+        "description": "Chance to stun enemies.",
+        "levels": {
+          "1": {
+            "stun_chance_pct": 10,
+            "stun_duration_s": 0.5
+          },
+          "2": {
+            "stun_chance_pct": 15,
+            "stun_duration_s": 0.5
+          },
+          "3": {
+            "stun_chance_pct": 15,
+            "stun_duration_s": 1.0
+          },
+          "4": {
+            "stun_chance_pct": 20,
+            "stun_duration_s": 1.0
+          },
+          "5": {
+            "stun_chance_pct": 20,
+            "stun_duration_s": 1.5
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Demolitions Expert",
+        "type": "Expedition",
+        "description": "Increases the town's quarry output.",
+        "levels": {
+          "1": {
+            "quarry_income_pct": 5
+          },
+          "2": {
+            "quarry_income_pct": 10
+          },
+          "3": {
+            "quarry_income_pct": 15
+          },
+          "4": {
+            "quarry_income_pct": 20
+          },
+          "5": {
+            "quarry_income_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Stone Mining",
+        "type": "Expedition",
+        "description": "Speeds up stone gathering in the wilderness.",
+        "levels": {
+          "1": {
+            "stone_gathering_speed_pct": 5
+          },
+          "2": {
+            "stone_gathering_speed_pct": 10
+          },
+          "3": {
+            "stone_gathering_speed_pct": 15
+          },
+          "4": {
+            "stone_gathering_speed_pct": 20
+          },
+          "5": {
+            "stone_gathering_speed_pct": 25
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [],
+    "talent": null
+  },
+  {
+    "hero_id": "quinn",
+    "conquest_skills": [
+      {
+        "name": "Headshot",
+        "type": "Active",
+        "description": "Fires an upgraded crossbow bolt for massive single-target damage.",
+        "levels": {
+          "1": {
+            "damage_pct": 400
+          },
+          "2": {
+            "damage_pct": 440
+          },
+          "3": {
+            "damage_pct": 480
+          },
+          "4": {
+            "damage_pct": 520
+          },
+          "5": {
+            "damage_pct": 560
+          }
+        }
+      },
+      {
+        "name": "Quick Shot",
+        "type": "Passive",
+        "description": "Increases his attack speed.",
+        "levels": {
+          "1": {
+            "attack_speed_pct": 10
+          },
+          "2": {
+            "attack_speed_pct": 15
+          },
+          "3": {
+            "attack_speed_pct": 20
+          },
+          "4": {
+            "attack_speed_pct": 25
+          },
+          "5": {
+            "attack_speed_pct": 30
+          }
+        }
+      },
+      {
+        "name": "Natural Selection",
+        "type": "Passive",
+        "description": "Boosts his damage dealt output.",
+        "levels": {
+          "1": {
+            "damage_dealt_pct": 10
+          },
+          "2": {
+            "damage_dealt_pct": 15
+          },
+          "3": {
+            "damage_dealt_pct": 20
+          },
+          "4": {
+            "damage_dealt_pct": 25
+          },
+          "5": {
+            "damage_dealt_pct": 30
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Sixth Sense",
+        "type": "Expedition",
+        "description": "Reduces damage taken for all squads.",
+        "levels": {
+          "1": {
+            "damage_taken_down_pct": 4
+          },
+          "2": {
+            "damage_taken_down_pct": 8
+          },
+          "3": {
+            "damage_taken_down_pct": 12
+          },
+          "4": {
+            "damage_taken_down_pct": 16
+          },
+          "5": {
+            "damage_taken_down_pct": 20
+          }
+        }
+      },
+      {
+        "name": "Precision Shot",
+        "type": "Expedition",
+        "description": "Grants squads a chance to deal bonus damage when attacking.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 10,
+            "damage_dealt_bonus_pct": 50
+          },
+          "2": {
+            "proc_chance_pct": 20,
+            "damage_dealt_bonus_pct": 50
+          },
+          "3": {
+            "proc_chance_pct": 30,
+            "damage_dealt_bonus_pct": 50
+          },
+          "4": {
+            "proc_chance_pct": 40,
+            "damage_dealt_bonus_pct": 50
+          },
+          "5": {
+            "proc_chance_pct": 50,
+            "damage_dealt_bonus_pct": 50
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [],
+    "talent": null
+  },
+  {
+    "hero_id": "howard",
+    "conquest_skills": [
+      {
+        "name": "Shielded Strike",
+        "type": "Active",
+        "description": "Sweeps enemies with a shield bash that deals area damage.",
+        "levels": {
+          "1": {
+            "aoe_damage_pct": 200
+          },
+          "2": {
+            "aoe_damage_pct": 220
+          },
+          "3": {
+            "aoe_damage_pct": 240
+          },
+          "4": {
+            "aoe_damage_pct": 260
+          },
+          "5": {
+            "aoe_damage_pct": 280
+          }
+        }
+      },
+      {
+        "name": "Joint Defense",
+        "type": "Passive",
+        "description": "Passively raises defense for all heroes in the party.",
+        "levels": {
+          "1": {
+            "all_heroes_defense_pct": 5
+          },
+          "2": {
+            "all_heroes_defense_pct": 7.5
+          },
+          "3": {
+            "all_heroes_defense_pct": 10
+          },
+          "4": {
+            "all_heroes_defense_pct": 12.5
+          },
+          "5": {
+            "all_heroes_defense_pct": 15
+          }
+        }
+      },
+      {
+        "name": "Shield Block",
+        "type": "Passive",
+        "description": "Reduces damage taken from all sources.",
+        "levels": {
+          "1": {
+            "damage_taken_down_pct": 10
+          },
+          "2": {
+            "damage_taken_down_pct": 15
+          },
+          "3": {
+            "damage_taken_down_pct": 20
+          },
+          "4": {
+            "damage_taken_down_pct": 25
+          },
+          "5": {
+            "damage_taken_down_pct": 30
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Defenders' Edge",
+        "type": "Expedition",
+        "description": "Lowers damage received by expedition squads.",
+        "levels": {
+          "1": {
+            "damage_taken_down_pct": 4
+          },
+          "2": {
+            "damage_taken_down_pct": 8
+          },
+          "3": {
+            "damage_taken_down_pct": 12
+          },
+          "4": {
+            "damage_taken_down_pct": 16
+          },
+          "5": {
+            "damage_taken_down_pct": 20
+          }
+        }
+      },
+      {
+        "name": "Weaken",
+        "type": "Expedition",
+        "description": "Reduces enemy attack during expeditions.",
+        "levels": {
+          "1": {
+            "enemy_attack_down_pct": 4
+          },
+          "2": {
+            "enemy_attack_down_pct": 8
+          },
+          "3": {
+            "enemy_attack_down_pct": 12
+          },
+          "4": {
+            "enemy_attack_down_pct": 16
+          },
+          "5": {
+            "enemy_attack_down_pct": 20
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [],
+    "talent": null
+  },
+  {
+    "hero_id": "chenko",
+    "conquest_skills": [
+      {
+        "name": "Burst Fire",
+        "type": "Active",
+        "description": "Rapid barrage, dealing repeated frontal damage every 0.5s for 2s.",
+        "levels": {
+          "1": {
+            "damage_pct": 55
+          },
+          "2": {
+            "damage_pct": 60
+          },
+          "3": {
+            "damage_pct": 65
+          },
+          "4": {
+            "damage_pct": 70
+          },
+          "5": {
+            "damage_pct": 75
+          }
+        }
+      },
+      {
+        "name": "Defense Upgrade",
+        "type": "Passive",
+        "description": "Increases Chenko's Defense.",
+        "levels": {
+          "1": {
+            "defense_up_pct": 25
+          },
+          "2": {
+            "defense_up_pct": 37.5
+          },
+          "3": {
+            "defense_up_pct": 50
+          },
+          "4": {
+            "defense_up_pct": 62.5
+          },
+          "5": {
+            "defense_up_pct": 70
+          }
+        }
+      },
+      {
+        "name": "Weapon Upgrade",
+        "type": "Passive",
+        "description": "Increases Chenko's Attack.",
+        "levels": {
+          "1": {
+            "attack_up_pct": 8
+          },
+          "2": {
+            "attack_up_pct": 12
+          },
+          "3": {
+            "attack_up_pct": 16
+          },
+          "4": {
+            "attack_up_pct": 20
+          },
+          "5": {
+            "attack_up_pct": 24
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Stand of Arms",
+        "type": "Expedition",
+        "description": "Enhances expedition lethality through upgraded weaponry.",
+        "levels": {
+          "1": {
+            "lethality_pct": 5
+          },
+          "2": {
+            "lethality_pct": 10
+          },
+          "3": {
+            "lethality_pct": 15
+          },
+          "4": {
+            "lethality_pct": 20
+          },
+          "5": {
+            "lethality_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Shield Wall",
+        "type": "Expedition",
+        "description": "Reinforces troop armor to reduce incoming damage.",
+        "levels": {
+          "1": {
+            "damage_taken_down_pct": 4
+          },
+          "2": {
+            "damage_taken_down_pct": 8
+          },
+          "3": {
+            "damage_taken_down_pct": 12
+          },
+          "4": {
+            "damage_taken_down_pct": 16
+          },
+          "5": {
+            "damage_taken_down_pct": 20
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [],
+    "talent": null
+  },
+  {
+    "hero_id": "gordon",
+    "conquest_skills": [
+      {
+        "name": "BBQ Feast",
+        "type": "Active",
+        "description": "Restores Health to all troops and increases Attack for 4 seconds.",
+        "levels": {
+          "1": {
+            "heal_pct": 200,
+            "attack_up_pct": 5
+          },
+          "2": {
+            "heal_pct": 220,
+            "attack_up_pct": 5.5
+          },
+          "3": {
+            "heal_pct": 240,
+            "attack_up_pct": 6
+          },
+          "4": {
+            "heal_pct": 260,
+            "attack_up_pct": 6.5
+          },
+          "5": {
+            "heal_pct": 280,
+            "attack_up_pct": 7
+          }
+        }
+      },
+      {
+        "name": "Culinary Chaos",
+        "type": "Passive",
+        "description": "Reduces damage taken.",
+        "levels": {
+          "1": {
+            "damage_taken_down_pct": 10
+          },
+          "2": {
+            "damage_taken_down_pct": 15
+          },
+          "3": {
+            "damage_taken_down_pct": 20
+          },
+          "4": {
+            "damage_taken_down_pct": 25
+          },
+          "5": {
+            "damage_taken_down_pct": 30
+          }
+        }
+      },
+      {
+        "name": "Emergency Snack",
+        "type": "Passive",
+        "description": "Restores Health every 5 seconds.",
+        "levels": {
+          "1": {
+            "heal_pct": 50
+          },
+          "2": {
+            "heal_pct": 55
+          },
+          "3": {
+            "heal_pct": 60
+          },
+          "4": {
+            "heal_pct": 65
+          },
+          "5": {
+            "heal_pct": 70
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Super Nutrients",
+        "type": "Expedition",
+        "description": "Bolsters all squads with a health boost.",
+        "levels": {
+          "1": {
+            "health_pct": 5
+          },
+          "2": {
+            "health_pct": 10
+          },
+          "3": {
+            "health_pct": 15
+          },
+          "4": {
+            "health_pct": 20
+          },
+          "5": {
+            "health_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Trash Talk",
+        "type": "Expedition",
+        "description": "Fires up allies with an attack bonus.",
+        "levels": {
+          "1": {
+            "attack_pct": 5
+          },
+          "2": {
+            "attack_pct": 10
+          },
+          "3": {
+            "attack_pct": 15
+          },
+          "4": {
+            "attack_pct": 20
+          },
+          "5": {
+            "attack_pct": 25
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [],
+    "talent": null
+  },
+  {
+    "hero_id": "diana",
+    "conquest_skills": [
+      {
+        "name": "Incendiary Arrows",
+        "type": "Active",
+        "description": "Deals heavy single-target damage and area damage to nearby enemies.",
+        "levels": {
+          "1": {
+            "damage_pct": 210,
+            "splash_pct": 70
+          },
+          "2": {
+            "damage_pct": 230,
+            "splash_pct": 77
+          },
+          "3": {
+            "damage_pct": 250,
+            "splash_pct": 84
+          },
+          "4": {
+            "damage_pct": 270,
+            "splash_pct": 91
+          },
+          "5": {
+            "damage_pct": 290,
+            "splash_pct": 98
+          }
+        }
+      },
+      {
+        "name": "Sharpshooter",
+        "type": "Passive",
+        "description": "Increases Attack Speed.",
+        "levels": {
+          "1": {
+            "attack_speed_pct": 10
+          },
+          "2": {
+            "attack_speed_pct": 15
+          },
+          "3": {
+            "attack_speed_pct": 20
+          },
+          "4": {
+            "attack_speed_pct": 25
+          },
+          "5": {
+            "attack_speed_pct": 30
+          }
+        }
+      },
+      {
+        "name": "Deadly Strike",
+        "type": "Passive",
+        "description": "Increases Crit Rate.",
+        "levels": {
+          "1": {
+            "crit_rate_pct": 7
+          },
+          "2": {
+            "crit_rate_pct": 10
+          },
+          "3": {
+            "crit_rate_pct": 13
+          },
+          "4": {
+            "crit_rate_pct": 16
+          },
+          "5": {
+            "crit_rate_pct": 20
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Iron Constitution",
+        "type": "Expedition",
+        "description": "Reduces the stamina cost for governor actions.",
+        "levels": {
+          "1": {
+            "governor_stamina_cost_down_pct": 10
+          },
+          "2": {
+            "governor_stamina_cost_down_pct": 12
+          },
+          "3": {
+            "governor_stamina_cost_down_pct": 15
+          },
+          "4": {
+            "governor_stamina_cost_down_pct": 18
+          },
+          "5": {
+            "governor_stamina_cost_down_pct": 20
+          }
+        }
+      },
+      {
+        "name": "Quick Paced",
+        "type": "Expedition",
+        "description": "Greatly increases march speed.",
+        "levels": {
+          "1": {
+            "march_speed_pct": 20
+          },
+          "2": {
+            "march_speed_pct": 40
+          },
+          "3": {
+            "march_speed_pct": 60
+          },
+          "4": {
+            "march_speed_pct": 80
+          },
+          "5": {
+            "march_speed_pct": 100
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [],
+    "talent": null
+  },
+  {
+    "hero_id": "amane",
+    "conquest_skills": [
+      {
+        "name": "Sakura Blossom",
+        "type": "Active",
+        "description": "Enchants nearby allies with increased attack and attack speed for 4s.",
+        "levels": {
+          "1": {
+            "party_attack_pct": 1.5,
+            "party_attack_speed_pct": 2.5,
+            "duration_s": 4
+          },
+          "2": {
+            "party_attack_pct": 2,
+            "party_attack_speed_pct": 3,
+            "duration_s": 4
+          },
+          "3": {
+            "party_attack_pct": 2.5,
+            "party_attack_speed_pct": 3.5,
+            "duration_s": 4
+          },
+          "4": {
+            "party_attack_pct": 3,
+            "party_attack_speed_pct": 4,
+            "duration_s": 4
+          },
+          "5": {
+            "party_attack_pct": 3.5,
+            "party_attack_speed_pct": 4.5,
+            "duration_s": 4
+          }
+        }
+      },
+      {
+        "name": "Fire Sigil",
+        "type": "Active",
+        "description": "Ignites a target with a powerful single strike.",
+        "levels": {
+          "1": {
+            "damage_pct": 150
+          },
+          "2": {
+            "damage_pct": 165
+          },
+          "3": {
+            "damage_pct": 180
+          },
+          "4": {
+            "damage_pct": 195
+          },
+          "5": {
+            "damage_pct": 210
+          }
+        }
+      },
+      {
+        "name": "Divine Melody",
+        "type": "Passive",
+        "description": "Every three attacks permanently increases attack speed for the battle.",
+        "levels": {
+          "1": {
+            "attack_speed_per_3_attacks_pct": 1,
+            "stacks": "infinite",
+            "persists_until_end": true
+          },
+          "2": {
+            "attack_speed_per_3_attacks_pct": 2,
+            "stacks": "infinite",
+            "persists_until_end": true
+          },
+          "3": {
+            "attack_speed_per_3_attacks_pct": 3,
+            "stacks": "infinite",
+            "persists_until_end": true
+          },
+          "4": {
+            "attack_speed_per_3_attacks_pct": 4,
+            "stacks": "infinite",
+            "persists_until_end": true
+          },
+          "5": {
+            "attack_speed_per_3_attacks_pct": 5,
+            "stacks": "infinite",
+            "persists_until_end": true
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Tri-Phalanx",
+        "type": "Expedition",
+        "description": "Adds extra attack for all expedition squads.",
+        "levels": {
+          "1": {
+            "attack_pct": 5
+          },
+          "2": {
+            "attack_pct": 10
+          },
+          "3": {
+            "attack_pct": 15
+          },
+          "4": {
+            "attack_pct": 20
+          },
+          "5": {
+            "attack_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Exorcism",
+        "type": "Expedition",
+        "description": "Speeds up infirmary healing during expeditions.",
+        "levels": {
+          "1": {
+            "infirmary_healing_speed_pct": 10
+          },
+          "2": {
+            "infirmary_healing_speed_pct": 20
+          },
+          "3": {
+            "infirmary_healing_speed_pct": 30
+          },
+          "4": {
+            "infirmary_healing_speed_pct": 40
+          },
+          "5": {
+            "infirmary_healing_speed_pct": 50
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [],
+    "talent": null
+  },
+  {
+    "hero_id": "yeonwoo",
+    "conquest_skills": [
+      {
+        "name": "Petalbloom",
+        "type": "Active",
+        "description": "Releases three cascading strikes that end with an AoE burst.",
+        "levels": {
+          "1": {
+            "wave1_damage_pct": 100,
+            "wave2_damage_pct": 125,
+            "wave3_damage_pct": 150,
+            "wave3_is_aoe": true
+          },
+          "2": {
+            "wave1_damage_pct": 100,
+            "wave2_damage_pct": 137.5,
+            "wave3_damage_pct": 165,
+            "wave3_is_aoe": true
+          },
+          "3": {
+            "wave1_damage_pct": 100,
+            "wave2_damage_pct": 150,
+            "wave3_damage_pct": 180,
+            "wave3_is_aoe": true
+          },
+          "4": {
+            "wave1_damage_pct": 100,
+            "wave2_damage_pct": 162.5,
+            "wave3_damage_pct": 195,
+            "wave3_is_aoe": true
+          },
+          "5": {
+            "wave1_damage_pct": 100,
+            "wave2_damage_pct": 175,
+            "wave3_damage_pct": 210,
+            "wave3_is_aoe": true
+          }
+        }
+      },
+      {
+        "name": "Falling Swallow",
+        "type": "Active",
+        "description": "Cuts enemies and reduces their attack speed for 2s.",
+        "levels": {
+          "1": {
+            "damage_pct": 100,
+            "enemy_attack_speed_down_pct": 30,
+            "debuff_duration_s": 2
+          },
+          "2": {
+            "damage_pct": 110,
+            "enemy_attack_speed_down_pct": 35,
+            "debuff_duration_s": 2
+          },
+          "3": {
+            "damage_pct": 120,
+            "enemy_attack_speed_down_pct": 40,
+            "debuff_duration_s": 2
+          },
+          "4": {
+            "damage_pct": 130,
+            "enemy_attack_speed_down_pct": 45,
+            "debuff_duration_s": 2
+          },
+          "5": {
+            "damage_pct": 140,
+            "enemy_attack_speed_down_pct": 50,
+            "debuff_duration_s": 2
+          }
+        }
+      },
+      {
+        "name": "Twin Fangs",
+        "type": "Passive",
+        "description": "Passively increases attack.",
+        "levels": {
+          "1": {
+            "attack_pct": 8
+          },
+          "2": {
+            "attack_pct": 12
+          },
+          "3": {
+            "attack_pct": 16
+          },
+          "4": {
+            "attack_pct": 20
+          },
+          "5": {
+            "attack_pct": 24
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "On Guard",
+        "type": "Expedition",
+        "description": "Provides a lethality boost to expedition squads.",
+        "levels": {
+          "1": {
+            "lethality_pct": 5
+          },
+          "2": {
+            "lethality_pct": 10
+          },
+          "3": {
+            "lethality_pct": 15
+          },
+          "4": {
+            "lethality_pct": 20
+          },
+          "5": {
+            "lethality_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Well-Traveled",
+        "type": "Expedition",
+        "description": "Speeds up research progress.",
+        "levels": {
+          "1": {
+            "research_speed_pct": 3
+          },
+          "2": {
+            "research_speed_pct": 6
+          },
+          "3": {
+            "research_speed_pct": 9
+          },
+          "4": {
+            "research_speed_pct": 12
+          },
+          "5": {
+            "research_speed_pct": 15
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [],
+    "talent": null
+  },
+  {
+    "hero_id": "fahd",
+    "conquest_skills": [
+      {
+        "name": "Sandstorm",
+        "type": "Active",
+        "description": "Summons a sandstorm that reduces enemy attack for 2s.",
+        "levels": {
+          "1": {
+            "enemy_attack_down_pct": 1,
+            "duration_s": 2
+          },
+          "2": {
+            "enemy_attack_down_pct": 2,
+            "duration_s": 2
+          },
+          "3": {
+            "enemy_attack_down_pct": 3,
+            "duration_s": 2
+          },
+          "4": {
+            "enemy_attack_down_pct": 4,
+            "duration_s": 2
+          },
+          "5": {
+            "enemy_attack_down_pct": 5,
+            "duration_s": 2
+          }
+        }
+      },
+      {
+        "name": "Eagle Wings",
+        "type": "Active",
+        "description": "After Sandstorm, boosts attack for Fahd and nearby allies for 2s.",
+        "levels": {
+          "1": {
+            "attack_up_pct": 15,
+            "duration_s": 2
+          },
+          "2": {
+            "attack_up_pct": 20,
+            "duration_s": 2
+          },
+          "3": {
+            "attack_up_pct": 25,
+            "duration_s": 2
+          },
+          "4": {
+            "attack_up_pct": 30,
+            "duration_s": 2
+          },
+          "5": {
+            "attack_up_pct": 35,
+            "duration_s": 2
+          }
+        }
+      },
+      {
+        "name": "Dune General",
+        "type": "Passive",
+        "description": "Increases his attack speed when the battle shifts in his favor.",
+        "levels": {
+          "1": {
+            "attack_speed_pct": 10
+          },
+          "2": {
+            "attack_speed_pct": 15
+          },
+          "3": {
+            "attack_speed_pct": 20
+          },
+          "4": {
+            "attack_speed_pct": 25
+          },
+          "5": {
+            "attack_speed_pct": 30
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Desert Eclipse",
+        "type": "Expedition",
+        "description": "Reduces damage dealt by enemy squads during expeditions.",
+        "levels": {
+          "1": {
+            "enemy_damage_dealt_down_pct": 4
+          },
+          "2": {
+            "enemy_damage_dealt_down_pct": 8
+          },
+          "3": {
+            "enemy_damage_dealt_down_pct": 12
+          },
+          "4": {
+            "enemy_damage_dealt_down_pct": 16
+          },
+          "5": {
+            "enemy_damage_dealt_down_pct": 20
+          }
+        }
+      },
+      {
+        "name": "Pathfinder",
+        "type": "Expedition",
+        "description": "Speeds up solo hunting marches.",
+        "levels": {
+          "1": {
+            "solo_hunting_march_speed_pct": 20
+          },
+          "2": {
+            "solo_hunting_march_speed_pct": 40
+          },
+          "3": {
+            "solo_hunting_march_speed_pct": 60
+          },
+          "4": {
+            "solo_hunting_march_speed_pct": 80
+          },
+          "5": {
+            "solo_hunting_march_speed_pct": 100
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [],
+    "talent": null
+  },
+  {
+    "hero_id": "jabel",
+    "conquest_skills": [
+      {
+        "name": "Gallant Throw",
+        "type": "Active",
+        "description": "Hurls a spear that deals area damage and pins enemies for 1.5s.",
+        "levels": {
+          "1": {
+            "aoe_damage_pct": 180,
+            "pin_duration_s": 1.5
+          },
+          "2": {
+            "aoe_damage_pct": 198,
+            "pin_duration_s": 1.5
+          },
+          "3": {
+            "aoe_damage_pct": 216,
+            "pin_duration_s": 1.5
+          },
+          "4": {
+            "aoe_damage_pct": 234,
+            "pin_duration_s": 1.5
+          },
+          "5": {
+            "aoe_damage_pct": 252,
+            "pin_duration_s": 1.5
+          }
+        }
+      },
+      {
+        "name": "Brave the Storm",
+        "type": "Active",
+        "description": "Follows up with a powerful single-target strike.",
+        "levels": {
+          "1": {
+            "damage_pct": 150
+          },
+          "2": {
+            "damage_pct": 165
+          },
+          "3": {
+            "damage_pct": 180
+          },
+          "4": {
+            "damage_pct": 195
+          },
+          "5": {
+            "damage_pct": 210
+          }
+        }
+      },
+      {
+        "name": "Persistence",
+        "type": "Passive",
+        "description": "Gains attack speed when her health falls below 50%.",
+        "levels": {
+          "1": {
+            "attack_speed_pct": 20,
+            "health_threshold_pct": 50
+          },
+          "2": {
+            "attack_speed_pct": 30,
+            "health_threshold_pct": 50
+          },
+          "3": {
+            "attack_speed_pct": 40,
+            "health_threshold_pct": 50
+          },
+          "4": {
+            "attack_speed_pct": 50,
+            "health_threshold_pct": 50
+          },
+          "5": {
+            "attack_speed_pct": 60,
+            "health_threshold_pct": 50
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Rally Flag",
+        "type": "Expedition",
+        "description": "Chance to grant all squads 50% damage reduction for a short time.",
+        "levels": {
+          "1": {
+            "all_squads_damage_taken_down_pct": 50,
+            "proc_chance_pct": 8
+          },
+          "2": {
+            "all_squads_damage_taken_down_pct": 50,
+            "proc_chance_pct": 16
+          },
+          "3": {
+            "all_squads_damage_taken_down_pct": 50,
+            "proc_chance_pct": 24
+          },
+          "4": {
+            "all_squads_damage_taken_down_pct": 50,
+            "proc_chance_pct": 32
+          },
+          "5": {
+            "all_squads_damage_taken_down_pct": 50,
+            "proc_chance_pct": 40
+          }
+        }
+      },
+      {
+        "name": "Hero's Domain",
+        "type": "Expedition",
+        "description": "Chance to boost allied damage dealt for several turns.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 50,
+            "damage_dealt_bonus_pct": 10
+          },
+          "2": {
+            "proc_chance_pct": 50,
+            "damage_dealt_bonus_pct": 20
+          },
+          "3": {
+            "proc_chance_pct": 50,
+            "damage_dealt_bonus_pct": 30
+          },
+          "4": {
+            "proc_chance_pct": 50,
+            "damage_dealt_bonus_pct": 40
+          },
+          "5": {
+            "proc_chance_pct": 50,
+            "damage_dealt_bonus_pct": 50
+          }
+        }
+      },
+      {
+        "name": "Youthful Rage",
+        "type": "Expedition",
+        "description": "Provides a permanent damage dealt bonus to the march.",
+        "levels": {
+          "1": {
+            "damage_dealt_pct": 5
+          },
+          "2": {
+            "damage_dealt_pct": 10
+          },
+          "3": {
+            "damage_dealt_pct": 15
+          },
+          "4": {
+            "damage_dealt_pct": 20
+          },
+          "5": {
+            "damage_dealt_pct": 25
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Crimson Spirit",
+        "type": "Exclusive",
+        "description": "Jabel breaks past her limits, increasing damage dealt.",
+        "levels": {
+          "1": {
+            "damage_dealt_pct": 10
+          },
+          "2": {
+            "damage_dealt_pct": 15
+          },
+          "3": {
+            "damage_dealt_pct": 20
+          },
+          "4": {
+            "damage_dealt_pct": 25
+          },
+          "5": {
+            "damage_dealt_pct": 30
+          }
+        }
+      },
+      {
+        "name": "Divine Strength",
+        "type": "Exclusive",
+        "description": "Faith empowers the defenders, boosting lethality.",
+        "levels": {
+          "1": {
+            "defender_lethality_up_pct": 5
+          },
+          "2": {
+            "defender_lethality_up_pct": 7.5
+          },
+          "3": {
+            "defender_lethality_up_pct": 10
+          },
+          "4": {
+            "defender_lethality_up_pct": 12.5
+          },
+          "5": {
+            "defender_lethality_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": null
+  },
+  {
+    "hero_id": "helga",
+    "conquest_skills": [
+      {
+        "name": "Antler Assault",
+        "type": "Active",
+        "description": "Charges and deals area damage, knocking back and stunning targets for 1s.",
+        "levels": {
+          "1": {
+            "damage_pct": 160
+          },
+          "2": {
+            "damage_pct": 176
+          },
+          "3": {
+            "damage_pct": 192
+          },
+          "4": {
+            "damage_pct": 208
+          },
+          "5": {
+            "damage_pct": 224
+          }
+        }
+      },
+      {
+        "name": "Spear Charge",
+        "type": "Active",
+        "description": "Deals direct single-target damage.",
+        "levels": {
+          "1": {
+            "damage_pct": 150
+          },
+          "2": {
+            "damage_pct": 165
+          },
+          "3": {
+            "damage_pct": 180
+          },
+          "4": {
+            "damage_pct": 195
+          },
+          "5": {
+            "damage_pct": 210
+          }
+        }
+      },
+      {
+        "name": "Fury",
+        "type": "Passive",
+        "description": "When taking damage, chance to increase Attack for 3s (stackable up to 5 times).",
+        "levels": {
+          "1": {
+            "attack_up_pct": 4
+          },
+          "2": {
+            "attack_up_pct": 6
+          },
+          "3": {
+            "attack_up_pct": 8
+          },
+          "4": {
+            "attack_up_pct": 10
+          },
+          "5": {
+            "attack_up_pct": 12
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Oath of Guardian",
+        "type": "Expedition",
+        "description": "Has a chance to reduce damage taken by 50% for all squads.",
+        "levels": {
+          "1": {
+            "all_squads_damage_taken_down_pct": 50,
+            "proc_chance_pct": 8
+          },
+          "2": {
+            "all_squads_damage_taken_down_pct": 50,
+            "proc_chance_pct": 16
+          },
+          "3": {
+            "all_squads_damage_taken_down_pct": 50,
+            "proc_chance_pct": 24
+          },
+          "4": {
+            "all_squads_damage_taken_down_pct": 50,
+            "proc_chance_pct": 32
+          },
+          "5": {
+            "all_squads_damage_taken_down_pct": 50,
+            "proc_chance_pct": 40
+          }
+        }
+      },
+      {
+        "name": "Echoes of Valhalla",
+        "type": "Expedition",
+        "description": "Rallies allies with a march-wide attack bonus.",
+        "levels": {
+          "1": {
+            "attack_pct": 5
+          },
+          "2": {
+            "attack_pct": 10
+          },
+          "3": {
+            "attack_pct": 15
+          },
+          "4": {
+            "attack_pct": 20
+          },
+          "5": {
+            "attack_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Nature's Balance",
+        "type": "Expedition",
+        "description": "Increases lethality for the entire march.",
+        "levels": {
+          "1": {
+            "lethality_pct": 5
+          },
+          "2": {
+            "lethality_pct": 10
+          },
+          "3": {
+            "lethality_pct": 15
+          },
+          "4": {
+            "lethality_pct": 20
+          },
+          "5": {
+            "lethality_pct": 25
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Valiant Fury",
+        "type": "Exclusive",
+        "description": "Helga channels fury into raw damage output.",
+        "levels": {
+          "1": {
+            "damage_dealt_pct": 10
+          },
+          "2": {
+            "damage_dealt_pct": 15
+          },
+          "3": {
+            "damage_dealt_pct": 20
+          },
+          "4": {
+            "damage_dealt_pct": 25
+          },
+          "5": {
+            "damage_dealt_pct": 30
+          }
+        }
+      },
+      {
+        "name": "Zeal",
+        "type": "Exclusive",
+        "description": "Helga's zeal increases rally lethality.",
+        "levels": {
+          "1": {
+            "rally_lethality_up_pct": 5
+          },
+          "2": {
+            "rally_lethality_up_pct": 7.5
+          },
+          "3": {
+            "rally_lethality_up_pct": 10
+          },
+          "4": {
+            "rally_lethality_up_pct": 12.5
+          },
+          "5": {
+            "rally_lethality_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": {
+      "name": "Power of the Deer",
+      "description": "Helga's manifold talent bolsters all deployed soldiers' Attack and Defense by 10% even in her absence.",
+      "max_level_effect": {
+        "attack_up_pct": 10,
+        "defense_up_pct": 10
+      }
+    }
+  },
+  {
+    "hero_id": "amadeus",
+    "conquest_skills": [
+      {
+        "name": "Combo Slash",
+        "type": "Active",
+        "description": "Unleashes a three-hit combo for heavy burst damage.",
+        "levels": {
+          "1": {
+            "damage_pct": 160,
+            "strikes": 3
+          },
+          "2": {
+            "damage_pct": 176,
+            "strikes": 3
+          },
+          "3": {
+            "damage_pct": 192,
+            "strikes": 3
+          },
+          "4": {
+            "damage_pct": 208,
+            "strikes": 3
+          },
+          "5": {
+            "damage_pct": 224,
+            "strikes": 3
+          }
+        }
+      },
+      {
+        "name": "Arcane Swordship",
+        "type": "Active",
+        "description": "Releases arcane energy that deals Attack-based damage to frontal foes.",
+        "levels": {
+          "1": {
+            "frontal_damage_pct": 15
+          },
+          "2": {
+            "frontal_damage_pct": 17
+          },
+          "3": {
+            "frontal_damage_pct": 19
+          },
+          "4": {
+            "frontal_damage_pct": 21
+          },
+          "5": {
+            "frontal_damage_pct": 23
+          }
+        }
+      },
+      {
+        "name": "Onslaught",
+        "type": "Passive",
+        "description": "Increases his attack when his health drops below 50%.",
+        "levels": {
+          "1": {
+            "attack_pct": 16,
+            "health_threshold_pct": 50
+          },
+          "2": {
+            "attack_pct": 24,
+            "health_threshold_pct": 50
+          },
+          "3": {
+            "attack_pct": 32,
+            "health_threshold_pct": 50
+          },
+          "4": {
+            "attack_pct": 40,
+            "health_threshold_pct": 50
+          },
+          "5": {
+            "attack_pct": 48,
+            "health_threshold_pct": 50
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Battle Ready",
+        "type": "Expedition",
+        "description": "Raises march lethality for the entire expedition.",
+        "levels": {
+          "1": {
+            "lethality_pct": 5
+          },
+          "2": {
+            "lethality_pct": 10
+          },
+          "3": {
+            "lethality_pct": 15
+          },
+          "4": {
+            "lethality_pct": 20
+          },
+          "5": {
+            "lethality_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Way of the Blade",
+        "type": "Expedition",
+        "description": "Provides a steady attack bonus to expedition squads.",
+        "levels": {
+          "1": {
+            "attack_pct": 5
+          },
+          "2": {
+            "attack_pct": 10
+          },
+          "3": {
+            "attack_pct": 15
+          },
+          "4": {
+            "attack_pct": 20
+          },
+          "5": {
+            "attack_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Unrighteous Strike",
+        "type": "Expedition",
+        "description": "Gives a chance for each attack to deal massive bonus damage.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 8,
+            "damage_dealt_bonus_pct": 50
+          },
+          "2": {
+            "proc_chance_pct": 16,
+            "damage_dealt_bonus_pct": 50
+          },
+          "3": {
+            "proc_chance_pct": 24,
+            "damage_dealt_bonus_pct": 50
+          },
+          "4": {
+            "proc_chance_pct": 32,
+            "damage_dealt_bonus_pct": 50
+          },
+          "5": {
+            "proc_chance_pct": 40,
+            "damage_dealt_bonus_pct": 50
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Double Parry",
+        "type": "Exclusive",
+        "description": "Amadeus deflects blows with ease, cutting incoming damage.",
+        "levels": {
+          "1": {
+            "damage_taken_down_pct": 10
+          },
+          "2": {
+            "damage_taken_down_pct": 15
+          },
+          "3": {
+            "damage_taken_down_pct": 20
+          },
+          "4": {
+            "damage_taken_down_pct": 25
+          },
+          "5": {
+            "damage_taken_down_pct": 30
+          }
+        }
+      },
+      {
+        "name": "Discernment",
+        "type": "Exclusive",
+        "description": "Amadeus guides the rally with precision, increasing attack.",
+        "levels": {
+          "1": {
+            "rally_attack_up_pct": 5
+          },
+          "2": {
+            "rally_attack_up_pct": 7.5
+          },
+          "3": {
+            "rally_attack_up_pct": 10
+          },
+          "4": {
+            "rally_attack_up_pct": 12.5
+          },
+          "5": {
+            "rally_attack_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": {
+      "name": "Born Leader",
+      "description": "Amadeus inspires at all times even when absent, boosting the Lethality and Health for all deployed soldiers by 15%.",
+      "max_level_effect": {
+        "lethality_up_pct": 15,
+        "health_up_pct": 15
+      }
+    }
+  },
+  {
+    "hero_id": "saul",
+    "conquest_skills": [
+      {
+        "name": "Rapidfire",
+        "type": "Active",
+        "description": "Unleashes a flurry of shots that can stun foes for 2s.",
+        "levels": {
+          "1": {
+            "multi_hit_damage_pct": 55,
+            "stun_duration_s": 2
+          },
+          "2": {
+            "multi_hit_damage_pct": 60,
+            "stun_duration_s": 2
+          },
+          "3": {
+            "multi_hit_damage_pct": 65,
+            "stun_duration_s": 2
+          },
+          "4": {
+            "multi_hit_damage_pct": 70,
+            "stun_duration_s": 2
+          },
+          "5": {
+            "multi_hit_damage_pct": 75,
+            "stun_duration_s": 2
+          }
+        }
+      },
+      {
+        "name": "Final Prayer",
+        "type": "Passive",
+        "description": "Greatly raises defense while under 50% health.",
+        "levels": {
+          "1": {
+            "defense_pct": 50,
+            "health_threshold_pct": 50
+          },
+          "2": {
+            "defense_pct": 75,
+            "health_threshold_pct": 50
+          },
+          "3": {
+            "defense_pct": 100,
+            "health_threshold_pct": 50
+          },
+          "4": {
+            "defense_pct": 125,
+            "health_threshold_pct": 50
+          },
+          "5": {
+            "defense_pct": 150,
+            "health_threshold_pct": 50
+          }
+        }
+      },
+      {
+        "name": "Superior Techniques",
+        "type": "Passive",
+        "description": "Permanently increases attack speed.",
+        "levels": {
+          "1": {
+            "attack_speed_pct": 10
+          },
+          "2": {
+            "attack_speed_pct": 15
+          },
+          "3": {
+            "attack_speed_pct": 20
+          },
+          "4": {
+            "attack_speed_pct": 25
+          },
+          "5": {
+            "attack_speed_pct": 30
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Taskforce Training",
+        "type": "Expedition",
+        "description": "Increases defense and health for expedition squads.",
+        "levels": {
+          "1": {
+            "defense_pct": 2,
+            "health_pct": 3
+          },
+          "2": {
+            "defense_pct": 4,
+            "health_pct": 6
+          },
+          "3": {
+            "defense_pct": 6,
+            "health_pct": 9
+          },
+          "4": {
+            "defense_pct": 8,
+            "health_pct": 12
+          },
+          "5": {
+            "defense_pct": 10,
+            "health_pct": 15
+          }
+        }
+      },
+      {
+        "name": "Resourceful",
+        "type": "Expedition",
+        "description": "Boosts construction speed while lowering costs.",
+        "levels": {
+          "1": {
+            "construction_speed_pct": 3,
+            "construction_cost_down_pct": 3
+          },
+          "2": {
+            "construction_speed_pct": 6,
+            "construction_cost_down_pct": 6
+          },
+          "3": {
+            "construction_speed_pct": 9,
+            "construction_cost_down_pct": 9
+          },
+          "4": {
+            "construction_speed_pct": 12,
+            "construction_cost_down_pct": 12
+          },
+          "5": {
+            "construction_speed_pct": 15,
+            "construction_cost_down_pct": 15
+          }
+        }
+      },
+      {
+        "name": "Positional Batter",
+        "type": "Expedition",
+        "description": "Raises lethality for the march.",
+        "levels": {
+          "1": {
+            "lethality_pct": 5
+          },
+          "2": {
+            "lethality_pct": 10
+          },
+          "3": {
+            "lethality_pct": 15
+          },
+          "4": {
+            "lethality_pct": 20
+          },
+          "5": {
+            "lethality_pct": 25
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Fearless Advance",
+        "type": "Exclusive",
+        "description": "Saul presses forward, gaining attack power in critical moments.",
+        "levels": {
+          "1": {
+            "attack_up_pct": 6
+          },
+          "2": {
+            "attack_up_pct": 12
+          },
+          "3": {
+            "attack_up_pct": 16
+          },
+          "4": {
+            "attack_up_pct": 20
+          },
+          "5": {
+            "attack_up_pct": 24
+          }
+        }
+      },
+      {
+        "name": "Defend to Attack",
+        "type": "Exclusive",
+        "description": "Saul turns defense into offense, boosting defender attack.",
+        "levels": {
+          "1": {
+            "defender_attack_up_pct": 5
+          },
+          "2": {
+            "defender_attack_up_pct": 7.5
+          },
+          "3": {
+            "defender_attack_up_pct": 10
+          },
+          "4": {
+            "defender_attack_up_pct": 12.5
+          },
+          "5": {
+            "defender_attack_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": null
+  },
+  {
+    "hero_id": "hilde",
+    "conquest_skills": [
+      {
+        "name": "Rejuvenating Plea",
+        "type": "Active",
+        "description": "Restores a large amount of health to all allies.",
+        "levels": {
+          "1": {
+            "party_heal_pct": 200
+          },
+          "2": {
+            "party_heal_pct": 220
+          },
+          "3": {
+            "party_heal_pct": 240
+          },
+          "4": {
+            "party_heal_pct": 260
+          },
+          "5": {
+            "party_heal_pct": 280
+          }
+        }
+      },
+      {
+        "name": "Redeemer",
+        "type": "Active",
+        "description": "Heals the weakest allied hero for a substantial amount.",
+        "levels": {
+          "1": {
+            "heal_pct": 100,
+            "target": "weakest_friendly_hero"
+          },
+          "2": {
+            "heal_pct": 110,
+            "target": "weakest_friendly_hero"
+          },
+          "3": {
+            "heal_pct": 120,
+            "target": "weakest_friendly_hero"
+          },
+          "4": {
+            "heal_pct": 130,
+            "target": "weakest_friendly_hero"
+          },
+          "5": {
+            "heal_pct": 140,
+            "target": "weakest_friendly_hero"
+          }
+        }
+      },
+      {
+        "name": "Intimidation",
+        "type": "Active",
+        "description": "Deals damage and briefly disables enemies.",
+        "levels": {
+          "1": {
+            "damage_pct": 140,
+            "disable_duration_s": 1
+          },
+          "2": {
+            "damage_pct": 154,
+            "disable_duration_s": 1
+          },
+          "3": {
+            "damage_pct": 168,
+            "disable_duration_s": 1
+          },
+          "4": {
+            "damage_pct": 182,
+            "disable_duration_s": 1
+          },
+          "5": {
+            "damage_pct": 196,
+            "disable_duration_s": 1
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Noble Path",
+        "type": "Expedition",
+        "description": "Provides balanced attack and defense bonuses to the march.",
+        "levels": {
+          "1": {
+            "attack_pct": 3,
+            "defense_pct": 2
+          },
+          "2": {
+            "attack_pct": 6,
+            "defense_pct": 4
+          },
+          "3": {
+            "attack_pct": 9,
+            "defense_pct": 6
+          },
+          "4": {
+            "attack_pct": 12,
+            "defense_pct": 8
+          },
+          "5": {
+            "attack_pct": 15,
+            "defense_pct": 10
+          }
+        }
+      },
+      {
+        "name": "Elixir of Strength",
+        "type": "Expedition",
+        "description": "Has a chance to trigger massive bonus damage on attack.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 25,
+            "damage_pct": 120
+          },
+          "2": {
+            "proc_chance_pct": 25,
+            "damage_pct": 140
+          },
+          "3": {
+            "proc_chance_pct": 25,
+            "damage_pct": 160
+          },
+          "4": {
+            "proc_chance_pct": 25,
+            "damage_pct": 180
+          },
+          "5": {
+            "proc_chance_pct": 25,
+            "damage_pct": 200
+          }
+        }
+      },
+      {
+        "name": "Trial by Fire",
+        "type": "Expedition",
+        "description": "Chance to halve incoming damage for a short time.",
+        "levels": {
+          "1": {
+            "damage_taken_down_pct": 50,
+            "proc_chance_pct": 8
+          },
+          "2": {
+            "damage_taken_down_pct": 50,
+            "proc_chance_pct": 16
+          },
+          "3": {
+            "damage_taken_down_pct": 50,
+            "proc_chance_pct": 24
+          },
+          "4": {
+            "damage_taken_down_pct": 50,
+            "proc_chance_pct": 32
+          },
+          "5": {
+            "damage_taken_down_pct": 50,
+            "proc_chance_pct": 40
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Holy Invocation",
+        "type": "Exclusive",
+        "description": "Hilde's miracles empower every heal.",
+        "levels": {
+          "1": {
+            "healing_effects_up_pct": 30
+          },
+          "2": {
+            "healing_effects_up_pct": 40
+          },
+          "3": {
+            "healing_effects_up_pct": 50
+          },
+          "4": {
+            "healing_effects_up_pct": 60
+          },
+          "5": {
+            "healing_effects_up_pct": 70
+          }
+        }
+      },
+      {
+        "name": "Fortitude",
+        "type": "Exclusive",
+        "description": "Hilde reinforces the garrison, boosting defender health.",
+        "levels": {
+          "1": {
+            "defender_health_up_pct": 5
+          },
+          "2": {
+            "defender_health_up_pct": 7.5
+          },
+          "3": {
+            "defender_health_up_pct": 10
+          },
+          "4": {
+            "defender_health_up_pct": 12.5
+          },
+          "5": {
+            "defender_health_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": null
+  },
+  {
+    "hero_id": "zoe",
+    "conquest_skills": [
+      {
+        "name": "Shield Strike",
+        "type": "Active",
+        "description": "Rapid shield combo that deals damage over time and makes foes take more damage.",
+        "levels": {
+          "1": {
+            "tick_damage_pct": 60,
+            "tick_interval_s": 0.5,
+            "enemy_damage_taken_up_pct": 10,
+            "debuff_duration_s": 2
+          },
+          "2": {
+            "tick_damage_pct": 66,
+            "tick_interval_s": 0.5,
+            "enemy_damage_taken_up_pct": 15,
+            "debuff_duration_s": 2
+          },
+          "3": {
+            "tick_damage_pct": 72,
+            "tick_interval_s": 0.5,
+            "enemy_damage_taken_up_pct": 20,
+            "debuff_duration_s": 2
+          },
+          "4": {
+            "tick_damage_pct": 78,
+            "tick_interval_s": 0.5,
+            "enemy_damage_taken_up_pct": 25,
+            "debuff_duration_s": 2
+          },
+          "5": {
+            "tick_damage_pct": 84,
+            "tick_interval_s": 0.5,
+            "enemy_damage_taken_up_pct": 30,
+            "debuff_duration_s": 2
+          }
+        }
+      },
+      {
+        "name": "Agony Rush",
+        "type": "Passive",
+        "description": "Once per battle, heals heavily when dropping below 50% health.",
+        "levels": {
+          "1": {
+            "heal_max_health_pct": 20,
+            "trigger_under_health_pct": 50,
+            "once_per_battle": true
+          },
+          "2": {
+            "heal_max_health_pct": 25,
+            "trigger_under_health_pct": 50,
+            "once_per_battle": true
+          },
+          "3": {
+            "heal_max_health_pct": 30,
+            "trigger_under_health_pct": 50,
+            "once_per_battle": true
+          },
+          "4": {
+            "heal_max_health_pct": 35,
+            "trigger_under_health_pct": 50,
+            "once_per_battle": true
+          },
+          "5": {
+            "heal_max_health_pct": 40,
+            "trigger_under_health_pct": 50,
+            "once_per_battle": true
+          }
+        }
+      },
+      {
+        "name": "Holy Might",
+        "type": "Passive",
+        "description": "Passively increases attack speed.",
+        "levels": {
+          "1": {
+            "attack_speed_pct": 3
+          },
+          "2": {
+            "attack_speed_pct": 4
+          },
+          "3": {
+            "attack_speed_pct": 5
+          },
+          "4": {
+            "attack_speed_pct": 6
+          },
+          "5": {
+            "attack_speed_pct": 7
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Sundering Wound",
+        "type": "Expedition",
+        "description": "Chance to inflict a bleeding damage-over-time effect for three turns.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 20,
+            "dot_damage_pct": 8,
+            "dot_duration_turns": 3
+          },
+          "2": {
+            "proc_chance_pct": 20,
+            "dot_damage_pct": 16,
+            "dot_duration_turns": 3
+          },
+          "3": {
+            "proc_chance_pct": 20,
+            "dot_damage_pct": 24,
+            "dot_duration_turns": 3
+          },
+          "4": {
+            "proc_chance_pct": 20,
+            "dot_damage_pct": 32,
+            "dot_duration_turns": 3
+          },
+          "5": {
+            "proc_chance_pct": 20,
+            "dot_damage_pct": 40,
+            "dot_duration_turns": 3
+          }
+        }
+      },
+      {
+        "name": "Stoic",
+        "type": "Expedition",
+        "description": "Provides a flat attack bonus to the march.",
+        "levels": {
+          "1": {
+            "attack_pct": 5
+          },
+          "2": {
+            "attack_pct": 10
+          },
+          "3": {
+            "attack_pct": 15
+          },
+          "4": {
+            "attack_pct": 20
+          },
+          "5": {
+            "attack_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Infinite Arsenal",
+        "type": "Expedition",
+        "description": "Chance to make enemies take increased damage.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 50,
+            "enemy_damage_taken_up_pct": 10
+          },
+          "2": {
+            "proc_chance_pct": 50,
+            "enemy_damage_taken_up_pct": 20
+          },
+          "3": {
+            "proc_chance_pct": 50,
+            "enemy_damage_taken_up_pct": 30
+          },
+          "4": {
+            "proc_chance_pct": 50,
+            "enemy_damage_taken_up_pct": 40
+          },
+          "5": {
+            "proc_chance_pct": 50,
+            "enemy_damage_taken_up_pct": 50
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Death or Glory",
+        "type": "Exclusive",
+        "description": "Agony Rush now grants Zoe a lasting attack increase.",
+        "levels": {
+          "1": {
+            "attack_up_pct": 8
+          },
+          "2": {
+            "attack_up_pct": 12
+          },
+          "3": {
+            "attack_up_pct": 16
+          },
+          "4": {
+            "attack_up_pct": 20
+          },
+          "5": {
+            "attack_up_pct": 24
+          }
+        }
+      },
+      {
+        "name": "Dark Lady",
+        "type": "Exclusive",
+        "description": "Zoe's command raises defender attack values.",
+        "levels": {
+          "1": {
+            "defender_attack_up_pct": 5
+          },
+          "2": {
+            "defender_attack_up_pct": 7.5
+          },
+          "3": {
+            "defender_attack_up_pct": 10
+          },
+          "4": {
+            "defender_attack_up_pct": 12.5
+          },
+          "5": {
+            "defender_attack_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": null
+  },
+  {
+    "hero_id": "marlin",
+    "conquest_skills": [
+      {
+        "name": "Tidal Rush",
+        "type": "Active",
+        "description": "Sends a crashing wave that damages and immobilizes enemies.",
+        "levels": {
+          "1": {
+            "aoe_damage_pct": 200,
+            "immobilize_duration_s": 1.5
+          },
+          "2": {
+            "aoe_damage_pct": 220,
+            "immobilize_duration_s": 1.5
+          },
+          "3": {
+            "aoe_damage_pct": 240,
+            "immobilize_duration_s": 1.5
+          },
+          "4": {
+            "aoe_damage_pct": 260,
+            "immobilize_duration_s": 1.5
+          },
+          "5": {
+            "aoe_damage_pct": 280,
+            "immobilize_duration_s": 1.5
+          }
+        }
+      },
+      {
+        "name": "Fermented Blow",
+        "type": "Active",
+        "description": "Hammers enemies with a swinging strike that deals area damage.",
+        "levels": {
+          "1": {
+            "aoe_damage_pct": 50
+          },
+          "2": {
+            "aoe_damage_pct": 55
+          },
+          "3": {
+            "aoe_damage_pct": 60
+          },
+          "4": {
+            "aoe_damage_pct": 65
+          },
+          "5": {
+            "aoe_damage_pct": 70
+          }
+        }
+      },
+      {
+        "name": "Lucky Hit",
+        "type": "Passive",
+        "description": "After several attacks, briefly stuns the target.",
+        "levels": {
+          "1": {
+            "attacks_per_stun": 8,
+            "stun_duration_s": 0.2
+          },
+          "2": {
+            "attacks_per_stun": 7,
+            "stun_duration_s": 0.2
+          },
+          "3": {
+            "attacks_per_stun": 7,
+            "stun_duration_s": 0.4
+          },
+          "4": {
+            "attacks_per_stun": 6,
+            "stun_duration_s": 0.4
+          },
+          "5": {
+            "attacks_per_stun": 5,
+            "stun_duration_s": 0.5
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Wild Card",
+        "type": "Expedition",
+        "description": "Chance for attacks to deal massive bonus damage.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 8,
+            "damage_dealt_bonus_pct": 50
+          },
+          "2": {
+            "proc_chance_pct": 16,
+            "damage_dealt_bonus_pct": 50
+          },
+          "3": {
+            "proc_chance_pct": 24,
+            "damage_dealt_bonus_pct": 50
+          },
+          "4": {
+            "proc_chance_pct": 32,
+            "damage_dealt_bonus_pct": 50
+          },
+          "5": {
+            "proc_chance_pct": 40,
+            "damage_dealt_bonus_pct": 50
+          }
+        }
+      },
+      {
+        "name": "Rumhead",
+        "type": "Expedition",
+        "description": "Chance to reduce enemy lethality for two turns.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 20,
+            "enemy_lethality_down_pct": 10,
+            "duration_turns": 2
+          },
+          "2": {
+            "proc_chance_pct": 20,
+            "enemy_lethality_down_pct": 20,
+            "duration_turns": 2
+          },
+          "3": {
+            "proc_chance_pct": 20,
+            "enemy_lethality_down_pct": 30,
+            "duration_turns": 2
+          },
+          "4": {
+            "proc_chance_pct": 20,
+            "enemy_lethality_down_pct": 40,
+            "duration_turns": 2
+          },
+          "5": {
+            "proc_chance_pct": 20,
+            "enemy_lethality_down_pct": 50,
+            "duration_turns": 2
+          }
+        }
+      },
+      {
+        "name": "Dynamo",
+        "type": "Expedition",
+        "description": "Reliable bonus that increases damage dealt.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 50,
+            "damage_dealt_bonus_pct": 10
+          },
+          "2": {
+            "proc_chance_pct": 50,
+            "damage_dealt_bonus_pct": 20
+          },
+          "3": {
+            "proc_chance_pct": 50,
+            "damage_dealt_bonus_pct": 30
+          },
+          "4": {
+            "proc_chance_pct": 50,
+            "damage_dealt_bonus_pct": 40
+          },
+          "5": {
+            "proc_chance_pct": 50,
+            "damage_dealt_bonus_pct": 50
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Servant of Wine",
+        "type": "Exclusive",
+        "description": "Marlin's brew heals the weakest ally with each basic attack.",
+        "levels": {
+          "1": {
+            "heal_pct": 5
+          },
+          "2": {
+            "heal_pct": 7.5
+          },
+          "3": {
+            "heal_pct": 10
+          },
+          "4": {
+            "heal_pct": 12.5
+          },
+          "5": {
+            "heal_pct": 15
+          }
+        }
+      },
+      {
+        "name": "Admiral of the Line",
+        "type": "Exclusive",
+        "description": "Marlin's leadership increases rally lethality.",
+        "levels": {
+          "1": {
+            "rally_lethality_up_pct": 5
+          },
+          "2": {
+            "rally_lethality_up_pct": 7.5
+          },
+          "3": {
+            "rally_lethality_up_pct": 10
+          },
+          "4": {
+            "rally_lethality_up_pct": 12.5
+          },
+          "5": {
+            "rally_lethality_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": null
+  },
+  {
+    "hero_id": "eric",
+    "conquest_skills": [
+      {
+        "name": "Ground Shock",
+        "type": "Active",
+        "description": "Slams the ground, damaging enemies and heavily slowing their attack speed for 4s.",
+        "levels": {
+          "1": {
+            "damage_pct": 120,
+            "enemy_attack_speed_down_pct": 50,
+            "debuff_duration_s": 4
+          },
+          "2": {
+            "damage_pct": 132,
+            "enemy_attack_speed_down_pct": 50,
+            "debuff_duration_s": 4
+          },
+          "3": {
+            "damage_pct": 144,
+            "enemy_attack_speed_down_pct": 50,
+            "debuff_duration_s": 4
+          },
+          "4": {
+            "damage_pct": 156,
+            "enemy_attack_speed_down_pct": 50,
+            "debuff_duration_s": 4
+          },
+          "5": {
+            "damage_pct": 168,
+            "enemy_attack_speed_down_pct": 50,
+            "debuff_duration_s": 4
+          }
+        }
+      },
+      {
+        "name": "Veterancy",
+        "type": "Passive",
+        "description": "On hit, has a chance to grant stacking defense for a short duration.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 8,
+            "defense_pct": 8,
+            "duration_s": 2,
+            "max_stacks": 5
+          },
+          "2": {
+            "proc_chance_pct": 10,
+            "defense_pct": 11,
+            "duration_s": 2,
+            "max_stacks": 5
+          },
+          "3": {
+            "proc_chance_pct": 12,
+            "defense_pct": 14,
+            "duration_s": 2,
+            "max_stacks": 5
+          },
+          "4": {
+            "proc_chance_pct": 14,
+            "defense_pct": 17,
+            "duration_s": 2,
+            "max_stacks": 5
+          },
+          "5": {
+            "proc_chance_pct": 16,
+            "defense_pct": 20,
+            "duration_s": 2,
+            "max_stacks": 5
+          }
+        }
+      },
+      {
+        "name": "Hammer of Justice",
+        "type": "Active",
+        "description": "Strikes a foe with a chance to stun for 1s.",
+        "levels": {
+          "1": {
+            "damage_pct": 80,
+            "stun_chance_pct": 30,
+            "stun_duration_s": 1
+          },
+          "2": {
+            "damage_pct": 88,
+            "stun_chance_pct": 30,
+            "stun_duration_s": 1
+          },
+          "3": {
+            "damage_pct": 96,
+            "stun_chance_pct": 30,
+            "stun_duration_s": 1
+          },
+          "4": {
+            "damage_pct": 104,
+            "stun_chance_pct": 30,
+            "stun_duration_s": 1
+          },
+          "5": {
+            "damage_pct": 112,
+            "stun_chance_pct": 30,
+            "stun_duration_s": 1
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Holy Warrior",
+        "type": "Expedition",
+        "description": "Cuts enemy attack values for the march.",
+        "levels": {
+          "1": {
+            "enemy_attack_down_pct": 4
+          },
+          "2": {
+            "enemy_attack_down_pct": 8
+          },
+          "3": {
+            "enemy_attack_down_pct": 12
+          },
+          "4": {
+            "enemy_attack_down_pct": 16
+          },
+          "5": {
+            "enemy_attack_down_pct": 20
+          }
+        }
+      },
+      {
+        "name": "Conviction",
+        "type": "Expedition",
+        "description": "Reduces damage taken by the expedition squads.",
+        "levels": {
+          "1": {
+            "damage_taken_down_pct": 4
+          },
+          "2": {
+            "damage_taken_down_pct": 8
+          },
+          "3": {
+            "damage_taken_down_pct": 12
+          },
+          "4": {
+            "damage_taken_down_pct": 16
+          },
+          "5": {
+            "damage_taken_down_pct": 20
+          }
+        }
+      },
+      {
+        "name": "Exhortation",
+        "type": "Expedition",
+        "description": "Increases total health for expedition troops.",
+        "levels": {
+          "1": {
+            "health_pct": 5
+          },
+          "2": {
+            "health_pct": 10
+          },
+          "3": {
+            "health_pct": 15
+          },
+          "4": {
+            "health_pct": 20
+          },
+          "5": {
+            "health_pct": 25
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Blessed Hammer",
+        "type": "Exclusive",
+        "description": "Eric trusts his blessed warhammer, increasing damage dealt after equipping the Anvil of Truth.",
+        "levels": {
+          "1": {
+            "damage_dealt_pct": 10
+          },
+          "2": {
+            "damage_dealt_pct": 15
+          },
+          "3": {
+            "damage_dealt_pct": 20
+          },
+          "4": {
+            "damage_dealt_pct": 25
+          },
+          "5": {
+            "damage_dealt_pct": 30
+          }
+        }
+      },
+      {
+        "name": "Vanguard",
+        "type": "Exclusive",
+        "description": "A paladin leads from the front, increasing Defender squad defense when the gear is active.",
+        "levels": {
+          "1": {
+            "defender_defense_up_pct": 5
+          },
+          "2": {
+            "defender_defense_up_pct": 7.5
+          },
+          "3": {
+            "defender_defense_up_pct": 10
+          },
+          "4": {
+            "defender_defense_up_pct": 12.5
+          },
+          "5": {
+            "defender_defense_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": null
+  },
+  {
+    "hero_id": "jaeger",
+    "conquest_skills": [
+      {
+        "name": "Fatal Attraction",
+        "type": "Active",
+        "description": "Like a siren's deadly song, Jaeger deals damage to enemies in the target area and stuns them for 2s.",
+        "levels": {
+          "1": {
+            "aoe_damage_pct": 160,
+            "stun_duration_s": 2
+          },
+          "2": {
+            "aoe_damage_pct": 176,
+            "stun_duration_s": 2
+          },
+          "3": {
+            "aoe_damage_pct": 192,
+            "stun_duration_s": 2
+          },
+          "4": {
+            "aoe_damage_pct": 208,
+            "stun_duration_s": 2
+          },
+          "5": {
+            "aoe_damage_pct": 224,
+            "stun_duration_s": 2
+          }
+        }
+      },
+      {
+        "name": "Game of Chance",
+        "type": "Active",
+        "description": "Jaeger's deadliest performances are also his most unpredictable. If successful, Jaeger deals damage or else restores the target's Health equal to his Attack * 50%.",
+        "levels": {
+          "1": {
+            "damage_pct": 220,
+            "alt_heal_pct_on_fail": 50
+          },
+          "2": {
+            "damage_pct": 240,
+            "alt_heal_pct_on_fail": 50
+          },
+          "3": {
+            "damage_pct": 260,
+            "alt_heal_pct_on_fail": 50
+          },
+          "4": {
+            "damage_pct": 280,
+            "alt_heal_pct_on_fail": 50
+          },
+          "5": {
+            "damage_pct": 300,
+            "alt_heal_pct_on_fail": 50
+          }
+        }
+      },
+      {
+        "name": "Rumormonger",
+        "type": "Passive",
+        "description": "A wandering bard knows how to take advantage of loose lips, increasing Enemy Damage Taken for 3s.",
+        "levels": {
+          "1": {
+            "enemy_damage_taken_up_pct": 10,
+            "duration_s": 3
+          },
+          "2": {
+            "enemy_damage_taken_up_pct": 15,
+            "duration_s": 3
+          },
+          "3": {
+            "enemy_damage_taken_up_pct": 20,
+            "duration_s": 3
+          },
+          "4": {
+            "enemy_damage_taken_up_pct": 25,
+            "duration_s": 3
+          },
+          "5": {
+            "enemy_damage_taken_up_pct": 30,
+            "duration_s": 3
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "The Tempest",
+        "type": "Expedition",
+        "description": "Chance to boost damage dealt for three turns.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 20,
+            "damage_dealt_bonus_pct": 8,
+            "duration_turns": 3
+          },
+          "2": {
+            "proc_chance_pct": 20,
+            "damage_dealt_bonus_pct": 16,
+            "duration_turns": 3
+          },
+          "3": {
+            "proc_chance_pct": 20,
+            "damage_dealt_bonus_pct": 24,
+            "duration_turns": 3
+          },
+          "4": {
+            "proc_chance_pct": 20,
+            "damage_dealt_bonus_pct": 32,
+            "duration_turns": 3
+          },
+          "5": {
+            "proc_chance_pct": 20,
+            "damage_dealt_bonus_pct": 40,
+            "duration_turns": 3
+          }
+        }
+      },
+      {
+        "name": "The Resistance",
+        "type": "Expedition",
+        "description": "Chance to lower enemy lethality for two turns.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 20,
+            "enemy_lethality_down_pct": 10,
+            "duration_turns": 2
+          },
+          "2": {
+            "proc_chance_pct": 20,
+            "enemy_lethality_down_pct": 20,
+            "duration_turns": 2
+          },
+          "3": {
+            "proc_chance_pct": 20,
+            "enemy_lethality_down_pct": 30,
+            "duration_turns": 2
+          },
+          "4": {
+            "proc_chance_pct": 20,
+            "enemy_lethality_down_pct": 40,
+            "duration_turns": 2
+          },
+          "5": {
+            "proc_chance_pct": 20,
+            "enemy_lethality_down_pct": 50,
+            "duration_turns": 2
+          }
+        }
+      },
+      {
+        "name": "The Celebration",
+        "type": "Expedition",
+        "description": "Increases expedition troop health.",
+        "levels": {
+          "1": {
+            "health_pct": 5
+          },
+          "2": {
+            "health_pct": 10
+          },
+          "3": {
+            "health_pct": 15
+          },
+          "4": {
+            "health_pct": 20
+          },
+          "5": {
+            "health_pct": 25
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Sound of Silence",
+        "type": "Exclusive",
+        "description": "Jaeger's solo silences foes and deals heavy damage.",
+        "levels": {
+          "1": {
+            "skill_prevention_duration_s": 3,
+            "damage_pct": 220
+          },
+          "2": {
+            "skill_prevention_duration_s": 3.5,
+            "damage_pct": 240
+          },
+          "3": {
+            "skill_prevention_duration_s": 4,
+            "damage_pct": 260
+          },
+          "4": {
+            "skill_prevention_duration_s": 4.5,
+            "damage_pct": 280
+          },
+          "5": {
+            "skill_prevention_duration_s": 5,
+            "damage_pct": 300
+          }
+        }
+      },
+      {
+        "name": "Hymn to Survival",
+        "type": "Exclusive",
+        "description": "Jaeger rallies the walls, raising defender health.",
+        "levels": {
+          "1": {
+            "defender_health_up_pct": 5
+          },
+          "2": {
+            "defender_health_up_pct": 7.5
+          },
+          "3": {
+            "defender_health_up_pct": 10
+          },
+          "4": {
+            "defender_health_up_pct": 12.5
+          },
+          "5": {
+            "defender_health_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": null
+  },
+  {
+    "hero_id": "petra",
+    "conquest_skills": [
+      {
+        "name": "Dichotomoy",
+        "type": "Active",
+        "description": "Deals heavy damage with a random follow-up that either weakens or stuns enemies.",
+        "levels": {
+          "1": {
+            "damage_pct": 270,
+            "alt_effects": [
+              {
+                "enemy_attack_down_pct": 20,
+                "duration_s": 2
+              },
+              {
+                "stun_duration_s": 1.5
+              }
+            ]
+          },
+          "2": {
+            "damage_pct": 297,
+            "alt_effects": [
+              {
+                "enemy_attack_down_pct": 20,
+                "duration_s": 2
+              },
+              {
+                "stun_duration_s": 1.5
+              }
+            ]
+          },
+          "3": {
+            "damage_pct": 324,
+            "alt_effects": [
+              {
+                "enemy_attack_down_pct": 20,
+                "duration_s": 2
+              },
+              {
+                "stun_duration_s": 1.5
+              }
+            ]
+          },
+          "4": {
+            "damage_pct": 351,
+            "alt_effects": [
+              {
+                "enemy_attack_down_pct": 20,
+                "duration_s": 2
+              },
+              {
+                "stun_duration_s": 1.5
+              }
+            ]
+          },
+          "5": {
+            "damage_pct": 378,
+            "alt_effects": [
+              {
+                "enemy_attack_down_pct": 20,
+                "duration_s": 2
+              },
+              {
+                "stun_duration_s": 1.5
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Change of Fate",
+        "type": "Active",
+        "description": "Rolls wildly variable damage ranging from minor to extreme.",
+        "levels": {
+          "1": {
+            "base_damage_pct": 50,
+            "final_damage_random_range_pct": [
+              5,
+              600
+            ]
+          },
+          "2": {
+            "base_damage_pct": 55,
+            "final_damage_random_range_pct": [
+              5,
+              600
+            ]
+          },
+          "3": {
+            "base_damage_pct": 60,
+            "final_damage_random_range_pct": [
+              5,
+              600
+            ]
+          },
+          "4": {
+            "base_damage_pct": 65,
+            "final_damage_random_range_pct": [
+              5,
+              600
+            ]
+          },
+          "5": {
+            "base_damage_pct": 70,
+            "final_damage_random_range_pct": [
+              5,
+              600
+            ]
+          }
+        }
+      },
+      {
+        "name": "Turn Card",
+        "type": "Active",
+        "description": "Randomly heals the lowest-health ally for a wide amount.",
+        "levels": {
+          "1": {
+            "base_heal_pct": 100,
+            "final_heal_random_range_pct": [
+              5,
+              400
+            ],
+            "target": "lowest_health_pct_ally"
+          },
+          "2": {
+            "base_heal_pct": 110,
+            "final_heal_random_range_pct": [
+              5,
+              400
+            ],
+            "target": "lowest_health_pct_ally"
+          },
+          "3": {
+            "base_heal_pct": 120,
+            "final_heal_random_range_pct": [
+              5,
+              400
+            ],
+            "target": "lowest_health_pct_ally"
+          },
+          "4": {
+            "base_heal_pct": 130,
+            "final_heal_random_range_pct": [
+              5,
+              400
+            ],
+            "target": "lowest_health_pct_ally"
+          },
+          "5": {
+            "base_heal_pct": 140,
+            "final_heal_random_range_pct": [
+              5,
+              400
+            ],
+            "target": "lowest_health_pct_ally"
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Evil Eye",
+        "type": "Expedition",
+        "description": "Chance to make enemies take more damage.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 50,
+            "enemy_damage_taken_up_pct": 10
+          },
+          "2": {
+            "proc_chance_pct": 50,
+            "enemy_damage_taken_up_pct": 20
+          },
+          "3": {
+            "proc_chance_pct": 50,
+            "enemy_damage_taken_up_pct": 30
+          },
+          "4": {
+            "proc_chance_pct": 50,
+            "enemy_damage_taken_up_pct": 40
+          },
+          "5": {
+            "proc_chance_pct": 50,
+            "enemy_damage_taken_up_pct": 50
+          }
+        }
+      },
+      {
+        "name": "The Favor",
+        "type": "Expedition",
+        "description": "Chance to grant a strong attack bonus to allies.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 50,
+            "attack_pct": 10
+          },
+          "2": {
+            "proc_chance_pct": 50,
+            "attack_pct": 20
+          },
+          "3": {
+            "proc_chance_pct": 50,
+            "attack_pct": 30
+          },
+          "4": {
+            "proc_chance_pct": 50,
+            "attack_pct": 40
+          },
+          "5": {
+            "proc_chance_pct": 50,
+            "attack_pct": 50
+          }
+        }
+      },
+      {
+        "name": "The Shield",
+        "type": "Expedition",
+        "description": "Chance to halve incoming damage for the march.",
+        "levels": {
+          "1": {
+            "damage_taken_down_pct": 50,
+            "proc_chance_pct": 10
+          },
+          "2": {
+            "damage_taken_down_pct": 50,
+            "proc_chance_pct": 20
+          },
+          "3": {
+            "damage_taken_down_pct": 50,
+            "proc_chance_pct": 30
+          },
+          "4": {
+            "damage_taken_down_pct": 50,
+            "proc_chance_pct": 40
+          },
+          "5": {
+            "damage_taken_down_pct": 50,
+            "proc_chance_pct": 50
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Weighted Deck",
+        "type": "Exclusive",
+        "description": "Petra stacks the odds, widening the range of her fluctuating effects.",
+        "levels": {
+          "1": {
+            "fluctuating_effects_up_pct": 30
+          },
+          "2": {
+            "fluctuating_effects_up_pct": 60
+          },
+          "3": {
+            "fluctuating_effects_up_pct": 90
+          },
+          "4": {
+            "fluctuating_effects_up_pct": 120
+          },
+          "5": {
+            "fluctuating_effects_up_pct": 150
+          }
+        }
+      },
+      {
+        "name": "Cosmic Eye",
+        "type": "Exclusive",
+        "description": "The cards guide the attack, increasing rally squad damage potential.",
+        "levels": {
+          "1": {
+            "rally_attack_up_pct": 5
+          },
+          "2": {
+            "rally_attack_up_pct": 7.5
+          },
+          "3": {
+            "rally_attack_up_pct": 10
+          },
+          "4": {
+            "rally_attack_up_pct": 12.5
+          },
+          "5": {
+            "rally_attack_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": null
+  },
+  {
+    "hero_id": "rosa",
+    "conquest_skills": [
+      {
+        "name": "Battle Focus",
+        "type": "Active",
+        "description": "Cleanses debuffs, grants immunity, and boosts attack for up to 5s.",
+        "levels": {
+          "1": {
+            "attack_pct": 3,
+            "duration_s": 3,
+            "cleanse_debuffs": true,
+            "immunity_to_debuffs_during_effect": true
+          },
+          "2": {
+            "attack_pct": 4,
+            "duration_s": 3.5,
+            "cleanse_debuffs": true,
+            "immunity_to_debuffs_during_effect": true
+          },
+          "3": {
+            "attack_pct": 5,
+            "duration_s": 4,
+            "cleanse_debuffs": true,
+            "immunity_to_debuffs_during_effect": true
+          },
+          "4": {
+            "attack_pct": 6,
+            "duration_s": 4.5,
+            "cleanse_debuffs": true,
+            "immunity_to_debuffs_during_effect": true
+          },
+          "5": {
+            "attack_pct": 7,
+            "duration_s": 5,
+            "cleanse_debuffs": true,
+            "immunity_to_debuffs_during_effect": true
+          }
+        }
+      },
+      {
+        "name": "Flutterfang",
+        "type": "Active",
+        "description": "Carves through a target for high damage.",
+        "levels": {
+          "1": {
+            "damage_pct": 220
+          },
+          "2": {
+            "damage_pct": 240
+          },
+          "3": {
+            "damage_pct": 260
+          },
+          "4": {
+            "damage_pct": 280
+          },
+          "5": {
+            "damage_pct": 300
+          }
+        }
+      },
+      {
+        "name": "Swoon Chakra",
+        "type": "Passive",
+        "description": "Reduces enemy attack speed and healing output.",
+        "levels": {
+          "1": {
+            "enemy_attack_speed_down_pct": 1,
+            "enemy_healing_down_pct": 40
+          },
+          "2": {
+            "enemy_attack_speed_down_pct": 1.5,
+            "enemy_healing_down_pct": 45
+          },
+          "3": {
+            "enemy_attack_speed_down_pct": 2,
+            "enemy_healing_down_pct": 50
+          },
+          "4": {
+            "enemy_attack_speed_down_pct": 2.5,
+            "enemy_healing_down_pct": 55
+          },
+          "5": {
+            "enemy_attack_speed_down_pct": 3,
+            "enemy_healing_down_pct": 60
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Chaos Gambit",
+        "type": "Expedition",
+        "description": "Chance to increase damage dealt each turn.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 40,
+            "damage_dealt_bonus_pct": 10
+          },
+          "2": {
+            "proc_chance_pct": 40,
+            "damage_dealt_bonus_pct": 20
+          },
+          "3": {
+            "proc_chance_pct": 40,
+            "damage_dealt_bonus_pct": 30
+          },
+          "4": {
+            "proc_chance_pct": 40,
+            "damage_dealt_bonus_pct": 40
+          },
+          "5": {
+            "proc_chance_pct": 40,
+            "damage_dealt_bonus_pct": 50
+          }
+        }
+      },
+      {
+        "name": "Rose of War",
+        "type": "Expedition",
+        "description": "Lowers enemy damage dealt during expeditions.",
+        "levels": {
+          "1": {
+            "enemy_damage_dealt_down_pct": 4
+          },
+          "2": {
+            "enemy_damage_dealt_down_pct": 8
+          },
+          "3": {
+            "enemy_damage_dealt_down_pct": 12
+          },
+          "4": {
+            "enemy_damage_dealt_down_pct": 16
+          },
+          "5": {
+            "enemy_damage_dealt_down_pct": 20
+          }
+        }
+      },
+      {
+        "name": "Golden Rhythm",
+        "type": "Expedition",
+        "description": "Boosts archer attack power for the march.",
+        "levels": {
+          "1": {
+            "archer_attack_pct": 6
+          },
+          "2": {
+            "archer_attack_pct": 12
+          },
+          "3": {
+            "archer_attack_pct": 18
+          },
+          "4": {
+            "archer_attack_pct": 24
+          },
+          "5": {
+            "archer_attack_pct": 30
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Night Reverie",
+        "type": "Exclusive",
+        "description": "Casting Battle Focus now grants Rosa a lasting attack bonus.",
+        "levels": {
+          "1": {
+            "attack_up_pct": 5
+          },
+          "2": {
+            "attack_up_pct": 7.5
+          },
+          "3": {
+            "attack_up_pct": 10
+          },
+          "4": {
+            "attack_up_pct": 12.5
+          },
+          "5": {
+            "attack_up_pct": 15
+          }
+        }
+      },
+      {
+        "name": "Perihelion",
+        "type": "Exclusive",
+        "description": "Rosa's performance spurs the rally, increasing lethality for the whole formation.",
+        "levels": {
+          "1": {
+            "rally_lethality_up_pct": 5
+          },
+          "2": {
+            "rally_lethality_up_pct": 7.5
+          },
+          "3": {
+            "rally_lethality_up_pct": 10
+          },
+          "4": {
+            "rally_lethality_up_pct": 12.5
+          },
+          "5": {
+            "rally_lethality_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": null
+  },
+  {
+    "hero_id": "alcar",
+    "conquest_skills": [
+      {
+        "name": "Glorious Mark",
+        "type": "Active",
+        "description": "Grants nearby allies invulnerability and heavy damage reduction for 2s while Alcar is rooted but control-immune.",
+        "levels": {
+          "1": {
+            "nearby_friendly_damage_taken_down_pct": 30,
+            "invulnerable_state": true,
+            "self_control_immune": true,
+            "self_rooted": true,
+            "duration_s": 2
+          },
+          "2": {
+            "nearby_friendly_damage_taken_down_pct": 40,
+            "invulnerable_state": true,
+            "self_control_immune": true,
+            "self_rooted": true,
+            "duration_s": 2
+          },
+          "3": {
+            "nearby_friendly_damage_taken_down_pct": 50,
+            "invulnerable_state": true,
+            "self_control_immune": true,
+            "self_rooted": true,
+            "duration_s": 2
+          },
+          "4": {
+            "nearby_friendly_damage_taken_down_pct": 60,
+            "invulnerable_state": true,
+            "self_control_immune": true,
+            "self_rooted": true,
+            "duration_s": 2
+          },
+          "5": {
+            "nearby_friendly_damage_taken_down_pct": 70,
+            "invulnerable_state": true,
+            "self_control_immune": true,
+            "self_rooted": true,
+            "duration_s": 2
+          }
+        }
+      },
+      {
+        "name": "Boneshatter",
+        "type": "Active",
+        "description": "Slams forward in a line, damaging enemies and making them take additional damage for 2s.",
+        "levels": {
+          "1": {
+            "line_damage_pct": 70,
+            "enemy_damage_taken_up_pct": 20,
+            "duration_s": 2
+          },
+          "2": {
+            "line_damage_pct": 77,
+            "enemy_damage_taken_up_pct": 20,
+            "duration_s": 2
+          },
+          "3": {
+            "line_damage_pct": 84,
+            "enemy_damage_taken_up_pct": 20,
+            "duration_s": 2
+          },
+          "4": {
+            "line_damage_pct": 91,
+            "enemy_damage_taken_up_pct": 20,
+            "duration_s": 2
+          },
+          "5": {
+            "line_damage_pct": 98,
+            "enemy_damage_taken_up_pct": 20,
+            "duration_s": 2
+          }
+        }
+      },
+      {
+        "name": "Second Wind",
+        "type": "Passive",
+        "description": "While Glorious Mark lasts, restores troop health each second for 5s.",
+        "levels": {
+          "1": {
+            "glorious_mark_heal_per_sec_pct": 30,
+            "duration_s": 5
+          },
+          "2": {
+            "glorious_mark_heal_per_sec_pct": 33,
+            "duration_s": 5
+          },
+          "3": {
+            "glorious_mark_heal_per_sec_pct": 36,
+            "duration_s": 5
+          },
+          "4": {
+            "glorious_mark_heal_per_sec_pct": 39,
+            "duration_s": 5
+          },
+          "5": {
+            "glorious_mark_heal_per_sec_pct": 42,
+            "duration_s": 5
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Rescuing Hands",
+        "type": "Expedition",
+        "description": "Every five turns reduces incoming damage to infantry and archer squads for two turns.",
+        "levels": {
+          "1": {
+            "infantry_damage_taken_down_pct": 14,
+            "archer_damage_taken_down_pct": 14,
+            "trigger_every_n_turns": 5,
+            "duration_turns": 2
+          },
+          "2": {
+            "infantry_damage_taken_down_pct": 28,
+            "archer_damage_taken_down_pct": 28,
+            "trigger_every_n_turns": 5,
+            "duration_turns": 2
+          },
+          "3": {
+            "infantry_damage_taken_down_pct": 42,
+            "archer_damage_taken_down_pct": 42,
+            "trigger_every_n_turns": 5,
+            "duration_turns": 2
+          },
+          "4": {
+            "infantry_damage_taken_down_pct": 56,
+            "archer_damage_taken_down_pct": 56,
+            "trigger_every_n_turns": 5,
+            "duration_turns": 2
+          },
+          "5": {
+            "infantry_damage_taken_down_pct": 70,
+            "archer_damage_taken_down_pct": 70,
+            "trigger_every_n_turns": 5,
+            "duration_turns": 2
+          }
+        }
+      },
+      {
+        "name": "Praetorian Will",
+        "type": "Expedition",
+        "description": "Boosts expedition damage dealt, heavily favoring infantry with smaller gains for other squads.",
+        "levels": {
+          "1": {
+            "infantry_damage_dealt_pct": 20,
+            "cavalry_damage_dealt_pct": 2,
+            "archer_damage_dealt_pct": 2
+          },
+          "2": {
+            "infantry_damage_dealt_pct": 40,
+            "cavalry_damage_dealt_pct": 4,
+            "archer_damage_dealt_pct": 4
+          },
+          "3": {
+            "infantry_damage_dealt_pct": 60,
+            "cavalry_damage_dealt_pct": 6,
+            "archer_damage_dealt_pct": 6
+          },
+          "4": {
+            "infantry_damage_dealt_pct": 80,
+            "cavalry_damage_dealt_pct": 8,
+            "archer_damage_dealt_pct": 8
+          },
+          "5": {
+            "infantry_damage_dealt_pct": 100,
+            "cavalry_damage_dealt_pct": 10,
+            "archer_damage_dealt_pct": 10
+          }
+        }
+      },
+      {
+        "name": "Capre Diem",
+        "type": "Expedition",
+        "description": "Adds bonus damage per attack and briefly increases enemy damage taken when triggered.",
+        "levels": {
+          "1": {
+            "extra_damage_per_attack_pct": 12,
+            "enemy_damage_taken_up_pct": 5,
+            "duration_turns": 1
+          },
+          "2": {
+            "extra_damage_per_attack_pct": 24,
+            "enemy_damage_taken_up_pct": 10,
+            "duration_turns": 1
+          },
+          "3": {
+            "extra_damage_per_attack_pct": 36,
+            "enemy_damage_taken_up_pct": 15,
+            "duration_turns": 1
+          },
+          "4": {
+            "extra_damage_per_attack_pct": 48,
+            "enemy_damage_taken_up_pct": 20,
+            "duration_turns": 1
+          },
+          "5": {
+            "extra_damage_per_attack_pct": 60,
+            "enemy_damage_taken_up_pct": 25,
+            "duration_turns": 1
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Flagbearer",
+        "type": "Exclusive",
+        "description": "Glorious Mark now adds an attack surge for nearby squads.",
+        "levels": {
+          "1": {
+            "attack_up_pct": 30,
+            "duration_s": 2.5
+          },
+          "2": {
+            "attack_up_pct": 33,
+            "duration_s": 2.5
+          },
+          "3": {
+            "attack_up_pct": 36,
+            "duration_s": 2.5
+          },
+          "4": {
+            "attack_up_pct": 39,
+            "duration_s": 2.5
+          },
+          "5": {
+            "attack_up_pct": 42,
+            "duration_s": 2.5
+          }
+        }
+      },
+      {
+        "name": "Vow of Honor",
+        "type": "Exclusive",
+        "description": "Alcar's oath bolsters defenders, raising their health.",
+        "levels": {
+          "1": {
+            "defender_health_up_pct": 5
+          },
+          "2": {
+            "defender_health_up_pct": 7.5
+          },
+          "3": {
+            "defender_health_up_pct": 10
+          },
+          "4": {
+            "defender_health_up_pct": 12.5
+          },
+          "5": {
+            "defender_health_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": null
+  },
+  {
+    "hero_id": "margot",
+    "conquest_skills": [
+      {
+        "name": "Ambush",
+        "type": "Active",
+        "description": "Springs an ambush that deals enormous area damage.",
+        "levels": {
+          "1": {
+            "aoe_damage_pct": 300
+          },
+          "2": {
+            "aoe_damage_pct": 330
+          },
+          "3": {
+            "aoe_damage_pct": 360
+          },
+          "4": {
+            "aoe_damage_pct": 390
+          },
+          "5": {
+            "aoe_damage_pct": 420
+          }
+        }
+      },
+      {
+        "name": "Parry",
+        "type": "Passive",
+        "description": "Grants a chance to parry incoming attacks.",
+        "levels": {
+          "1": {
+            "parry_chance_pct": 5
+          },
+          "2": {
+            "parry_chance_pct": 10
+          },
+          "3": {
+            "parry_chance_pct": 15
+          },
+          "4": {
+            "parry_chance_pct": 20
+          },
+          "5": {
+            "parry_chance_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Stiletto",
+        "type": "Active",
+        "description": "Targets frontline heroes, dealing damage and rooting them for 1.5s.",
+        "levels": {
+          "1": {
+            "damage_pct": 100,
+            "immobilize_duration_s": 1.5,
+            "prefers_heroes": true
+          },
+          "2": {
+            "damage_pct": 110,
+            "immobilize_duration_s": 1.5,
+            "prefers_heroes": true
+          },
+          "3": {
+            "damage_pct": 120,
+            "immobilize_duration_s": 1.5,
+            "prefers_heroes": true
+          },
+          "4": {
+            "damage_pct": 130,
+            "immobilize_duration_s": 1.5,
+            "prefers_heroes": true
+          },
+          "5": {
+            "damage_pct": 140,
+            "immobilize_duration_s": 1.5,
+            "prefers_heroes": true
+          }
+        }
+      }
+    ],
+    "expedition_skills": [
+      {
+        "name": "Warbringer",
+        "type": "Expedition",
+        "description": "Raises attack for all expedition squads.",
+        "levels": {
+          "1": {
+            "attack_pct": 5
+          },
+          "2": {
+            "attack_pct": 10
+          },
+          "3": {
+            "attack_pct": 15
+          },
+          "4": {
+            "attack_pct": 20
+          },
+          "5": {
+            "attack_pct": 25
+          }
+        }
+      },
+      {
+        "name": "Subterfuge",
+        "type": "Expedition",
+        "description": "Improves dodge chance for the march.",
+        "levels": {
+          "1": {
+            "dodge_chance_pct": 4
+          },
+          "2": {
+            "dodge_chance_pct": 8
+          },
+          "3": {
+            "dodge_chance_pct": 12
+          },
+          "4": {
+            "dodge_chance_pct": 16
+          },
+          "5": {
+            "dodge_chance_pct": 20
+          }
+        }
+      },
+      {
+        "name": "Sleight Hand",
+        "type": "Expedition",
+        "description": "Chance to unleash a devastating bonus strike.",
+        "levels": {
+          "1": {
+            "proc_chance_pct": 25,
+            "extra_attack_damage_pct": 120
+          },
+          "2": {
+            "proc_chance_pct": 25,
+            "extra_attack_damage_pct": 140
+          },
+          "3": {
+            "proc_chance_pct": 25,
+            "extra_attack_damage_pct": 160
+          },
+          "4": {
+            "proc_chance_pct": 25,
+            "extra_attack_damage_pct": 180
+          },
+          "5": {
+            "proc_chance_pct": 25,
+            "extra_attack_damage_pct": 200
+          }
+        }
+      }
+    ],
+    "exclusive_skills": [
+      {
+        "name": "Indefensible",
+        "type": "Exclusive",
+        "description": "Margot has an extra strike chance with every basic attack while the gear is active.",
+        "levels": {
+          "1": {
+            "extra_attack_chance_pct": 40,
+            "extra_attack_damage_pct": 25
+          },
+          "2": {
+            "extra_attack_chance_pct": 40,
+            "extra_attack_damage_pct": 30
+          },
+          "3": {
+            "extra_attack_chance_pct": 40,
+            "extra_attack_damage_pct": 35
+          },
+          "4": {
+            "extra_attack_chance_pct": 40,
+            "extra_attack_damage_pct": 40
+          },
+          "5": {
+            "extra_attack_chance_pct": 40,
+            "extra_attack_damage_pct": 45
+          }
+        }
+      },
+      {
+        "name": "Pugilist",
+        "type": "Exclusive",
+        "description": "Margot hardens the defenses, improving defender lethality.",
+        "levels": {
+          "1": {
+            "defender_lethality_up_pct": 5
+          },
+          "2": {
+            "defender_lethality_up_pct": 7.5
+          },
+          "3": {
+            "defender_lethality_up_pct": 10
+          },
+          "4": {
+            "defender_lethality_up_pct": 12.5
+          },
+          "5": {
+            "defender_lethality_up_pct": 15
+          }
+        }
+      }
+    ],
+    "talent": null
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "hero_id": "rosa",
+    "attack": 2157,
+    "defense": 2220,
+    "health": 13320
+  },
+  {
+    "hero_id": "alcar",
+    "attack": 3150,
+    "defense": 4106,
+    "health": 61604
+  },
+  {
+    "hero_id": "margot",
+    "attack": 2606,
+    "defense": 2909,
+    "health": 16628
+  },
+  {
+    "hero_id": "jaeger",
+    "attack": 2318,
+    "defense": 2220,
+    "health": 11809
+  },
+  {
+    "hero_id": "eric",
+    "attack": 1225,
+    "defense": 2610,
+    "health": 31418
+  },
+  {
+    "hero_id": "petra",
+    "attack": 3330,
+    "defense": 3330,
+    "health": 33300
+  },
+  {
+    "hero_id": "hilde",
+    "attack": 2128,
+    "defense": 2220,
+    "health": 41624
+  },
+  {
+    "hero_id": "zoe",
+    "attack": 2043,
+    "defense": 2664,
+    "health": 39960
+  },
+  {
+    "hero_id": "marlin",
+    "attack": 1752,
+    "defense": 2220,
+    "health": 19980
+  },
+  {
+    "hero_id": "jabel",
+    "attack": 1879,
+    "defense": 2220,
+    "health": 18003
+  },
+  {
+    "hero_id": "amadeus",
+    "attack": 2128,
+    "defense": 2220,
+    "health": 41624
+  },
+  {
+    "hero_id": "helga",
+    "attack": 1752,
+    "defense": 2685,
+    "health": 25864
+  },
+  {
+    "hero_id": "saul",
+    "attack": 2653,
+    "defense": 2961,
+    "health": 16913
+  },
+  {
+    "hero_id": "mikoto",
+    "attack": 2157,
+    "defense": 2220,
+    "health": 13320
+  },
+  {
+    "hero_id": "yeonwoo",
+    "attack": 2157,
+    "defense": 2220,
+    "health": 13320
+  },
+  {
+    "hero_id": "chenko",
+    "attack": 1776,
+    "defense": 2220,
+    "health": 17760
+  },
+  {
+    "hero_id": "fahd",
+    "attack": 1776,
+    "defense": 2220,
+    "health": 17760
+  },
+  {
+    "hero_id": "gordon",
+    "attack": 1776,
+    "defense": 2220,
+    "health": 17760
+  },
+  {
+    "hero_id": "diana",
+    "attack": 2157,
+    "defense": 2220,
+    "health": 13320
+  },
+  {
+    "hero_id": "howard",
+    "attack": 1361,
+    "defense": 2220,
+    "health": 26640
+  },
+  {
+    "hero_id": "quinn",
+    "attack": 2157,
+    "defense": 2220,
+    "health": 13320
+  },
+  {
+    "hero_id": "olive",
+    "attack": 1752,
+    "defense": 2220,
+    "health": 10822
+  },
+  {
+    "hero_id": "edwin",
+    "attack": 1442,
+    "defense": 2220,
+    "health": 14430
+  },
+  {
+    "hero_id": "seth",
+    "attack": 1106,
+    "defense": 2220,
+    "health": 21644
+  },
+  {
+    "hero_id": "forrest",
+    "attack": 1106,
+    "defense": 2220,
+    "health": 21644
+  }
+]

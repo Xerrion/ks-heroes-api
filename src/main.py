@@ -1,0 +1,29 @@
+from fastapi import FastAPI
+
+from db.supabase_client import get_supabase_client
+
+from .routes.heroes import get_all as get_all_heroes
+from .routes.heroes import get_all_exclusive_gear
+from .routes.skills import get_all as get_all_skills
+from .routes.stats import get_all_conquest, get_all_expedition
+
+db = get_supabase_client()
+app = FastAPI(
+    title="KS-Heroes API",
+    description="An API for Kingshot hero data.",
+    version="0.1.0",
+)
+
+
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the KS-Heroes API"}
+
+
+app.include_router(get_all_heroes.router, prefix="/heroes", tags=["heroes"])
+app.include_router(
+    get_all_exclusive_gear.router, prefix="/heroes", tags=["exclusive_gear"]
+)
+app.include_router(get_all_skills.router, prefix="/skills", tags=["skills"])
+app.include_router(get_all_conquest.router, prefix="/stats", tags=["stats"])
+app.include_router(get_all_expedition.router, prefix="/stats", tags=["stats"])

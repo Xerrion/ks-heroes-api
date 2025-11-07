@@ -1,0 +1,2612 @@
+[
+  {
+    "hero_id": "jabel",
+    "name": "Greaves of Faith",
+    "conquest_skill_name": "Crimson Spirit",
+    "conquest_skill_description": "Jabel's will to win increases her damage dealt by 30%.",
+    "expedition_skill_name": "Divine Strength",
+    "expedition_skill_description": "Steadfast faith grants Defender Troops an extra 15% Lethality.",
+    "levels": {
+      "1": {
+        "power": 30000,
+        "attack": 60,
+        "defense": 60,
+        "health": 600,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 5
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 5
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 10
+        },
+        "skill_2": null
+      },
+      "2": {
+        "power": 51000,
+        "attack": 102,
+        "defense": 102,
+        "health": 1020,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 10
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 10
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 10
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "lethality_increase",
+          "value_pct": 5
+        }
+      },
+      "3": {
+        "power": 72000,
+        "attack": 144,
+        "defense": 144,
+        "health": 1440,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 15
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 15
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 15
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "lethality_increase",
+          "value_pct": 5
+        }
+      },
+      "4": {
+        "power": 93000,
+        "attack": 186,
+        "defense": 186,
+        "health": 1860,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 20
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 20
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 15
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "lethality_increase",
+          "value_pct": 7.5
+        }
+      },
+      "5": {
+        "power": 114000,
+        "attack": 228,
+        "defense": 228,
+        "health": 2280,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 25
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 25
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 20
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "lethality_increase",
+          "value_pct": 7.5
+        }
+      },
+      "6": {
+        "power": 135000,
+        "attack": 270,
+        "defense": 270,
+        "health": 2700,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 30
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 30
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 20
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "lethality_increase",
+          "value_pct": 10
+        }
+      },
+      "7": {
+        "power": 156000,
+        "attack": 312,
+        "defense": 312,
+        "health": 3120,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 35
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 35
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 25
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "lethality_increase",
+          "value_pct": 10
+        }
+      },
+      "8": {
+        "power": 177000,
+        "attack": 354,
+        "defense": 354,
+        "health": 3540,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 40
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 40
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 25
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "lethality_increase",
+          "value_pct": 12.5
+        }
+      },
+      "9": {
+        "power": 198000,
+        "attack": 396,
+        "defense": 396,
+        "health": 3960,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 45
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 45
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 30
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "lethality_increase",
+          "value_pct": 12.5
+        }
+      },
+      "10": {
+        "power": 225000,
+        "attack": 450,
+        "defense": 450,
+        "health": 4500,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 50
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 50
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 30
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "lethality_increase",
+          "value_pct": 15
+        }
+      }
+    }
+  },
+  {
+    "hero_id": "saul",
+    "name": "Rabbitgear Cannon",
+    "conquest_skill_name": "Fearless Advance",
+    "conquest_skill_description": "Saul's determination under pressure increases his attack by 24%.",
+    "expedition_skill_name": "Defend to Attack",
+    "expedition_skill_description": "Saul's tactics increase Defender Troops' Attack by 15%.",
+    "levels": {
+      "1": {
+        "power": 30000,
+        "attack": 72,
+        "defense": 60,
+        "health": 450,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 5
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 5
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 8
+        },
+        "skill_2": null
+      },
+      "2": {
+        "power": 51000,
+        "attack": 123,
+        "defense": 102,
+        "health": 765,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 10
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 10
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 8
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 5
+        }
+      },
+      "3": {
+        "power": 72000,
+        "attack": 174,
+        "defense": 144,
+        "health": 1080,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 15
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 15
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 12
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 5
+        }
+      },
+      "4": {
+        "power": 93000,
+        "attack": 226,
+        "defense": 186,
+        "health": 1395,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 20
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 20
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 12
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 7.5
+        }
+      },
+      "5": {
+        "power": 114000,
+        "attack": 277,
+        "defense": 228,
+        "health": 1710,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 25
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 25
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 16
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 7.5
+        }
+      },
+      "6": {
+        "power": 135000,
+        "attack": 328,
+        "defense": 270,
+        "health": 2025,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 30
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 30
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 16
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 10
+        }
+      },
+      "7": {
+        "power": 156000,
+        "attack": 379,
+        "defense": 312,
+        "health": 2340,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 35
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 35
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 20
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 10
+        }
+      },
+      "8": {
+        "power": 177000,
+        "attack": 430,
+        "defense": 354,
+        "health": 2655,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 40
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 40
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 20
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 12.5
+        }
+      },
+      "9": {
+        "power": 198000,
+        "attack": 481,
+        "defense": 396,
+        "health": 2970,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 45
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 45
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 24
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 12.5
+        }
+      },
+      "10": {
+        "power": 225000,
+        "attack": 546,
+        "defense": 450,
+        "health": 3375,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 50
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 50
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 24
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 15
+        }
+      }
+    }
+  },
+  {
+    "hero_id": "helga",
+    "name": "Bands of Tyre",
+    "conquest_skill_name": "Valiant Fury",
+    "conquest_skill_description": "Helga's fury increases her damage dealt by 30%.",
+    "expedition_skill_name": "Zeal",
+    "expedition_skill_description": "Helga joins the rally, adding 15% Lethality to Rally Troops.",
+    "levels": {
+      "1": {
+        "power": 33000,
+        "attack": 50,
+        "defense": 66,
+        "health": 990,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 5.55
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 5.55
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 10
+        },
+        "skill_2": null
+      },
+      "2": {
+        "power": 56100,
+        "attack": 85,
+        "defense": 112,
+        "health": 1683,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 11.1
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 11.1
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 10
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 5
+        }
+      },
+      "3": {
+        "power": 79200,
+        "attack": 121,
+        "defense": 158,
+        "health": 2376,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 16.65
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 16.65
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 15
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 5
+        }
+      },
+      "4": {
+        "power": 102300,
+        "attack": 156,
+        "defense": 204,
+        "health": 3069,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 22.2
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 22.2
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 15
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 7.5
+        }
+      },
+      "5": {
+        "power": 125400,
+        "attack": 192,
+        "defense": 250,
+        "health": 3762,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 27.75
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 27.75
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 20
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 7.5
+        }
+      },
+      "6": {
+        "power": 148500,
+        "attack": 227,
+        "defense": 297,
+        "health": 4455,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 33.3
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 33.3
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 20
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 10
+        }
+      },
+      "7": {
+        "power": 171600,
+        "attack": 262,
+        "defense": 343,
+        "health": 5148,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 38.85
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 38.85
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 25
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 10
+        }
+      },
+      "8": {
+        "power": 194700,
+        "attack": 298,
+        "defense": 389,
+        "health": 5841,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 44.4
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 44.4
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 25
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 12.5
+        }
+      },
+      "9": {
+        "power": 217800,
+        "attack": 333,
+        "defense": 435,
+        "health": 6534,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 49.95
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 49.95
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 30
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 12.5
+        }
+      },
+      "10": {
+        "power": 247500,
+        "attack": 379,
+        "defense": 495,
+        "health": 7425,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 55.5
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 55.5
+        },
+        "skill_1": {
+          "target": "self",
+          "effect": "damage_increase",
+          "value_pct": 30
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 15
+        }
+      }
+    }
+  },
+  {
+    "hero_id": "marlin",
+    "name": "Mistweaver",
+    "conquest_skill_name": "Servant of Wine",
+    "conquest_skill_description": "Marlin's brew heals the weakest hero by up to 15% of his Attack with every strike.",
+    "expedition_skill_name": "Admiral of the Line",
+    "expedition_skill_description": "Marlin leads from the front, increasing Rally Squads' Lethality by 15%.",
+    "levels": {
+      "1": {
+        "power": 36000,
+        "attack": 86,
+        "defense": 72,
+        "health": 540,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 6
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 6
+        },
+        "skill_1": {
+          "effect": "heal_ally_lowest_hp",
+          "value_pct": 5,
+          "trigger": "on_basic_attack"
+        },
+        "skill_2": null
+      },
+      "2": {
+        "power": 61200,
+        "attack": 147,
+        "defense": 122,
+        "health": 918,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 12
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 12
+        },
+        "skill_1": {
+          "effect": "heal_ally_lowest_hp",
+          "value_pct": 5,
+          "trigger": "on_basic_attack"
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 5
+        }
+      },
+      "3": {
+        "power": 86400,
+        "attack": 208,
+        "defense": 172,
+        "health": 1296,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 18
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 18
+        },
+        "skill_1": {
+          "effect": "heal_ally_lowest_hp",
+          "value_pct": 7.5,
+          "trigger": "on_basic_attack"
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 5
+        }
+      },
+      "4": {
+        "power": 111600,
+        "attack": 271,
+        "defense": 223,
+        "health": 1674,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 24
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 24
+        },
+        "skill_1": {
+          "effect": "heal_ally_lowest_hp",
+          "value_pct": 7.5,
+          "trigger": "on_basic_attack"
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 7.5
+        }
+      },
+      "5": {
+        "power": 136800,
+        "attack": 332,
+        "defense": 273,
+        "health": 2052,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 30
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 30
+        },
+        "skill_1": {
+          "effect": "heal_ally_lowest_hp",
+          "value_pct": 10,
+          "trigger": "on_basic_attack"
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 7.5
+        }
+      },
+      "6": {
+        "power": 162000,
+        "attack": 393,
+        "defense": 324,
+        "health": 2430,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 36
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 36
+        },
+        "skill_1": {
+          "effect": "heal_ally_lowest_hp",
+          "value_pct": 10,
+          "trigger": "on_basic_attack"
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 10
+        }
+      },
+      "7": {
+        "power": 187200,
+        "attack": 454,
+        "defense": 374,
+        "health": 2808,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 42
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 42
+        },
+        "skill_1": {
+          "effect": "heal_ally_lowest_hp",
+          "value_pct": 12.5,
+          "trigger": "on_basic_attack"
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 10
+        }
+      },
+      "8": {
+        "power": 212400,
+        "attack": 516,
+        "defense": 424,
+        "health": 3186,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 48
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 48
+        },
+        "skill_1": {
+          "effect": "heal_ally_lowest_hp",
+          "value_pct": 12.5,
+          "trigger": "on_basic_attack"
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 12.5
+        }
+      },
+      "9": {
+        "power": 237600,
+        "attack": 577,
+        "defense": 475,
+        "health": 3564,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 54
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 54
+        },
+        "skill_1": {
+          "effect": "heal_ally_lowest_hp",
+          "value_pct": 15,
+          "trigger": "on_basic_attack"
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 12.5
+        }
+      },
+      "10": {
+        "power": 270000,
+        "attack": 655,
+        "defense": 540,
+        "health": 4050,
+        "lethality": {
+          "type": "Archers",
+          "value_pct": 60
+        },
+        "health_bonus": {
+          "type": "Archers",
+          "value_pct": 60
+        },
+        "skill_1": {
+          "effect": "heal_ally_lowest_hp",
+          "value_pct": 15,
+          "trigger": "on_basic_attack"
+        },
+        "skill_2": {
+          "target": "rally_troops",
+          "effect": "lethality_increase",
+          "value_pct": 15
+        }
+      }
+    }
+  },
+  {
+    "hero_id": "zoe",
+    "name": "The Unrighteous",
+    "conquest_skill_name": "Death or Glory",
+    "conquest_skill_description": "Once Agony Rush triggers, Zoe gains up to 24% Attack for the rest of the battle.",
+    "expedition_skill_name": "Dark Lady",
+    "expedition_skill_description": "Zoe demands excellence from the garrison, increasing Defender Squads' Attack by 15%.",
+    "levels": {
+      "1": {
+        "power": 36000,
+        "attack": 55,
+        "defense": 72,
+        "health": 1080,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 6
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 6
+        },
+        "skill_1": {
+          "trigger": "on_incinerator",
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 8,
+          "duration": "until_end_of_battle"
+        },
+        "skill_2": null
+      },
+      "2": {
+        "power": 61200,
+        "attack": 93,
+        "defense": 122,
+        "health": 1836,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 12
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 12
+        },
+        "skill_1": {
+          "trigger": "on_incinerator",
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 8,
+          "duration": "until_end_of_battle"
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 5
+        }
+      },
+      "3": {
+        "power": 86400,
+        "attack": 132,
+        "defense": 172,
+        "health": 2592,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 18
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 18
+        },
+        "skill_1": {
+          "trigger": "on_incinerator",
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 12,
+          "duration": "until_end_of_battle"
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 5
+        }
+      },
+      "4": {
+        "power": 111600,
+        "attack": 170,
+        "defense": 223,
+        "health": 3348,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 24
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 24
+        },
+        "skill_1": {
+          "trigger": "on_incinerator",
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 12,
+          "duration": "until_end_of_battle"
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 7.5
+        }
+      },
+      "5": {
+        "power": 136800,
+        "attack": 210,
+        "defense": 273,
+        "health": 4104,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 30
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 30
+        },
+        "skill_1": {
+          "trigger": "on_incinerator",
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 16,
+          "duration": "until_end_of_battle"
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 7.5
+        }
+      },
+      "6": {
+        "power": 162000,
+        "attack": 248,
+        "defense": 324,
+        "health": 4860,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 36
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 36
+        },
+        "skill_1": {
+          "trigger": "on_incinerator",
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 16,
+          "duration": "until_end_of_battle"
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 10
+        }
+      },
+      "7": {
+        "power": 187200,
+        "attack": 286,
+        "defense": 374,
+        "health": 5616,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 42
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 42
+        },
+        "skill_1": {
+          "trigger": "on_incinerator",
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 20,
+          "duration": "until_end_of_battle"
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 10
+        }
+      },
+      "8": {
+        "power": 212400,
+        "attack": 325,
+        "defense": 424,
+        "health": 6372,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 48
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 48
+        },
+        "skill_1": {
+          "trigger": "on_incinerator",
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 20,
+          "duration": "until_end_of_battle"
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 12.5
+        }
+      },
+      "9": {
+        "power": 237600,
+        "attack": 363,
+        "defense": 475,
+        "health": 7128,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 54
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 54
+        },
+        "skill_1": {
+          "trigger": "on_incinerator",
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 24,
+          "duration": "until_end_of_battle"
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 12.5
+        }
+      },
+      "10": {
+        "power": 270000,
+        "attack": 414,
+        "defense": 540,
+        "health": 8100,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 60
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 60
+        },
+        "skill_1": {
+          "trigger": "on_incinerator",
+          "target": "self",
+          "effect": "attack_increase",
+          "value_pct": 24,
+          "duration": "until_end_of_battle"
+        },
+        "skill_2": {
+          "target": "defender_troops",
+          "effect": "attack_increase",
+          "value_pct": 15
+        }
+      }
+    }
+  },
+  {
+    "hero_id": "hilde",
+    "name": "Revelation",
+    "conquest_skill_name": "Holy Invocation",
+    "conquest_skill_description": "Soldiers swear by Hilde's everyday miracles, increasing her healing effects by 70%.",
+    "expedition_skill_name": "Fortitude",
+    "expedition_skill_description": "Hilde's confidence is infectious, increasing Defender Squads' Health by 15%.",
+    "levels": {
+      "1": {
+        "power": 36000,
+        "attack": 72,
+        "defense": 72,
+        "health": 720,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 6
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 6
+        },
+        "skill_1": "Hilde Healing Effects +30%",
+        "skill_2": null
+      },
+      "2": {
+        "power": 61200,
+        "attack": 122,
+        "defense": 122,
+        "health": 1224,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 12
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 12
+        },
+        "skill_1": "Hilde Healing Effects +30%",
+        "skill_2": "Defender Troop Health +5%"
+      },
+      "3": {
+        "power": 86400,
+        "attack": 172,
+        "defense": 172,
+        "health": 1728,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 18
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 18
+        },
+        "skill_1": "Hilde Healing Effects +40%",
+        "skill_2": "Defender Troop Health +5%"
+      },
+      "4": {
+        "power": 111600,
+        "attack": 223,
+        "defense": 223,
+        "health": 2232,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 24
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 24
+        },
+        "skill_1": "Hilde Healing Effects +40%",
+        "skill_2": "Defender Troop Health +7.5%"
+      },
+      "5": {
+        "power": 136800,
+        "attack": 273,
+        "defense": 273,
+        "health": 2736,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 30
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 30
+        },
+        "skill_1": "Hilde Healing Effects +50%",
+        "skill_2": "Defender Troop Health +7.5%"
+      },
+      "6": {
+        "power": 162000,
+        "attack": 324,
+        "defense": 324,
+        "health": 3240,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 36
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 36
+        },
+        "skill_1": "Hilde Healing Effects +50%",
+        "skill_2": "Defender Troop Health +10%"
+      },
+      "7": {
+        "power": 187200,
+        "attack": 374,
+        "defense": 374,
+        "health": 3744,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 42
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 42
+        },
+        "skill_1": "Hilde Healing Effects +60%",
+        "skill_2": "Defender Troop Health +10%"
+      },
+      "8": {
+        "power": 212400,
+        "attack": 424,
+        "defense": 424,
+        "health": 4248,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 48
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 48
+        },
+        "skill_1": "Hilde Healing Effects +60%",
+        "skill_2": "Defender Troop Health +12.5%"
+      },
+      "9": {
+        "power": 237600,
+        "attack": 475,
+        "defense": 475,
+        "health": 4752,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 54
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 54
+        },
+        "skill_1": "Hilde Healing Effects +70%",
+        "skill_2": "Defender Troop Health +12.5%"
+      },
+      "10": {
+        "power": 270000,
+        "attack": 540,
+        "defense": 540,
+        "health": 5400,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 60
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 60
+        },
+        "skill_1": "Hilde Healing Effects +70%",
+        "skill_2": "Defender Troop Health +15%"
+      }
+    }
+  },
+  {
+    "hero_id": "amadeus",
+    "name": "Aegis of Fate",
+    "conquest_skill_name": "Double Parry",
+    "conquest_skill_description": "Amadeus parries incoming blows, reducing damage taken by 30%.",
+    "expedition_skill_name": "Discernment",
+    "expedition_skill_description": "Amadeus' sword-tailored formations increase Rally Attack by 15%.",
+    "levels": {
+      "1": {
+        "power": 37500,
+        "attack": 57,
+        "defense": 75,
+        "health": 1125,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 6.25
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 6.25
+        },
+        "skill_1": "Jeronimo damage taken -10%",
+        "skill_2": null
+      },
+      "2": {
+        "power": 63750,
+        "attack": 97,
+        "defense": 127,
+        "health": 1912,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 12.5
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 12.5
+        },
+        "skill_1": "Jeronimo damage taken -10%",
+        "skill_2": "Rally Troop Attack +5%"
+      },
+      "3": {
+        "power": 90000,
+        "attack": 137,
+        "defense": 180,
+        "health": 2700,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 18.75
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 18.75
+        },
+        "skill_1": "Jeronimo damage taken -15%",
+        "skill_2": "Rally Troop Attack +5%"
+      },
+      "4": {
+        "power": 116250,
+        "attack": 177,
+        "defense": 232,
+        "health": 3487,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 25
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 25
+        },
+        "skill_1": "Jeronimo damage taken -15%",
+        "skill_2": "Rally Troop Attack +7.5%"
+      },
+      "5": {
+        "power": 142500,
+        "attack": 218,
+        "defense": 285,
+        "health": 4275,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 31.25
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 31.25
+        },
+        "skill_1": "Jeronimo damage taken -20%",
+        "skill_2": "Rally Troop Attack +7.5%"
+      },
+      "6": {
+        "power": 168750,
+        "attack": 258,
+        "defense": 337,
+        "health": 5062,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 37.5
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 37.5
+        },
+        "skill_1": "Jeronimo damage taken -20%",
+        "skill_2": "Rally Troop Attack +10%"
+      },
+      "7": {
+        "power": 195000,
+        "attack": 298,
+        "defense": 390,
+        "health": 5850,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 43.75
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 43.75
+        },
+        "skill_1": "Jeronimo damage taken -25%",
+        "skill_2": "Rally Troop Attack +10%"
+      },
+      "8": {
+        "power": 221250,
+        "attack": 338,
+        "defense": 442,
+        "health": 6637,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 50
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 50
+        },
+        "skill_1": "Jeronimo damage taken -25%",
+        "skill_2": "Rally Troop Attack +12.5%"
+      },
+      "9": {
+        "power": 247500,
+        "attack": 378,
+        "defense": 495,
+        "health": 7425,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 56.25
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 56.25
+        },
+        "skill_1": "Jeronimo damage taken -30%",
+        "skill_2": "Rally Troop Attack +12.5%"
+      },
+      "10": {
+        "power": 281250,
+        "attack": 431,
+        "defense": 562,
+        "health": 8437,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 62.5
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 62.5
+        },
+        "skill_1": "Jeronimo damage taken -30%",
+        "skill_2": "Rally Troop Attack +15%"
+      }
+    }
+  },
+  {
+    "hero_id": "jaeger",
+    "name": "Wanderwail",
+    "conquest_skill_name": "Sound of Silence",
+    "conquest_skill_description": "Jaeger silences and prevents the target from using skills for up to 5s while dealing heavy damage.",
+    "expedition_skill_name": "Hymn to Survival",
+    "expedition_skill_description": "Jaeger increases Defender Squads' Health by 15% through rousing song.",
+    "levels": {
+      "1": {
+        "power": 42000,
+        "attack": 100,
+        "defense": 84,
+        "health": 630,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 7
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 7
+        },
+        "skill_1": "Silences target for 3s, dealing Attack * 220% damage",
+        "skill_2": null
+      },
+      "2": {
+        "power": 71400,
+        "attack": 172,
+        "defense": 142,
+        "health": 1071,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 14
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 14
+        },
+        "skill_1": "Silences target for 3s, dealing Attack * 220% damage",
+        "skill_2": "Rally Troop Health +5%"
+      },
+      "3": {
+        "power": 100800,
+        "attack": 243,
+        "defense": 201,
+        "health": 1512,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 21
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 21
+        },
+        "skill_1": "Silences target for 3.5s, dealing Attack * 240% damage",
+        "skill_2": "Rally Troop Health +5%"
+      },
+      "4": {
+        "power": 130200,
+        "attack": 316,
+        "defense": 260,
+        "health": 1952,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 28
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 28
+        },
+        "skill_1": "Silences target for 3.5s, dealing Attack * 240% damage",
+        "skill_2": "Rally Troop Health +7.5%"
+      },
+      "5": {
+        "power": 159600,
+        "attack": 387,
+        "defense": 319,
+        "health": 2394,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 35
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 35
+        },
+        "skill_1": "Silences target for 4s, dealing Attack * 260% damage",
+        "skill_2": "Rally Troop Health +7.5%"
+      },
+      "6": {
+        "power": 189000,
+        "attack": 459,
+        "defense": 378,
+        "health": 2835,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 42
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 42
+        },
+        "skill_1": "Silences target for 4s, dealing Attack * 260% damage",
+        "skill_2": "Rally Troop Health +10%"
+      },
+      "7": {
+        "power": 218400,
+        "attack": 530,
+        "defense": 436,
+        "health": 3276,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 49
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 49
+        },
+        "skill_1": "Silences target for 4.5s, dealing Attack * 280% damage",
+        "skill_2": "Rally Troop Health +10%"
+      },
+      "8": {
+        "power": 247800,
+        "attack": 602,
+        "defense": 495,
+        "health": 3716,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 56
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 56
+        },
+        "skill_1": "Silences target for 4.5s, dealing Attack * 280% damage",
+        "skill_2": "Rally Troop Health +12.5%"
+      },
+      "9": {
+        "power": 277200,
+        "attack": 673,
+        "defense": 554,
+        "health": 4158,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 63
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 63
+        },
+        "skill_1": "Silences target for 5s, dealing Attack * 300% damage",
+        "skill_2": "Rally Troop Health +12.5%"
+      },
+      "10": {
+        "power": 315000,
+        "attack": 764,
+        "defense": 630,
+        "health": 4725,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 70
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 70
+        },
+        "skill_1": "Silences target for 5s, dealing Attack * 300% damage",
+        "skill_2": "Rally Troop Health +15%"
+      }
+    }
+  },
+  {
+    "hero_id": "eric",
+    "name": "Anvil of Truth",
+    "conquest_skill_name": "Blessed Hammer",
+    "conquest_skill_description": "Eric trusts not himself but his blessed warhammer, increasing damage by 30%.",
+    "expedition_skill_name": "Vanguard",
+    "expedition_skill_description": "A paladin must always lead by example from the front. Eric increases Defender Squad Defense by 15%.",
+    "levels": {
+      "1": {
+        "power": 42000,
+        "attack": 64,
+        "defense": 84,
+        "health": 1260,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 7
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 7
+        },
+        "skill_1": "Fists of Steel deal +10% more damage",
+        "skill_2": null
+      },
+      "2": {
+        "power": 71400,
+        "attack": 109,
+        "defense": 142,
+        "health": 2142,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 14
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 14
+        },
+        "skill_1": "Fists of Steel deal +10% more damage",
+        "skill_2": "Defender Troop Defense +5%"
+      },
+      "3": {
+        "power": 100800,
+        "attack": 154,
+        "defense": 201,
+        "health": 3024,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 21
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 21
+        },
+        "skill_1": "Fists of Steel deal +15% more damage",
+        "skill_2": "Defender Troop Defense +5%"
+      },
+      "4": {
+        "power": 130200,
+        "attack": 198,
+        "defense": 260,
+        "health": 3905,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 28
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 28
+        },
+        "skill_1": "Fists of Steel deal +15% more damage",
+        "skill_2": "Defender Troop Defense +7.5%"
+      },
+      "5": {
+        "power": 159600,
+        "attack": 244,
+        "defense": 319,
+        "health": 4788,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 35
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 35
+        },
+        "skill_1": "Fists of Steel deal +20% more damage",
+        "skill_2": "Defender Troop Defense +7.5%"
+      },
+      "6": {
+        "power": 189000,
+        "attack": 289,
+        "defense": 378,
+        "health": 5670,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 42
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 42
+        },
+        "skill_1": "Fists of Steel deal +20% more damage",
+        "skill_2": "Defender Troop Defense +10%"
+      },
+      "7": {
+        "power": 218400,
+        "attack": 334,
+        "defense": 436,
+        "health": 6552,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 49
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 49
+        },
+        "skill_1": "Fists of Steel deal +25% more damage",
+        "skill_2": "Defender Troop Defense +10%"
+      },
+      "8": {
+        "power": 247800,
+        "attack": 379,
+        "defense": 495,
+        "health": 7433,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 56
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 56
+        },
+        "skill_1": "Fists of Steel deal +25% more damage",
+        "skill_2": "Defender Troop Defense +12.5%"
+      },
+      "9": {
+        "power": 277200,
+        "attack": 424,
+        "defense": 554,
+        "health": 8316,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 63
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 63
+        },
+        "skill_1": "Fists of Steel deal +30% more damage",
+        "skill_2": "Defender Troop Defense +12.5%"
+      },
+      "10": {
+        "power": 315000,
+        "attack": 482,
+        "defense": 630,
+        "health": 9450,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 70
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 70
+        },
+        "skill_1": "Fists of Steel deal +30% more damage",
+        "skill_2": "Defender Troop Defense +15%"
+      }
+    }
+  },
+  {
+    "hero_id": "petra",
+    "name": "Fate's Writ",
+    "conquest_skill_name": "Weighted Deck",
+    "conquest_skill_description": "Petra increases the upper and lower limit of her fluctuating skills by 150%.",
+    "expedition_skill_name": "Cosmic Eye",
+    "expedition_skill_description": "Petra's cards reveal the right moment to strike, increasing Rally Squad Attack by 15%.",
+    "levels": {
+      "1": {
+        "power": 42000,
+        "attack": 84,
+        "defense": 84,
+        "health": 840,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 7
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 7
+        },
+        "skill_1": "Increases upper / lower limits of Mia's fluctuating skills by 30%",
+        "skill_2": null
+      },
+      "2": {
+        "power": 71400,
+        "attack": 142,
+        "defense": 142,
+        "health": 1428,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 14
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 14
+        },
+        "skill_1": "Increases upper / lower limits of Mia's fluctuating skills by 30%",
+        "skill_2": "Rally Troop Attack +5%"
+      },
+      "3": {
+        "power": 100800,
+        "attack": 201,
+        "defense": 201,
+        "health": 2015,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 21
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 21
+        },
+        "skill_1": "Increases upper / lower limits of Mia's fluctuating skills by 60%",
+        "skill_2": "Rally Troop Attack +5%"
+      },
+      "4": {
+        "power": 130200,
+        "attack": 260,
+        "defense": 260,
+        "health": 2604,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 28
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 28
+        },
+        "skill_1": "Increases upper / lower limits of Mia's fluctuating skills by 60%",
+        "skill_2": "Rally Troop Attack +7.5%"
+      },
+      "5": {
+        "power": 159600,
+        "attack": 319,
+        "defense": 319,
+        "health": 3192,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 35
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 35
+        },
+        "skill_1": "Increases upper / lower limits of Mia's fluctuating skills by 90%",
+        "skill_2": "Rally Troop Attack +7.5%"
+      },
+      "6": {
+        "power": 189000,
+        "attack": 378,
+        "defense": 378,
+        "health": 3779,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 42
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 42
+        },
+        "skill_1": "Increases upper / lower limits of Mia's fluctuating skills by 90%",
+        "skill_2": "Rally Troop Attack +10%"
+      },
+      "7": {
+        "power": 218400,
+        "attack": 436,
+        "defense": 436,
+        "health": 4368,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 49
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 49
+        },
+        "skill_1": "Increases upper / lower limits of Mia's fluctuating skills by 120%",
+        "skill_2": "Rally Troop Attack +10%"
+      },
+      "8": {
+        "power": 247800,
+        "attack": 495,
+        "defense": 495,
+        "health": 4956,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 56
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 56
+        },
+        "skill_1": "Increases upper / lower limits of Mia's fluctuating skills by 120%",
+        "skill_2": "Rally Troop Attack +12.5%"
+      },
+      "9": {
+        "power": 277200,
+        "attack": 554,
+        "defense": 554,
+        "health": 5544,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 63
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 63
+        },
+        "skill_1": "Increases upper / lower limits of Mia's fluctuating skills by 150%",
+        "skill_2": "Rally Troop Attack +12.5%"
+      },
+      "10": {
+        "power": 315000,
+        "attack": 630,
+        "defense": 630,
+        "health": 6300,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 70
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 70
+        },
+        "skill_1": "Increases upper / lower limits of Mia's fluctuating skills by 150%",
+        "skill_2": "Rally Troop Attack +15%"
+      }
+    }
+  },
+  {
+    "hero_id": "margot",
+    "name": "Revel Fang",
+    "conquest_skill_name": "Indefensible",
+    "conquest_skill_description": "Margot has a 40% chance of launching a second attack with each Normal Attack, dealing massive damage.",
+    "expedition_skill_name": "Pugilist",
+    "expedition_skill_description": "Margot never lets her guard down on the battlements, increasing Defender Squads' Lethality by 15%.",
+    "levels": {
+      "1": {
+        "power": 55000,
+        "attack": 111,
+        "defense": 111,
+        "health": 1110,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 9.25
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 9.25
+        },
+        "skill_1": "40% chance of an extra attack dealing Attack * 25% damage alongside a normal attack",
+        "skill_2": null
+      },
+      "2": {
+        "power": 94350,
+        "attack": 188,
+        "defense": 188,
+        "health": 1887,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 18.5
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 18.5
+        },
+        "skill_1": "40% chance of an extra attack dealing Attack * 25% damage alongside a normal attack",
+        "skill_2": "Rally Troop Lethality +5%"
+      },
+      "3": {
+        "power": 133200,
+        "attack": 266,
+        "defense": 266,
+        "health": 2664,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 27.75
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 27.75
+        },
+        "skill_1": "40% chance of an extra attack dealing Attack * 30% damage alongside a normal attack",
+        "skill_2": "Rally Troop Lethality +5%"
+      },
+      "4": {
+        "power": 172050,
+        "attack": 344,
+        "defense": 344,
+        "health": 3441,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 37
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 37
+        },
+        "skill_1": "40% chance of an extra attack dealing Attack * 30% damage alongside a normal attack",
+        "skill_2": "Rally Troop Lethality +7.5%"
+      },
+      "5": {
+        "power": 210900,
+        "attack": 421,
+        "defense": 421,
+        "health": 4218,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 46.25
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 46.25
+        },
+        "skill_1": "40% chance of an extra attack dealing Attack * 35% damage alongside a normal attack",
+        "skill_2": "Rally Troop Lethality +7.5%"
+      },
+      "6": {
+        "power": 249750,
+        "attack": 499,
+        "defense": 499,
+        "health": 4995,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 55.5
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 55.5
+        },
+        "skill_1": "40% chance of an extra attack dealing Attack * 35% damage alongside a normal attack",
+        "skill_2": "Rally Troop Lethality +10%"
+      },
+      "7": {
+        "power": 288600,
+        "attack": 577,
+        "defense": 577,
+        "health": 5772,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 64.75
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 64.75
+        },
+        "skill_1": "40% chance of an extra attack dealing Attack * 40% damage alongside a normal attack",
+        "skill_2": "Rally Troop Lethality +10%"
+      },
+      "8": {
+        "power": 327450,
+        "attack": 654,
+        "defense": 654,
+        "health": 6549,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 74
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 74
+        },
+        "skill_1": "40% chance of an extra attack dealing Attack * 40% damage alongside a normal attack",
+        "skill_2": "Rally Troop Lethality +12.5%"
+      },
+      "9": {
+        "power": 366300,
+        "attack": 732,
+        "defense": 732,
+        "health": 7326,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 83.25
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 83.25
+        },
+        "skill_1": "40% chance of an extra attack dealing Attack * 45% damage alongside a normal attack",
+        "skill_2": "Rally Troop Lethality +12.5%"
+      },
+      "10": {
+        "power": 416250,
+        "attack": 832,
+        "defense": 832,
+        "health": 8325,
+        "lethality": {
+          "type": "Cavalry",
+          "value_pct": 92.5
+        },
+        "health_bonus": {
+          "type": "Cavalry",
+          "value_pct": 92.5
+        },
+        "skill_1": "40% chance of an extra attack dealing Attack * 45% damage alongside a normal attack",
+        "skill_2": "Rally Troop Lethality +15%"
+      }
+    }
+  },
+  {
+    "hero_id": "rosa",
+    "name": "Aeolian",
+    "conquest_skill_name": "Night Reverie",
+    "conquest_skill_description": "Upon casting Battle Focus, Rosa increases her Attack by 15% until the end of the battle.",
+    "expedition_skill_name": "Perihelion",
+    "expedition_skill_description": "Rosa's performances greatly increase your soldiers' willingness to fight, increasing Rally Squad Lethality by 15%.",
+    "levels": {
+      "1": {
+        "power": 55000,
+        "attack": 133,
+        "defense": 111,
+        "health": 832,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 9.25
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 9.25
+        },
+        "skill_1": "Lynn Attack +7% after Hymn of Sidrak until end of battle",
+        "skill_2": null
+      },
+      "2": {
+        "power": 94350,
+        "attack": 227,
+        "defense": 227,
+        "health": 1415,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 18.5
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 18.5
+        },
+        "skill_1": "Lynn Attack +7% after Hymn of Sidrak until end of battle",
+        "skill_2": "Defender Troop Lethality +5%"
+      },
+      "3": {
+        "power": 133200,
+        "attack": 321,
+        "defense": 266,
+        "health": 1998,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 27.75
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 27.75
+        },
+        "skill_1": "Lynn Attack +9% after Hymn of Sidrak until end of battle",
+        "skill_2": "Defender Troop Lethality +5%"
+      },
+      "4": {
+        "power": 172050,
+        "attack": 418,
+        "defense": 344,
+        "health": 2580,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 37
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 37
+        },
+        "skill_1": "Lynn Attack +9% after Hymn of Sidrak until end of battle",
+        "skill_2": "Defender Troop Lethality +7.5%"
+      },
+      "5": {
+        "power": 210900,
+        "attack": 512,
+        "defense": 421,
+        "health": 3163,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 46.25
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 46.25
+        },
+        "skill_1": "Lynn Attack +11% after Hymn of Sidrak until end of battle",
+        "skill_2": "Defender Troop Lethality +7.5%"
+      },
+      "6": {
+        "power": 249750,
+        "attack": 606,
+        "defense": 499,
+        "health": 3746,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 55.5
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 55.5
+        },
+        "skill_1": "Lynn Attack +11% after Hymn of Sidrak until end of battle",
+        "skill_2": "Defender Troop Lethality +10%"
+      },
+      "7": {
+        "power": 288600,
+        "attack": 701,
+        "defense": 577,
+        "health": 4329,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 64.75
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 64.75
+        },
+        "skill_1": "Lynn Attack +13% after Hymn of Sidrak until end of battle",
+        "skill_2": "Defender Troop Lethality +10%"
+      },
+      "8": {
+        "power": 327450,
+        "attack": 795,
+        "defense": 654,
+        "health": 4911,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 74
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 74
+        },
+        "skill_1": "Lynn Attack +13% after Hymn of Sidrak until end of battle",
+        "skill_2": "Defender Troop Lethality +12.5%"
+      },
+      "9": {
+        "power": 366300,
+        "attack": 889,
+        "defense": 732,
+        "health": 5494,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 83.25
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 83.25
+        },
+        "skill_1": "Lynn Attack +15% after Hymn of Sidrak until end of battle",
+        "skill_2": "Defender Troop Lethality +12.5%"
+      },
+      "10": {
+        "power": 416250,
+        "attack": 1010,
+        "defense": 832,
+        "health": 6243,
+        "lethality": {
+          "type": "Archer",
+          "value_pct": 92.5
+        },
+        "health_bonus": {
+          "type": "Archer",
+          "value_pct": 92.5
+        },
+        "skill_1": "Lynn Attack +15% after Hymn of Sidrak until end of battle",
+        "skill_2": "Defender Troop Lethality +15%"
+      }
+    }
+  },
+  {
+    "hero_id": "alcar",
+    "name": "Praetorian Guard",
+    "conquest_skill_name": "Flagbearer",
+    "conquest_skill_description": "Glory is best shared. Glorious Mark increases friendly squads' Attack by 42% for 2.5s.",
+    "expedition_skill_name": "Vow of Honor",
+    "expedition_skill_description": "There is power in the steadfast vow. Alcar increases Defender Squads' Health by 15%.",
+    "levels": {
+      "1": {
+        "power": 55000,
+        "attack": 85,
+        "defense": 111,
+        "health": 1665,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 9.25
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 9.25
+        },
+        "skill_1": "Friendly Troop Attack +30% during Cthuga's Protection for 2.5s",
+        "skill_2": null
+      },
+      "2": {
+        "power": 94350,
+        "attack": 144,
+        "defense": 144,
+        "health": 2830,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 18.5
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 18.5
+        },
+        "skill_1": "Friendly Troop Attack +30% during Cthuga's Protection for 2.5s",
+        "skill_2": "Defender Troop Health +5%"
+      },
+      "3": {
+        "power": 133200,
+        "attack": 203,
+        "defense": 266,
+        "health": 3996,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 27.75
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 27.75
+        },
+        "skill_1": "Friendly Troop Attack +33% during Cthuga's Protection for 2.5s",
+        "skill_2": "Defender Troop Health +5%"
+      },
+      "4": {
+        "power": 172050,
+        "attack": 262,
+        "defense": 344,
+        "health": 5161,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 37
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 37
+        },
+        "skill_1": "Friendly Troop Attack +33% during Cthuga's Protection for 2.5s",
+        "skill_2": "Defender Troop Health +7.5%"
+      },
+      "5": {
+        "power": 210900,
+        "attack": 323,
+        "defense": 421,
+        "health": 6327,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 46.25
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 46.25
+        },
+        "skill_1": "Friendly Troop Attack +36% during Cthuga's Protection for 2.5s",
+        "skill_2": "Defender Troop Health +7.5%"
+      },
+      "6": {
+        "power": 249750,
+        "attack": 382,
+        "defense": 499,
+        "health": 7492,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 55.5
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 55.5
+        },
+        "skill_1": "Friendly Troop Attack +36% during Cthuga's Protection for 2.5s",
+        "skill_2": "Defender Troop Health +10%"
+      },
+      "7": {
+        "power": 288600,
+        "attack": 442,
+        "defense": 577,
+        "health": 8658,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 64.75
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 64.75
+        },
+        "skill_1": "Friendly Troop Attack +39% during Cthuga's Protection for 2.5s",
+        "skill_2": "Defender Troop Health +10%"
+      },
+      "8": {
+        "power": 327450,
+        "attack": 501,
+        "defense": 654,
+        "health": 9823,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 74
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 74
+        },
+        "skill_1": "Friendly Troop Attack +39% during Cthuga's Protection for 2.5s",
+        "skill_2": "Defender Troop Health +12.5%"
+      },
+      "9": {
+        "power": 366300,
+        "attack": 560,
+        "defense": 732,
+        "health": 10989,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 83.25
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 83.25
+        },
+        "skill_1": "Friendly Troop Attack +42% during Cthuga's Protection for 2.5s",
+        "skill_2": "Defender Troop Health +12.5%"
+      },
+      "10": {
+        "power": 416250,
+        "attack": 638,
+        "defense": 832,
+        "health": 12487,
+        "lethality": {
+          "type": "Infantry",
+          "value_pct": 92.5
+        },
+        "health_bonus": {
+          "type": "Infantry",
+          "value_pct": 92.5
+        },
+        "skill_1": "Friendly Troop Attack +42% during Cthuga's Protection for 2.5s",
+        "skill_2": "Defender Troop Health +15%"
+      }
+    }
+  }
+]

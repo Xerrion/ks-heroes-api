@@ -1,0 +1,293 @@
+[
+  {
+    "id": "olive",
+    "name": "Olive",
+    "generation": 1,
+    "rarity": "Rare",
+    "class": "Archer",
+    "sources": [
+      "Hero Recruitment",
+      "Intel Missions",
+      "Conquest Battles"
+    ]
+  },
+  {
+    "id": "forrest",
+    "name": "Forrest",
+    "generation": 1,
+    "rarity": "Rare",
+    "class": "Infantry",
+    "sources": [
+      "Hero Recruitment",
+      "Intel Missions",
+      "Conquest Battles"
+    ]
+  },
+  {
+    "id": "seth",
+    "name": "Seth",
+    "generation": 1,
+    "rarity": "Rare",
+    "class": "Infantry",
+    "sources": [
+      "Hero Recruitment",
+      "Intel Missions",
+      "Conquest Battles"
+    ]
+  },
+  {
+    "id": "edwin",
+    "name": "Edwin",
+    "generation": 1,
+    "rarity": "Rare",
+    "class": "Cavalry",
+    "sources": [
+      "Hero Recruitment",
+      "Intel Missions",
+      "Conquest Battles"
+    ]
+  },
+  {
+    "id": "quinn",
+    "name": "Quinn",
+    "generation": 1,
+    "rarity": "Epic",
+    "class": "Archer",
+    "sources": [
+      "Hero Recruitment",
+      "Intel Missions"
+    ]
+  },
+  {
+    "id": "howard",
+    "name": "Howard",
+    "generation": 1,
+    "rarity": "Epic",
+    "class": "Infantry",
+    "sources": [
+      "Hero Recruitment",
+      "Conquest Battles",
+      "Intel Missions"
+    ]
+  },
+  {
+    "id": "chenko",
+    "name": "Chenko",
+    "generation": 1,
+    "rarity": "Epic",
+    "class": "Cavalry",
+    "sources": [
+      "Path of Growth Event",
+      "Hero Recruitment",
+      "Intel Missions \u2013 Watchtower"
+    ]
+  },
+  {
+    "id": "gordon",
+    "name": "Gordon",
+    "generation": 1,
+    "rarity": "Epic",
+    "class": "Cavalry",
+    "sources": [
+      "Hero Recruitment",
+      "Intel Missions",
+      "Alliance Championship Store"
+    ]
+  },
+  {
+    "id": "diana",
+    "name": "Diana",
+    "generation": 1,
+    "rarity": "Epic",
+    "class": "Archer",
+    "sources": [
+      "Desert Trial Event"
+    ]
+  },
+  {
+    "id": "amane",
+    "name": "Amane",
+    "generation": 1,
+    "rarity": "Epic",
+    "class": "Archer",
+    "sources": [
+      "Hero Recruitment",
+      "Oasis & Beyond Event"
+    ]
+  },
+  {
+    "id": "yeonwoo",
+    "name": "Yeonwoo",
+    "generation": 1,
+    "rarity": "Epic",
+    "class": "Archer",
+    "sources": [
+      "Hero Recruitment",
+      "Oasis & Beyond Event"
+    ]
+  },
+  {
+    "id": "fahd",
+    "name": "Fahd",
+    "generation": 1,
+    "rarity": "Epic",
+    "class": "Cavalry",
+    "sources": [
+      "Hero Recruitment",
+      "Oasis & Beyond Event"
+    ]
+  },
+  {
+    "id": "jabel",
+    "name": "Jabel",
+    "generation": 1,
+    "rarity": "Mythic",
+    "class": "Cavalry",
+    "sources": [
+      "7-day Sign-in Gift",
+      "Path of Growth",
+      "Recruit Heroes",
+      "Watchtower Intel",
+      "Hall of Heroes",
+      "Swordland Shop"
+    ]
+  },
+  {
+    "id": "helga",
+    "name": "Helga",
+    "generation": 1,
+    "rarity": "Mythic",
+    "class": "Infantry",
+    "sources": [
+      "First Purchase",
+      "VIP Special Packs"
+    ]
+  },
+  {
+    "id": "amadeus",
+    "name": "Amadeus",
+    "generation": 1,
+    "rarity": "Mythic",
+    "class": "Infantry",
+    "sources": [
+      "Hall of Governors",
+      "VIP Packs"
+    ]
+  },
+  {
+    "id": "saul",
+    "name": "Saul",
+    "generation": 1,
+    "rarity": "Mythic",
+    "class": "Archer",
+    "sources": [
+      "Daily Deals",
+      "Hero Roulette",
+      "Hall of Heroes",
+      "Swordland Shop"
+    ]
+  },
+  {
+    "id": "hilde",
+    "name": "Hilde",
+    "generation": 2,
+    "rarity": "Mythic",
+    "class": "Cavalry",
+    "sources": [
+      "Hall of Governors",
+      "Strongest Governor Event",
+      "Daily Deals"
+    ]
+  },
+  {
+    "id": "zoe",
+    "name": "Zoe",
+    "generation": 2,
+    "rarity": "Mythic",
+    "class": "Infantry",
+    "sources": [
+      "Hero Roulette"
+    ]
+  },
+  {
+    "id": "marlin",
+    "name": "Marlin",
+    "generation": 2,
+    "rarity": "Mythic",
+    "class": "Archer",
+    "sources": [
+      "Hall of Heroes"
+    ]
+  },
+  {
+    "id": "eric",
+    "name": "Eric",
+    "generation": 3,
+    "rarity": "Mythic",
+    "class": "Infantry",
+    "sources": [
+      "Hall of Heroes",
+      "Swordland Shop"
+    ]
+  },
+  {
+    "id": "jaeger",
+    "name": "Jaeger",
+    "generation": 3,
+    "rarity": "Mythic",
+    "class": "Archer",
+    "sources": [
+      "Daily Deals",
+      "Hero Rally",
+      "Swordland Shop",
+      "Strongest Governor Event"
+    ]
+  },
+  {
+    "id": "petra",
+    "name": "Petra",
+    "generation": 3,
+    "rarity": "Mythic",
+    "class": "Cavalry",
+    "sources": [
+      "Hero Roulette",
+      "Swordland Showdown"
+    ]
+  },
+  {
+    "id": "rosa",
+    "name": "Rosa",
+    "generation": 4,
+    "rarity": "Mythic",
+    "class": "Archer",
+    "sources": [
+      "Hero Roulette",
+      "Swordland Showdown Shop"
+    ]
+  },
+  {
+    "id": "alcar",
+    "name": "Alcar",
+    "generation": 4,
+    "rarity": "Mythic",
+    "class": "Infantry",
+    "sources": [
+      "Hero Rally",
+      "Daily Deals",
+      "Strongest Governor Event",
+      "Kingdom of Power Event",
+      "Swordland Showdown Shop"
+    ]
+  },
+  {
+    "id": "margot",
+    "name": "Margot",
+    "generation": 4,
+    "rarity": "Mythic",
+    "class": "Cavalry",
+    "sources": [
+      "Hall of Heroes",
+      "Swordland Showdown Shop"
+    ]
+  }
+]

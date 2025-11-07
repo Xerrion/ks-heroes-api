@@ -1,0 +1,152 @@
+[
+  {
+    "hero_id": "rosa",
+    "bonus_type": "archer",
+    "attack_pct": 370.29,
+    "defense_pct": 370.29
+  },
+  {
+    "hero_id": "alcar",
+    "bonus_type": "infantry",
+    "attack_pct": 370.29,
+    "defense_pct": 370.29
+  },
+  {
+    "hero_id": "margot",
+    "bonus_type": "cavalry",
+    "attack_pct": 370.29,
+    "defense_pct": 370.29
+  },
+  {
+    "hero_id": "jaeger",
+    "bonus_type": "archer",
+    "attack_pct": 290.23,
+    "defense_pct": 290.23
+  },
+  {
+    "hero_id": "eric",
+    "bonus_type": "infantry",
+    "attack_pct": 290.23,
+    "defense_pct": 290.23
+  },
+  {
+    "hero_id": "petra",
+    "bonus_type": "cavalry",
+    "attack_pct": 290.23,
+    "defense_pct": 290.23
+  },
+  {
+    "hero_id": "hilde",
+    "bonus_type": "cavalry",
+    "attack_pct": 370.29,
+    "defense_pct": 370.29
+  },
+  {
+    "hero_id": "zoe",
+    "bonus_type": "infantry",
+    "attack_pct": 240.19,
+    "defense_pct": 240.19
+  },
+  {
+    "hero_id": "marlin",
+    "bonus_type": "archer",
+    "attack_pct": 240.19,
+    "defense_pct": 240.19
+  },
+  {
+    "hero_id": "jabel",
+    "bonus_type": "cavalry",
+    "attack_pct": 240.19,
+    "defense_pct": 240.19
+  },
+  {
+    "hero_id": "amadeus",
+    "bonus_type": "infantry",
+    "attack_pct": 260.2,
+    "defense_pct": 260.2
+  },
+  {
+    "hero_id": "helga",
+    "bonus_type": "infantry",
+    "attack_pct": 260.2,
+    "defense_pct": 260.2
+  },
+  {
+    "hero_id": "saul",
+    "bonus_type": "archer",
+    "attack_pct": 260.2,
+    "defense_pct": 260.2
+  },
+  {
+    "hero_id": "amane",
+    "bonus_type": "archer",
+    "attack_pct": 140.11,
+    "defense_pct": 140.11
+  },
+  {
+    "hero_id": "yeonwoo",
+    "bonus_type": "archer",
+    "attack_pct": 140.11,
+    "defense_pct": 140.11
+  },
+  {
+    "hero_id": "chenko",
+    "bonus_type": "cavalry",
+    "attack_pct": 140.11,
+    "defense_pct": 140.11
+  },
+  {
+    "hero_id": "fahd",
+    "bonus_type": "cavalry",
+    "attack_pct": 140.11,
+    "defense_pct": 140.11
+  },
+  {
+    "hero_id": "gordon",
+    "bonus_type": "cavalry",
+    "attack_pct": 140.11,
+    "defense_pct": 140.11
+  },
+  {
+    "hero_id": "diana",
+    "bonus_type": "archer",
+    "attack_pct": 110.08,
+    "defense_pct": 110.08
+  },
+  {
+    "hero_id": "howard",
+    "bonus_type": "infantry",
+    "attack_pct": 140.11,
+    "defense_pct": 140.11
+  },
+  {
+    "hero_id": "quinn",
+    "bonus_type": "archer",
+    "attack_pct": 140.11,
+    "defense_pct": 140.11
+  },
+  {
+    "hero_id": "olive",
+    "bonus_type": "archer",
+    "attack_pct": 90.07,
+    "defense_pct": 90.07
+  },
+  {
+    "hero_id": "edwin",
+    "bonus_type": "infantry",
+    "attack_pct": 90.07,
+    "defense_pct": 90.07
+  },
+  {
+    "hero_id": "seth",
+    "bonus_type": "infantry",
+    "attack_pct": 90.07,
+    "defense_pct": 90.07
+  },
+  {
+    "hero_id": "forrest",
+    "bonus_type": "cavalry",
+    "attack_pct": 90.07,
+    "defense_pct": 90.07
+  }
+]
