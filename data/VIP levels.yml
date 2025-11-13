@@ -1,0 +1,88 @@
+VIP levels:
+
+Level 1:
+- Resource Production Speed: +2.0%
+- Storehouse Capacity: +100,000
+
+Level 2:
+- Resource Production Speed: +4.0%
+- Storehouse Capacity: +150,000
+
+Level 3:
+- Resource Production Speed: +6.0%
+- Storehouse Capacity: +200,000
+
+Level 4:
+- Construction Speed: +10.0%
+- Resource Production Speed: +8.0%
+- Storehouse Capacity: +300,000
+
+Level 5:
+- Formations: +1
+- Construction Speed: +10.0%
+- Resource Production Speed: +10.0%
+- Storehouse Capacity: +400,000
+
+Level 6:
+- March Queue: +1
+- Formations: +1
+- Construction Speed: +10.0%
+- Resource Production Speed: +12.0%
+- Storehouse Capacity: +500,000
+
+Level 7:
+- March Queue: +1
+- Formations: +1
+- Construction Speed: +10.0%
+- Resource Production Speed: +14.0%
+- Storehouse Capacity: +600,000
+
+Level 8:
+- March Queue: +1
+- Formations: +2
+- Construction Speed: +10.0%
+- Resource Production Speed: +16.0%
+- Storehouse Capacity: +700,000
+
+Level 9:
+- Squads' Defense: +10.0%
+- March Queue: +1
+- Formations: +2
+- Construction Speed: +20.0%
+- Resource Production Speed: +18.0%
+- Storehouse Capacity: +800,000
+
+Level 10:
+- Custom Avatar Upload Cooldown: -48 hours
+- Squads' Attack: +12.0%
+- Squads' Defense: +12.0%
+- March Queue: +1
+- Formations: +2
+- Construction Speed: +20.0%
+- Resource Production Speed: +20.0%
+- Storehouse Capacity: +900,000
+
+Level 11:
+- Custom Avatar Upload Cooldown: -48 hours
+- Squads' Health: +14.0%
+- Squads' Attack: +14.0%
+- Squads' Defense: +14.0%
+- March Queue: +1
+- Formations: +2
+- Construction Speed: +20.0%
+- Resource Production Speed: +22.0%
+- Storehouse Capacity: +1,000,000
+
+Level 12:
+- Custom Avatar Upload Cooldown: -48 hours
+- Squads' Health: +16.0%
+- Squads' Attack: +16.0%
+- Squads' Lethality: +16.0%
+- Squads' Defense: +16.0%
+- March Queue: +1
+- Formations: +2
+- Construction Speed: +20.0%
+- Resource Production Speed: +24.0%
+- Storehouse Capacity: +1,100,000
+
+All the levels, are total and not additive. For example, VIP level 3 gives +4% resource production speed, not +6%.

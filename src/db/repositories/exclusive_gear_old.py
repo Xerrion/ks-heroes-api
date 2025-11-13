@@ -61,7 +61,7 @@ class ExclusiveGearRepository:
 
     def _post_process(self, records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         for gear in records:
-            hero = gear.pop("hero", None) or {}
+            gear.pop("hero", None)
             # Removed setting hero_slug and hero_name to avoid redundancy in hero-specific endpoints
 
             levels = list(gear.get("levels") or [])

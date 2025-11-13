@@ -15,6 +15,7 @@ dependencies = [
     "pytest>=8.4.2",
     "python-dotenv>=1.2.1",
     "python-jose[cryptography]>=3.3.0",
+    "rich>=14.2.0",
     "supabase>=2.23.0",
     "thefuzz>=0.22.1",
     "tqdm>=4.67.1",
@@ -24,3 +25,10 @@ dependencies = [
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 addopts = ["--ignore=simulation"]
+
+[tool.uv]
+
+[dependency-groups]
+dev = [
+    "rich>=14.2.0",
+]

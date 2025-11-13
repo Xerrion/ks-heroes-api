@@ -413,10 +413,16 @@ dependencies = [
     { name = "pytest" },
     { name = "python-dotenv" },
     { name = "python-jose", extra = ["cryptography"] },
+    { name = "rich" },
     { name = "supabase" },
     { name = "thefuzz" },
     { name = "tqdm" },
     { name = "uvicorn" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "rich" },
 ]
 
 [package.metadata]
@@ -431,11 +437,15 @@ requires-dist = [
     { name = "pytest", specifier = ">=8.4.2" },
     { name = "python-dotenv", specifier = ">=1.2.1" },
     { name = "python-jose", extras = ["cryptography"], specifier = ">=3.3.0" },
+    { name = "rich", specifier = ">=14.2.0" },
     { name = "supabase", specifier = ">=2.23.0" },
     { name = "thefuzz", specifier = ">=0.22.1" },
     { name = "tqdm", specifier = ">=4.67.1" },
     { name = "uvicorn", specifier = ">=0.38.0" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "rich", specifier = ">=14.2.0" }]
 
 [[package]]
 name = "markdown-it-py"
