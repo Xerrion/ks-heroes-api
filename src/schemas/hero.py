@@ -23,6 +23,7 @@ class HeroBasicResponse(BaseModel):
         ..., alias="class", description="Hero class: Infantry, Archer, Cavalry"
     )
     image_path: Optional[str] = Field(None, description="Path or URL to hero image")
+    image_url: Optional[str] = Field(None, description="Public URL to hero image")
 
     class Config:
         populate_by_name = True

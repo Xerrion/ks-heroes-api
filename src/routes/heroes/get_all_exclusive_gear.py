@@ -3,10 +3,10 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.concurrency import run_in_threadpool
 
+from src.db.repositories.exclusive_gear import ExclusiveGearRepository
+from src.dependencies import get_supabase_client
+from src.schemas.exclusive_gear import HeroExclusiveGearResponse
 from supabase import Client
-
-from ...dependencies import get_supabase_client
-from ...schemas.exclusive_gear import HeroExclusiveGearResponse
 
 router = APIRouter()
 
@@ -18,10 +18,11 @@ async def get_all_exclusive_gear(
     """
     Retrieve all hero exclusive gear.
     """
-    query = supabase.table("hero_exclusive_gear").select(
-        "*, levels:hero_exclusive_gear_levels(*), skills:hero_exclusive_gear_skills(*)"
-    )
-    response = await run_in_threadpool(query.execute)
-    if not response.data:
+    repository = ExclusiveGearRepository(supabase)
+    try:
+        data = await run_in_threadpool(repository.list_all)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    if not data:
         raise HTTPException(status_code=404, detail="No exclusive gear found")
-    return response.data
+    return data

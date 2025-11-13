@@ -26,6 +26,7 @@ class HeroSkillResponse(BaseModel):
     battle_type: str = Field(..., description="Battle type: Conquest, Expedition")
     description: str = Field(..., description="Skill description")
     icon_path: Optional[str] = Field(None, description="Path or URL to skill icon")
+    icon_url: Optional[str] = Field(None, description="Public URL to skill icon")
     levels: Optional[List[HeroSkillLevelResponse]] = Field(
         None, description="Skill levels with effects"
     )

@@ -1,39 +1,39 @@
 """Schemas package - API request/response schemas for the Heroes API."""
-from .hero import (
-    HeroBasicResponse,
-    HeroListResponse,
-    HeroDetailResponse,
-    HeroCreateRequest,
-    HeroUpdateRequest
-)
-from .stats import (
-    HeroStatsResponse,
-    HeroExpeditionStatsResponse,
-    HeroStatsCreateRequest,
-    HeroExpeditionStatsCreateRequest,
-    HeroStatsListResponse,
-    HeroExpeditionStatsListResponse
-)
-from .skills import (
-    HeroSkillResponse,
-    HeroSkillLevelResponse,
-    HeroSkillCreateRequest,
-    HeroSkillLevelCreateRequest,
-    HeroSkillListResponse
-)
+
 from .exclusive_gear import (
-    HeroExclusiveGearResponse,
-    HeroExclusiveGearLevelResponse,
-    HeroExclusiveGearSkillResponse,
     HeroExclusiveGearCreateRequest,
     HeroExclusiveGearLevelCreateRequest,
-    HeroExclusiveGearSkillCreateRequest
+    HeroExclusiveGearLevelResponse,
+    HeroExclusiveGearResponse,
+    HeroExclusiveGearSkillCreateRequest,
+    HeroExclusiveGearSkillResponse,
 )
-from .talent import (
-    HeroTalentResponse,
-    HeroTalentCreateRequest,
-    HeroTalentListResponse
+from .hero import (
+    HeroBasicResponse,
+    HeroCreateRequest,
+    HeroDetailResponse,
+    HeroListResponse,
+    HeroUpdateRequest,
 )
+from .skills import (
+    HeroSkillCreateRequest,
+    HeroSkillLevelCreateRequest,
+    HeroSkillLevelResponse,
+    HeroSkillListResponse,
+    HeroSkillResponse,
+)
+from .stats import (
+    HeroExpeditionStatsCreateRequest,
+    HeroExpeditionStatsListResponse,
+    HeroExpeditionStatsResponse,
+    HeroStatsBundleResponse,
+    HeroStatsCreateRequest,
+    HeroStatsListResponse,
+    HeroStatsResponse,
+)
+from .talent import HeroTalentCreateRequest, HeroTalentListResponse, HeroTalentResponse
+from .troops import Troop, TroopBase, TroopCreate, TroopFilter, TroopType
+from .vip import VIPLevel, VIPLevelBase
 
 __all__ = [
     # Hero
@@ -49,6 +49,7 @@ __all__ = [
     "HeroExpeditionStatsCreateRequest",
     "HeroStatsListResponse",
     "HeroExpeditionStatsListResponse",
+    "HeroStatsBundleResponse",
     # Skills
     "HeroSkillResponse",
     "HeroSkillLevelResponse",
@@ -66,5 +67,13 @@ __all__ = [
     "HeroTalentResponse",
     "HeroTalentCreateRequest",
     "HeroTalentListResponse",
+    # VIP
+    "VIPLevel",
+    "VIPLevelBase",
+    # Troops
+    "Troop",
+    "TroopBase",
+    "TroopCreate",
+    "TroopFilter",
+    "TroopType",
 ]
-

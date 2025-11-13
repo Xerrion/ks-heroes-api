@@ -14,6 +14,7 @@ class HeroTalentResponse(BaseModel):
     name: str = Field(..., description="Talent name")
     description: str = Field(..., description="Talent description")
     icon_path: Optional[str] = Field(None, description="Path or URL to talent icon")
+    icon_url: Optional[str] = Field(None, description="Public URL to talent icon")
 
     class Config:
         from_attributes = True

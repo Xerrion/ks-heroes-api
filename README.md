@@ -113,6 +113,18 @@ supabase db reset
 
 ---
 
+## 📡 REST API Highlights
+
+- `GET /heroes` – list all heroes with computed `image_url`
+- `GET /heroes/{hero_slug}/skills` – battle-ready skill payloads (with `icon_url`)
+- `GET /heroes/{hero_slug}/exclusive-gear` – normalized conquest/expedition gear data
+- `GET /heroes/{hero_slug}/stats` – combined conquest + expedition stats, or scope down via `/stats/conquest` and `/stats/expedition`
+- `GET /heroes/{hero_slug}/talents` – hero-specific talent data with icon URLs
+
+Every endpoint returns public asset URLs derived from the stored paths, so clients no longer need to build Supabase storage links manually.
+
+---
+
 ## 🔮 Future (Separate Simulator Project)
 
 A separate repository will:

@@ -1,0 +1,148 @@
+{
+  "vip_levels": {
+    "1": {
+      "resource_production_speed_pct": 2.0,
+      "storehouse_capacity": 100000,
+      "construction_speed_pct": 0.0,
+      "formations": 0,
+      "march_queue": 0,
+      "squads_attack_pct": 0.0,
+      "squads_defense_pct": 0.0,
+      "squads_health_pct": 0.0,
+      "squads_lethality_pct": 0.0,
+      "custom_avatar_upload_cooldown_hours": 0
+    },
+    "2": {
+      "resource_production_speed_pct": 4.0,
+      "storehouse_capacity": 150000,
+      "construction_speed_pct": 0.0,
+      "formations": 0,
+      "march_queue": 0,
+      "squads_attack_pct": 0.0,
+      "squads_defense_pct": 0.0,
+      "squads_health_pct": 0.0,
+      "squads_lethality_pct": 0.0,
+      "custom_avatar_upload_cooldown_hours": 0
+    },
+    "3": {
+      "resource_production_speed_pct": 6.0,
+      "storehouse_capacity": 200000,
+      "construction_speed_pct": 0.0,
+      "formations": 0,
+      "march_queue": 0,
+      "squads_attack_pct": 0.0,
+      "squads_defense_pct": 0.0,
+      "squads_health_pct": 0.0,
+      "squads_lethality_pct": 0.0,
+      "custom_avatar_upload_cooldown_hours": 0
+    },
+    "4": {
+      "resource_production_speed_pct": 8.0,
+      "storehouse_capacity": 300000,
+      "construction_speed_pct": 10.0,
+      "formations": 0,
+      "march_queue": 0,
+      "squads_attack_pct": 0.0,
+      "squads_defense_pct": 0.0,
+      "squads_health_pct": 0.0,
+      "squads_lethality_pct": 0.0,
+      "custom_avatar_upload_cooldown_hours": 0
+    },
+    "5": {
+      "resource_production_speed_pct": 10.0,
+      "storehouse_capacity": 400000,
+      "construction_speed_pct": 10.0,
+      "formations": 1,
+      "march_queue": 0,
+      "squads_attack_pct": 0.0,
+      "squads_defense_pct": 0.0,
+      "squads_health_pct": 0.0,
+      "squads_lethality_pct": 0.0,
+      "custom_avatar_upload_cooldown_hours": 0
+    },
+    "6": {
+      "resource_production_speed_pct": 12.0,
+      "storehouse_capacity": 500000,
+      "construction_speed_pct": 10.0,
+      "formations": 1,
+      "march_queue": 1,
+      "squads_attack_pct": 0.0,
+      "squads_defense_pct": 0.0,
+      "squads_health_pct": 0.0,
+      "squads_lethality_pct": 0.0,
+      "custom_avatar_upload_cooldown_hours": 0
+    },
+    "7": {
+      "resource_production_speed_pct": 14.0,
+      "storehouse_capacity": 600000,
+      "construction_speed_pct": 10.0,
+      "formations": 1,
+      "march_queue": 1,
+      "squads_attack_pct": 0.0,
+      "squads_defense_pct": 0.0,
+      "squads_health_pct": 0.0,
+      "squads_lethality_pct": 0.0,
+      "custom_avatar_upload_cooldown_hours": 0
+    },
+    "8": {
+      "resource_production_speed_pct": 16.0,
+      "storehouse_capacity": 700000,
+      "construction_speed_pct": 10.0,
+      "formations": 2,
+      "march_queue": 1,
+      "squads_attack_pct": 0.0,
+      "squads_defense_pct": 0.0,
+      "squads_health_pct": 0.0,
+      "squads_lethality_pct": 0.0,
+      "custom_avatar_upload_cooldown_hours": 0
+    },
+    "9": {
+      "resource_production_speed_pct": 18.0,
+      "storehouse_capacity": 800000,
+      "construction_speed_pct": 20.0,
+      "formations": 2,
+      "march_queue": 1,
+      "squads_attack_pct": 0.0,
+      "squads_defense_pct": 10.0,
+      "squads_health_pct": 0.0,
+      "squads_lethality_pct": 0.0,
+      "custom_avatar_upload_cooldown_hours": 0
+    },
+    "10": {
+      "resource_production_speed_pct": 20.0,
+      "storehouse_capacity": 900000,
+      "construction_speed_pct": 20.0,
+      "formations": 2,
+      "march_queue": 1,
+      "squads_attack_pct": 12.0,
+      "squads_defense_pct": 12.0,
+      "squads_health_pct": 0.0,
+      "squads_lethality_pct": 0.0,
+      "custom_avatar_upload_cooldown_hours": -48
+    },
+    "11": {
+      "resource_production_speed_pct": 22.0,
+      "storehouse_capacity": 1000000,
+      "construction_speed_pct": 20.0,
+      "formations": 2,
+      "march_queue": 1,
+      "squads_attack_pct": 14.0,
+      "squads_defense_pct": 14.0,
+      "squads_health_pct": 14.0,
+      "squads_lethality_pct": 0.0,
+      "custom_avatar_upload_cooldown_hours": -48
+    },
+    "12": {
+      "resource_production_speed_pct": 24.0,
+      "storehouse_capacity": 1100000,
+      "construction_speed_pct": 20.0,
+      "formations": 2,
+      "march_queue": 1,
+      "squads_attack_pct": 16.0,
+      "squads_defense_pct": 16.0,
+      "squads_health_pct": 16.0,
+      "squads_lethality_pct": 16.0,
+      "custom_avatar_upload_cooldown_hours": -48
+    }
+  }
+}

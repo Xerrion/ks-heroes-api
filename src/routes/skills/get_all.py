@@ -3,10 +3,10 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.concurrency import run_in_threadpool
 
+from src.db.repositories.skills import SkillsRepository
+from src.dependencies import get_supabase_client
+from src.schemas.hero import HeroSkillResponse
 from supabase import Client
-
-from ...dependencies import get_supabase_client
-from ...schemas.hero import HeroSkillResponse
 
 router = APIRouter()
 
@@ -18,8 +18,8 @@ async def get_all_skills(
     """
     Retrieve all hero skills.
     """
-    query = supabase.table("hero_skills").select("*")
-    response = await run_in_threadpool(query.execute)
-    if not response.data:
+    repository = SkillsRepository(supabase)
+    skills = await run_in_threadpool(repository.list_all)
+    if not skills:
         raise HTTPException(status_code=404, detail="No skills found")
-    return response.data
+    return skills

@@ -14,15 +14,7 @@ class HeroExclusiveGearBase(BaseModel):
 
     hero_id: UUID = Field(..., description="Foreign key to heroes table")
     name: str = Field(..., description="Exclusive gear name")
-    conquest_skill_name: str = Field(..., description="Conquest skill name")
-    conquest_skill_description: str = Field(
-        ..., description="Conquest skill description"
-    )
-    expedition_skill_name: str = Field(..., description="Expedition skill name")
-    expedition_skill_description: str = Field(
-        ..., description="Expedition skill description"
-    )
-    icon_path: Optional[str] = Field(None, description="Path or URL to gear icon")
+    image_path: Optional[str] = Field(None, description="Path or URL to gear icon")
 
 
 class HeroExclusiveGearCreate(HeroExclusiveGearBase):
@@ -36,6 +28,7 @@ class HeroExclusiveGear(HeroExclusiveGearBase):
 
     id: UUID = Field(..., description="Database primary key")
     created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
 
 
 class HeroExclusiveGearLevelBase(BaseModel):
@@ -44,11 +37,23 @@ class HeroExclusiveGearLevelBase(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     gear_id: UUID = Field(..., description="Foreign key to hero_exclusive_gear table")
-    level: int = Field(..., ge=1, description="Gear level")
-    power: int = Field(..., ge=0, description="Power stat")
-    attack: int = Field(..., ge=0, description="Attack stat")
-    defense: int = Field(..., ge=0, description="Defense stat")
-    health: int = Field(..., ge=0, description="Health stat")
+    level: int = Field(..., ge=1, le=10, description="Gear level (1-10)")
+    power: Optional[int] = Field(None, ge=0, description="Power rating at this level")
+    hero_attack: Optional[int] = Field(None, description="Attack bonus granted")
+    hero_defense: Optional[int] = Field(None, description="Defense bonus granted")
+    hero_health: Optional[int] = Field(None, description="Health bonus granted")
+    troop_lethality_bonus: Optional[Dict[str, Any]] = Field(
+        None, description="Troop lethality bonus payload"
+    )
+    troop_health_bonus: Optional[Dict[str, Any]] = Field(
+        None, description="Troop health bonus payload"
+    )
+    conquest_skill_effect: Optional[Dict[str, Any]] = Field(
+        None, description="Per-level Conquest skill effect payload"
+    )
+    expedition_skill_effect: Optional[Dict[str, Any]] = Field(
+        None, description="Per-level Expedition skill effect payload"
+    )
 
 
 class HeroExclusiveGearLevelCreate(HeroExclusiveGearLevelBase):
@@ -62,6 +67,7 @@ class HeroExclusiveGearLevel(HeroExclusiveGearLevelBase):
 
     id: UUID = Field(..., description="Database primary key")
     created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
 
 
 class HeroExclusiveGearSkillBase(BaseModel):
@@ -69,23 +75,10 @@ class HeroExclusiveGearSkillBase(BaseModel):
 
     model_config = ConfigDict(from_attributes=True)
 
-    gear_level_id: UUID = Field(
-        ..., description="Foreign key to hero_exclusive_gear_levels table"
-    )
-    skill_number: int = Field(..., ge=1, le=2, description="Skill number (1 or 2)")
-    target: str = Field(
-        ..., description="Skill target (e.g., 'self', 'defender_troops')"
-    )
-    effect: str = Field(..., description="Skill effect type")
-    value_pct: Optional[float] = Field(
-        None, description="Percentage value for the effect"
-    )
-    troop_type: Optional[str] = Field(
-        None, description="Troop type if applicable (Infantry, Archer, Cavalry)"
-    )
-    additional_effects: Optional[Dict[str, Any]] = Field(
-        None, description="Additional effect data as JSON"
-    )
+    gear_id: UUID = Field(..., description="Foreign key to hero_exclusive_gear table")
+    skill_type: str = Field(..., description="Skill type (Conquest or Expedition)")
+    name: str = Field(..., description="Skill name")
+    description: str = Field(..., description="Skill description")
 
 
 class HeroExclusiveGearSkillCreate(HeroExclusiveGearSkillBase):
@@ -99,3 +92,4 @@ class HeroExclusiveGearSkill(HeroExclusiveGearSkillBase):
 
     id: UUID = Field(..., description="Database primary key")
     created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None

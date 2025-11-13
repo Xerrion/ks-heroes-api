@@ -1,6 +1,7 @@
 """Hero stats database models."""
 
 from datetime import datetime
+from decimal import Decimal
 from typing import Optional
 from uuid import UUID
 
@@ -8,28 +9,28 @@ from pydantic import BaseModel, ConfigDict, Field
 
 
 class HeroStatsBase(BaseModel):
-    """Base hero stats model."""
+    """Base hero conquest stats model."""
 
     model_config = ConfigDict(from_attributes=True)
+
     hero_id: UUID = Field(..., description="Foreign key to heroes table")
-    level: int = Field(..., ge=1, description="Hero level")
     attack: int = Field(..., ge=0, description="Attack stat")
     defense: int = Field(..., ge=0, description="Defense stat")
     health: int = Field(..., ge=0, description="Health stat")
-    power: int = Field(..., ge=0, description="Total power")
 
 
 class HeroStatsCreate(HeroStatsBase):
-    """Model for creating hero stats."""
+    """Model for creating hero conquest stats."""
 
     pass
 
 
 class HeroStats(HeroStatsBase):
-    """Complete hero stats model from database."""
+    """Complete hero conquest stats model from database."""
 
     id: UUID = Field(..., description="Database primary key")
     created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
 
 
 class HeroExpeditionStatsBase(BaseModel):
@@ -38,10 +39,15 @@ class HeroExpeditionStatsBase(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     hero_id: UUID = Field(..., description="Foreign key to heroes table")
-    level: int = Field(..., ge=1, description="Hero level")
-    attack: int = Field(..., ge=0, description="Attack stat")
-    defense: int = Field(..., ge=0, description="Defense stat")
-    health: int = Field(..., ge=0, description="Health stat")
+    troop_type: str = Field(
+        ..., description="Troop type the expedition bonuses apply to"
+    )
+    attack_pct: Optional[Decimal] = Field(
+        None, description="Attack percentage bonus for the specified troop type"
+    )
+    defense_pct: Optional[Decimal] = Field(
+        None, description="Defense percentage bonus for the specified troop type"
+    )
 
 
 class HeroExpeditionStatsCreate(HeroExpeditionStatsBase):
@@ -55,3 +61,4 @@ class HeroExpeditionStats(HeroExpeditionStatsBase):
 
     id: UUID = Field(..., description="Database primary key")
     created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None

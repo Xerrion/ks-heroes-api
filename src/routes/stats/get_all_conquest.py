@@ -3,10 +3,10 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.concurrency import run_in_threadpool
 
+from src.db.repositories.stats import StatsRepository
+from src.dependencies import get_supabase_client
+from src.schemas.hero import HeroStatsResponse
 from supabase import Client
-
-from ...dependencies import get_supabase_client
-from ...schemas.hero import HeroStatsResponse
 
 router = APIRouter()
 
@@ -18,8 +18,8 @@ async def get_all_conquest_stats(
     """
     Retrieve all hero conquest stats.
     """
-    query = supabase.table("hero_stats").select("*")
-    response = await run_in_threadpool(query.execute)
-    if not response.data:
+    repository = StatsRepository(supabase)
+    stats = await run_in_threadpool(repository.list_all_conquest)
+    if not stats:
         raise HTTPException(status_code=404, detail="No conquest stats found")
-    return response.data
+    return stats
