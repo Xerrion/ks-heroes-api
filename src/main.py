@@ -8,6 +8,9 @@ from .routes.heroes import get_by_slug as hero_by_slug
 from .routes.heroes import get_exclusive_gear_progression
 from .routes.skills import get_all as get_all_skills
 from .routes.stats import get_all_conquest, get_all_expedition
+from .routes.troops import get_all as get_all_troops
+from .routes.vip import get_all as get_all_vip
+from .routes.vip import get_by_level as vip_by_level
 
 db = get_supabase_client()
 app = FastAPI(
@@ -33,3 +36,6 @@ app.include_router(
 app.include_router(get_all_skills.router, prefix="/skills", tags=["skills"])
 app.include_router(get_all_conquest.router, prefix="/stats", tags=["stats"])
 app.include_router(get_all_expedition.router, prefix="/stats", tags=["stats"])
+app.include_router(get_all_vip.router, prefix="/vip", tags=["VIP"])
+app.include_router(vip_by_level.router, prefix="/vip", tags=["VIP"])
+app.include_router(get_all_troops.router, prefix="/troops", tags=["Troops"])

@@ -1,7 +1,7 @@
 """Troop Pydantic schemas"""
 
 from enum import Enum
-from typing import Optional
+from typing import Dict, List, Optional
 
 from pydantic import BaseModel, Field
 
@@ -12,6 +12,13 @@ class TroopType(str, Enum):
     infantry = "Infantry"
     cavalry = "Cavalry"
     archer = "Archer"
+
+
+class GroupBy(str, Enum):
+    """Grouping options for troop responses"""
+
+    type = "type"
+    none = "none"
 
 
 class TroopBase(BaseModel):
@@ -95,5 +102,73 @@ class TroopFilter(BaseModel):
                 "max_level": 10,
                 "min_tg": 0,
                 "max_tg": 5,
+            }
+        }
+
+
+class TroopStats(BaseModel):
+    """Troop stats without type information (for grouped responses)"""
+
+    troop_level: int = Field(
+        ..., ge=1, le=11, description="Troop level (1-10 regular, 11 is Helios)"
+    )
+    true_gold_level: int = Field(
+        ...,
+        ge=0,
+        le=10,
+        description="True Gold level (0 = no TG bonuses, 1-10 = TG tiers)",
+    )
+
+    stats: Dict[str, int] = Field(
+        ...,
+        description="Combat and other stats (attack, defense, health, lethality, power, load, speed)",
+    )
+
+    class Config:
+        from_attributes = True
+        json_schema_extra = {
+            "example": {
+                "troop_level": 5,
+                "true_gold_level": 2,
+                "stats": {
+                    "attack": 7,
+                    "defense": 10,
+                    "health": 12,
+                    "lethality": 6,
+                    "power": 15,
+                    "load": 188,
+                    "speed": 11,
+                },
+            }
+        }
+
+
+class TroopsGroupedByType(BaseModel):
+    """Troops grouped by type (Infantry, Cavalry, Archer)"""
+
+    Infantry: List[TroopStats] = Field(default_factory=list)
+    Cavalry: List[TroopStats] = Field(default_factory=list)
+    Archer: List[TroopStats] = Field(default_factory=list)
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "Infantry": [
+                    {
+                        "troop_level": 5,
+                        "true_gold_level": 2,
+                        "stats": {
+                            "attack": 7,
+                            "defense": 10,
+                            "health": 12,
+                            "lethality": 6,
+                            "power": 15,
+                            "load": 188,
+                            "speed": 11,
+                        },
+                    }
+                ],
+                "Cavalry": [],
+                "Archer": [],
             }
         }

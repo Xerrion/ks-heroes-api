@@ -32,7 +32,16 @@ from .stats import (
     HeroStatsResponse,
 )
 from .talent import HeroTalentCreateRequest, HeroTalentListResponse, HeroTalentResponse
-from .troops import Troop, TroopBase, TroopCreate, TroopFilter, TroopType
+from .troops import (
+    GroupBy,
+    Troop,
+    TroopBase,
+    TroopCreate,
+    TroopFilter,
+    TroopsGroupedByType,
+    TroopStats,
+    TroopType,
+)
 from .vip import VIPLevel, VIPLevelBase
 
 __all__ = [
@@ -76,4 +85,7 @@ __all__ = [
     "TroopCreate",
     "TroopFilter",
     "TroopType",
+    "TroopStats",
+    "TroopsGroupedByType",
+    "GroupBy",
 ]
