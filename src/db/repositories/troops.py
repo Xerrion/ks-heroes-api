@@ -1,6 +1,6 @@
 """Repository for troops data access."""
 
-from typing import List, Optional
+from typing import Any, Dict, List, Optional, cast
 
 from src.schemas.troops import Troop, TroopType
 from supabase import Client
@@ -56,7 +56,8 @@ class TroopsRepository:
             .execute()
         )
 
-        return [Troop(**item) for item in response.data]
+        records = cast(List[Dict[str, Any]], response.data or [])
+        return [Troop.model_validate(item) for item in records]
 
     async def get_by_configuration(
         self, troop_type: TroopType, troop_level: int, true_gold_level: int = 0
@@ -77,8 +78,10 @@ class TroopsRepository:
             .eq("troop_type", troop_type.value)
             .eq("troop_level", troop_level)
             .eq("true_gold_level", true_gold_level)
-            .maybe_single()
             .execute()
         )
 
-        return Troop(**response.data) if response.data else None
+        data = cast(List[Dict[str, Any]], response.data or [])
+        if data:
+            return Troop.model_validate(data[0])
+        return None

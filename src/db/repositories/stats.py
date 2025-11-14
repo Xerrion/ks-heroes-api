@@ -19,16 +19,7 @@ class StatsRepository:
         query = (
             self._client.table("hero_conquest_stats")
             .select(
-                ",".join(
-                    [
-                        "id",
-                        "hero_id",
-                        "attack",
-                        "defense",
-                        "health",
-                        "hero:heroes!hero_conquest_stats_hero_id_fkey(id, hero_id_slug, name)",
-                    ]
-                )
+                "attack, defense, health, hero:heroes!hero_conquest_stats_hero_id_fkey(hero_id_slug, name)"
             )
             .order("name", foreign_table="heroes")
         )
@@ -41,12 +32,27 @@ class StatsRepository:
         return records
 
     def list_conquest_by_hero(self, hero_id: str) -> List[Dict[str, Any]]:
-        """Return conquest stats for a specific hero."""
+        """Return conquest stats for a specific hero by UUID."""
 
         query = (
             self._client.table("hero_conquest_stats")
-            .select("id, hero_id, attack, defense, health")
+            .select("attack, defense, health")
             .eq("hero_id", hero_id)
+            .order("attack")
+        )
+        response = query.execute()
+        return cast(List[Dict[str, Any]], response.data or [])
+
+    def list_conquest_by_hero_slug(self, hero_slug: str) -> List[Dict[str, Any]]:
+        """Return conquest stats for a specific hero by slug."""
+
+        # Use join with !inner to filter by hero_id_slug (without selecting hero fields)
+        query = (
+            self._client.table("hero_conquest_stats")
+            .select(
+                "attack, defense, health, heroes!hero_conquest_stats_hero_id_fkey!inner(hero_id_slug)"
+            )
+            .eq("heroes.hero_id_slug", hero_slug)
             .order("attack")
         )
         response = query.execute()
@@ -58,16 +64,7 @@ class StatsRepository:
         query = (
             self._client.table("hero_expedition_stats")
             .select(
-                ",".join(
-                    [
-                        "id",
-                        "hero_id",
-                        "troop_type",
-                        "attack_pct",
-                        "defense_pct",
-                        "hero:heroes!hero_expedition_stats_hero_id_fkey(id, hero_id_slug, name)",
-                    ]
-                )
+                "troop_type, attack_pct, defense_pct, hero:heroes!hero_expedition_stats_hero_id_fkey(hero_id_slug, name)"
             )
             .order("name", foreign_table="heroes")
         )
@@ -80,12 +77,27 @@ class StatsRepository:
         return records
 
     def list_expedition_by_hero(self, hero_id: str) -> List[Dict[str, Any]]:
-        """Return expedition stats for a specific hero."""
+        """Return expedition stats for a specific hero by UUID."""
 
         query = (
             self._client.table("hero_expedition_stats")
-            .select("id, hero_id, troop_type, attack_pct, defense_pct")
+            .select("troop_type, attack_pct, defense_pct")
             .eq("hero_id", hero_id)
+            .order("troop_type")
+        )
+        response = query.execute()
+        return cast(List[Dict[str, Any]], response.data or [])
+
+    def list_expedition_by_hero_slug(self, hero_slug: str) -> List[Dict[str, Any]]:
+        """Return expedition stats for a specific hero by slug."""
+
+        # Use join with !inner to filter by hero_id_slug (without selecting hero fields)
+        query = (
+            self._client.table("hero_expedition_stats")
+            .select(
+                "troop_type, attack_pct, defense_pct, heroes!hero_expedition_stats_hero_id_fkey!inner(hero_id_slug)"
+            )
+            .eq("heroes.hero_id_slug", hero_slug)
             .order("troop_type")
         )
         response = query.execute()

@@ -1,6 +1,6 @@
 """Repository for VIP levels data access."""
 
-from typing import List, Optional
+from typing import Any, Dict, List, Optional, cast
 
 from src.schemas.vip import VIPLevel
 from supabase import Client
@@ -36,7 +36,8 @@ class VIPRepository:
             .execute()
         )
 
-        return [VIPLevel(**item) for item in response.data]
+        data = cast(List[Dict[str, Any]], response.data or [])
+        return [VIPLevel.model_validate(item) for item in data]
 
     async def get_by_level(self, level: int) -> Optional[VIPLevel]:
         """Get specific VIP level data.
@@ -48,11 +49,10 @@ class VIPRepository:
             VIP level data or None if not found
         """
         response = (
-            self.supabase.table("vip_levels")
-            .select("*")
-            .eq("level", level)
-            .maybe_single()
-            .execute()
+            self.supabase.table("vip_levels").select("*").eq("level", level).execute()
         )
 
-        return VIPLevel(**response.data) if response.data else None
+        data = cast(List[Dict[str, Any]], response.data or [])
+        if data:
+            return VIPLevel.model_validate(data[0])
+        return None

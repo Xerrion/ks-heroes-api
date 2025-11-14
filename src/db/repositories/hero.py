@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Optional, cast
 
-from src.db.utils import attach_public_asset_url
+from src.db.utils import attach_public_asset_url, slugify
 from supabase import Client
 
 
@@ -16,6 +16,11 @@ class HeroRepository:
     def __init__(self, client: Client) -> None:
         self._client = client
 
+    @staticmethod
+    def _default_image_path(hero: Dict[str, Any]) -> str | None:
+        hero_slug = hero.get("hero_id_slug") or slugify(hero.get("name"))
+        return f"heroes/{hero_slug}.png" if hero_slug else None
+
     def list_all(self) -> List[Dict[str, Any]]:
         """Return all heroes with their basic attributes."""
 
@@ -24,7 +29,10 @@ class HeroRepository:
         records = cast(List[Dict[str, Any]], response.data or [])
         for hero in records:
             attach_public_asset_url(
-                hero, path_field="image_path", url_field="image_url"
+                hero,
+                path_field="image_path",
+                url_field="image_url",
+                default_path=self._default_image_path(hero),
             )
         return records
 
@@ -41,6 +49,9 @@ class HeroRepository:
         record = cast(Optional[Dict[str, Any]], response.data)
         if record:
             attach_public_asset_url(
-                record, path_field="image_path", url_field="image_url"
+                record,
+                path_field="image_path",
+                url_field="image_url",
+                default_path=self._default_image_path(record),
             )
         return record

@@ -4,6 +4,11 @@ from fastapi import Depends, HTTPException
 
 from supabase import Client
 
+from .db.repositories.exclusive_gear import ExclusiveGearRepository
+from .db.repositories.hero import HeroRepository
+from .db.repositories.skills import SkillsRepository
+from .db.repositories.stats import StatsRepository
+from .db.repositories.talent import TalentRepository
 from .db.repositories.troops import TroopsRepository
 from .db.repositories.vip import VIPRepository
 from .db.supabase_client import SupabaseClientError
@@ -39,3 +44,38 @@ def get_troops_repository(
 ) -> TroopsRepository:
     """Dependency injection for Troops repository."""
     return TroopsRepository(supabase)
+
+
+def get_hero_repository(
+    supabase: Client = Depends(get_supabase_client),
+) -> HeroRepository:
+    """Dependency injection for Hero repository."""
+    return HeroRepository(supabase)
+
+
+def get_skills_repository(
+    supabase: Client = Depends(get_supabase_client),
+) -> SkillsRepository:
+    """Dependency injection for Skills repository."""
+    return SkillsRepository(supabase)
+
+
+def get_stats_repository(
+    supabase: Client = Depends(get_supabase_client),
+) -> StatsRepository:
+    """Dependency injection for Stats repository."""
+    return StatsRepository(supabase)
+
+
+def get_talent_repository(
+    supabase: Client = Depends(get_supabase_client),
+) -> TalentRepository:
+    """Dependency injection for Talent repository."""
+    return TalentRepository(supabase)
+
+
+def get_exclusive_gear_repository(
+    supabase: Client = Depends(get_supabase_client),
+) -> ExclusiveGearRepository:
+    """Dependency injection for Exclusive Gear repository."""
+    return ExclusiveGearRepository(supabase)

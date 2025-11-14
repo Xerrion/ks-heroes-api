@@ -23,13 +23,13 @@ from .skills import (
     HeroSkillResponse,
 )
 from .stats import (
+    ConquestStatsResponse,
+    ExpeditionStatsResponse,
     HeroExpeditionStatsCreateRequest,
     HeroExpeditionStatsListResponse,
-    HeroExpeditionStatsResponse,
     HeroStatsBundleResponse,
     HeroStatsCreateRequest,
     HeroStatsListResponse,
-    HeroStatsResponse,
 )
 from .talent import HeroTalentCreateRequest, HeroTalentListResponse, HeroTalentResponse
 from .troops import (
@@ -52,8 +52,8 @@ __all__ = [
     "HeroCreateRequest",
     "HeroUpdateRequest",
     # Stats
-    "HeroStatsResponse",
-    "HeroExpeditionStatsResponse",
+    "ConquestStatsResponse",
+    "ExpeditionStatsResponse",
     "HeroStatsCreateRequest",
     "HeroExpeditionStatsCreateRequest",
     "HeroStatsListResponse",

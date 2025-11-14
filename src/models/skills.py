@@ -7,6 +7,7 @@ from uuid import UUID
 from pydantic import BaseModel, ConfigDict, Field, computed_field
 
 from src.db.storage import build_public_asset_url
+from src.db.utils import slugify
 
 
 class HeroSkillBase(BaseModel):
@@ -30,7 +31,10 @@ class HeroSkillBase(BaseModel):
         """Populate default icon path when none is provided."""
 
         if not self.icon_path:
-            self.icon_path = f"talents/{hero_id}.png"
+            hero_slug = slugify(hero_id)
+            skill_slug = slugify(self.name)
+            if hero_slug and skill_slug:
+                self.icon_path = f"skills/{hero_slug}/{skill_slug}.png"
 
     def model_dump(self, **kwargs) -> dict:  # type: ignore[override]
         """Dump model excluding None values by default."""

@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from typing import Any, Dict, List, cast
 
-from src.db.utils import attach_public_asset_url
+from src.db.utils import attach_public_asset_url, slugify
 from supabase import Client
 
 
@@ -86,8 +86,17 @@ class ExclusiveGearRepository:
                     skill_lookup[skill_type] = skill
             gear["conquest_skill"] = skill_lookup["conquest"]
             gear["expedition_skill"] = skill_lookup["expedition"]
+            gear_slug = slugify(gear.get("name"))
+            default_path = (
+                f"exclusive/gear/{gear_slug}.png"
+                if not gear.get("image_path") and gear_slug
+                else None
+            )
             attach_public_asset_url(
-                gear, path_field="image_path", url_field="image_url"
+                gear,
+                path_field="image_path",
+                url_field="image_url",
+                default_path=default_path,
             )
 
         return records

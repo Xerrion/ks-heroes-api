@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 from .exclusive_gear import HeroExclusiveGearResponse
 from .skills import HeroSkillResponse
-from .stats import HeroExpeditionStatsResponse, HeroStatsResponse
+from .stats import ConquestStatsResponse, ExpeditionStatsResponse
 from .talent import HeroTalentResponse
 
 
@@ -43,10 +43,10 @@ class HeroListResponse(BaseModel):
 class HeroDetailResponse(HeroBasicResponse):
     """Detailed hero response with all nested data."""
 
-    conquest_stats: Optional[List[HeroStatsResponse]] = Field(
+    conquest_stats: Optional[List[ConquestStatsResponse]] = Field(
         None, description="Conquest stats by level"
     )
-    expedition_stats: Optional[List[HeroExpeditionStatsResponse]] = Field(
+    expedition_stats: Optional[List[ExpeditionStatsResponse]] = Field(
         None, description="Expedition stats by level"
     )
     conquest_skills: Optional[List[HeroSkillResponse]] = Field(
