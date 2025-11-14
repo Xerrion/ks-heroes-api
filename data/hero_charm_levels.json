@@ -1,0 +1,84 @@
+{
+  "charm_levels": [
+    {
+      "level": 1,
+      "lethality_bonus_percent": 9.0,
+      "health_bonus_percent": 9.0
+    },
+    {
+      "level": 2,
+      "lethality_bonus_percent": 12.0,
+      "health_bonus_percent": 12.0
+    },
+    {
+      "level": 3,
+      "lethality_bonus_percent": 16.0,
+      "health_bonus_percent": 16.0
+    },
+    {
+      "level": 4,
+      "lethality_bonus_percent": 19.0,
+      "health_bonus_percent": 19.0
+    },
+    {
+      "level": 5,
+      "lethality_bonus_percent": 25.0,
+      "health_bonus_percent": 25.0
+    },
+    {
+      "level": 6,
+      "lethality_bonus_percent": 30.0,
+      "health_bonus_percent": 30.0
+    },
+    {
+      "level": 7,
+      "lethality_bonus_percent": 35.0,
+      "health_bonus_percent": 35.0
+    },
+    {
+      "level": 8,
+      "lethality_bonus_percent": 40.0,
+      "health_bonus_percent": 40.0
+    },
+    {
+      "level": 9,
+      "lethality_bonus_percent": 45.0,
+      "health_bonus_percent": 45.0
+    },
+    {
+      "level": 10,
+      "lethality_bonus_percent": 50.0,
+      "health_bonus_percent": 50.0
+    },
+    {
+      "level": 11,
+      "lethality_bonus_percent": 55.0,
+      "health_bonus_percent": 55.0
+    },
+    {
+      "level": 12,
+      "lethality_bonus_percent": 64.0,
+      "health_bonus_percent": 64.0
+    },
+    {
+      "level": 13,
+      "lethality_bonus_percent": 73.0,
+      "health_bonus_percent": 73.0
+    },
+    {
+      "level": 14,
+      "lethality_bonus_percent": 82.0,
+      "health_bonus_percent": 82.0
+    },
+    {
+      "level": 15,
+      "lethality_bonus_percent": 91.0,
+      "health_bonus_percent": 91.0
+    },
+    {
+      "level": 16,
+      "lethality_bonus_percent": 100.0,
+      "health_bonus_percent": 100.0
+    }
+  ]
+}

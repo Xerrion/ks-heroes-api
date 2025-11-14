@@ -15,7 +15,7 @@ tools:
     "ms-python.python/installPythonPackage",
     "ms-python.python/configurePythonEnvironment",
   ]
-title: "KS Heroes Agent"
+name: "ks-data-api-development-agent"
 model: Claude Sonnet 4.5 (copilot)
 ---
 

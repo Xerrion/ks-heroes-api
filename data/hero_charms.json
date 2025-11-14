@@ -1,0 +1,76 @@
+{
+  "gear_charms": [
+    {
+      "gear_id": "cavalry_head",
+      "charm_index": 1
+    },
+    {
+      "gear_id": "cavalry_head",
+      "charm_index": 2
+    },
+    {
+      "gear_id": "cavalry_head",
+      "charm_index": 3
+    },
+    {
+      "gear_id": "cavalry_amulet",
+      "charm_index": 1
+    },
+    {
+      "gear_id": "cavalry_amulet",
+      "charm_index": 2
+    },
+    {
+      "gear_id": "cavalry_amulet",
+      "charm_index": 3
+    },
+    {
+      "gear_id": "infantry_chest",
+      "charm_index": 1
+    },
+    {
+      "gear_id": "infantry_chest",
+      "charm_index": 2
+    },
+    {
+      "gear_id": "infantry_chest",
+      "charm_index": 3
+    },
+    {
+      "gear_id": "infantry_legs",
+      "charm_index": 1
+    },
+    {
+      "gear_id": "infantry_legs",
+      "charm_index": 2
+    },
+    {
+      "gear_id": "infantry_legs",
+      "charm_index": 3
+    },
+    {
+      "gear_id": "archer_ring",
+      "charm_index": 1
+    },
+    {
+      "gear_id": "archer_ring",
+      "charm_index": 2
+    },
+    {
+      "gear_id": "archer_ring",
+      "charm_index": 3
+    },
+    {
+      "gear_id": "archer_staff",
+      "charm_index": 1
+    },
+    {
+      "gear_id": "archer_staff",
+      "charm_index": 2
+    },
+    {
+      "gear_id": "archer_staff",
+      "charm_index": 3
+    }
+  ]
+}
