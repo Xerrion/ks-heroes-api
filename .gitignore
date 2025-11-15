@@ -15,3 +15,27 @@ venv/
 # Supabase configuration files
 supabase/.branches/
 supabase/.temp/
+
+# IDE and editor configurations
+.idea/
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Lock files
+uv.lock
+*.lock
+
+# Temporary and archive files
+*.zip
+*.tar.gz
+*.rar
+
+# Changesets
+.changeset/
+
+# Test files
+test_*.py
+*_test.py
