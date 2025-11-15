@@ -1,8 +1,16 @@
 from fastapi import FastAPI
 
-from db.supabase_client import get_supabase_client
-
-from .routes import exclusive_gear, heroes, skills, stats, talents, troops, vip
+from src.db.supabase_client import get_supabase_client
+from src.routes import (
+    exclusive_gear,
+    governor_gear,
+    heroes,
+    skills,
+    stats,
+    talents,
+    troops,
+    vip,
+)
 
 db = get_supabase_client()
 app = FastAPI(
@@ -25,3 +33,4 @@ app.include_router(exclusive_gear.router)
 app.include_router(talents.router)
 app.include_router(troops.router)
 app.include_router(vip.router)
+app.include_router(governor_gear.router)

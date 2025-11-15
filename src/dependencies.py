@@ -5,6 +5,7 @@ from fastapi import Depends, HTTPException
 from supabase import Client
 
 from .db.repositories.exclusive_gear import ExclusiveGearRepository
+from .db.repositories.governor_gear import GovernorGearRepository
 from .db.repositories.hero import HeroRepository
 from .db.repositories.skills import SkillsRepository
 from .db.repositories.stats import StatsRepository
@@ -79,3 +80,10 @@ def get_exclusive_gear_repository(
 ) -> ExclusiveGearRepository:
     """Dependency injection for Exclusive Gear repository."""
     return ExclusiveGearRepository(supabase)
+
+
+def get_governor_gear_repository(
+    supabase: Client = Depends(get_supabase_client),
+) -> GovernorGearRepository:
+    """Dependency injection for Governor Gear repository."""
+    return GovernorGearRepository(supabase)

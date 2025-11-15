@@ -35,7 +35,3 @@ uv.lock
 
 # Changesets
 .changeset/
-
-# Test files
-test_*.py
-*_test.py

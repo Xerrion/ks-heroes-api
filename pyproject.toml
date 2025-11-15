@@ -1,7 +1,7 @@
 [project]
-name = "kingshot-heroes"
+name = "ks-data-api"
 version = "0.1.0"
-description = "Add your description here"
+description = "A data API built with FastAPI."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [

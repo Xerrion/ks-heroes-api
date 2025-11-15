@@ -3,506 +3,122 @@
     {
       "gear_id": "head",
       "rarity": "Uncommon",
-      "tier": 0,
-      "tier_suffix": null,
       "name": "Plain Hood"
     },
     {
       "gear_id": "head",
       "rarity": "Rare",
-      "tier": 0,
-      "tier_suffix": null,
       "name": "Pioneer's Wreath"
     },
     {
       "gear_id": "head",
       "rarity": "Epic",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "head",
-      "rarity": "Epic",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
+      "name": "Regal Headdress"
     },
     {
       "gear_id": "head",
       "rarity": "Mythic",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "head",
-      "rarity": "Mythic",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
-    },
-    {
-      "gear_id": "head",
-      "rarity": "Mythic",
-      "tier": 2,
-      "tier_suffix": "T2",
-      "name": null
-    },
-    {
-      "gear_id": "head",
-      "rarity": "Legendary",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "head",
-      "rarity": "Legendary",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
-    },
-    {
-      "gear_id": "head",
-      "rarity": "Legendary",
-      "tier": 2,
-      "tier_suffix": "T2",
-      "name": null
-    },
-    {
-      "gear_id": "head",
-      "rarity": "Legendary",
-      "tier": 3,
-      "tier_suffix": "T3",
-      "name": null
-    },
-    {
-      "gear_id": "head",
-      "rarity": "Legendary",
-      "tier": 4,
-      "tier_suffix": "T4",
-      "name": null
+      "name": "Dominus Circlet"
     },
     {
       "gear_id": "amulet",
       "rarity": "Uncommon",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
+      "name": "Charmstone"
     },
     {
       "gear_id": "amulet",
       "rarity": "Rare",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
+      "name": "Ranger's Caress"
     },
     {
       "gear_id": "amulet",
       "rarity": "Epic",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "amulet",
-      "rarity": "Epic",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
+      "name": "Sunblossom Halo"
     },
     {
       "gear_id": "amulet",
       "rarity": "Mythic",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "amulet",
-      "rarity": "Mythic",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
-    },
-    {
-      "gear_id": "amulet",
-      "rarity": "Mythic",
-      "tier": 2,
-      "tier_suffix": "T2",
-      "name": null
-    },
-    {
-      "gear_id": "amulet",
-      "rarity": "Legendary",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "amulet",
-      "rarity": "Legendary",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
-    },
-    {
-      "gear_id": "amulet",
-      "rarity": "Legendary",
-      "tier": 2,
-      "tier_suffix": "T2",
-      "name": null
-    },
-    {
-      "gear_id": "amulet",
-      "rarity": "Legendary",
-      "tier": 3,
-      "tier_suffix": "T3",
-      "name": null
-    },
-    {
-      "gear_id": "amulet",
-      "rarity": "Legendary",
-      "tier": 4,
-      "tier_suffix": "T4",
-      "name": null
+      "name": "Lion's Valor"
     },
     {
       "gear_id": "chest",
       "rarity": "Uncommon",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
+      "name": "Modest Cloak"
     },
     {
       "gear_id": "chest",
       "rarity": "Rare",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
+      "name": "Pioneer's Garb"
     },
     {
       "gear_id": "chest",
       "rarity": "Epic",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "chest",
-      "rarity": "Epic",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
+      "name": "Regal Leatherwear"
     },
     {
       "gear_id": "chest",
       "rarity": "Mythic",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "chest",
-      "rarity": "Mythic",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
-    },
-    {
-      "gear_id": "chest",
-      "rarity": "Mythic",
-      "tier": 2,
-      "tier_suffix": "T2",
-      "name": null
-    },
-    {
-      "gear_id": "chest",
-      "rarity": "Legendary",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "chest",
-      "rarity": "Legendary",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
-    },
-    {
-      "gear_id": "chest",
-      "rarity": "Legendary",
-      "tier": 2,
-      "tier_suffix": "T2",
-      "name": null
-    },
-    {
-      "gear_id": "chest",
-      "rarity": "Legendary",
-      "tier": 3,
-      "tier_suffix": "T3",
-      "name": null
-    },
-    {
-      "gear_id": "chest",
-      "rarity": "Legendary",
-      "tier": 4,
-      "tier_suffix": "T4",
-      "name": null
+      "name": "Dominus Robe"
     },
     {
       "gear_id": "legs",
       "rarity": "Uncommon",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
+      "name": "Plain Breeches"
     },
     {
       "gear_id": "legs",
       "rarity": "Rare",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
+      "name": "Pioneer's Gaiters"
     },
     {
       "gear_id": "legs",
       "rarity": "Epic",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "legs",
-      "rarity": "Epic",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
+      "name": "Regal Breeches"
     },
     {
       "gear_id": "legs",
       "rarity": "Mythic",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "legs",
-      "rarity": "Mythic",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
-    },
-    {
-      "gear_id": "legs",
-      "rarity": "Mythic",
-      "tier": 2,
-      "tier_suffix": "T2",
-      "name": null
-    },
-    {
-      "gear_id": "legs",
-      "rarity": "Legendary",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "legs",
-      "rarity": "Legendary",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
-    },
-    {
-      "gear_id": "legs",
-      "rarity": "Legendary",
-      "tier": 2,
-      "tier_suffix": "T2",
-      "name": null
-    },
-    {
-      "gear_id": "legs",
-      "rarity": "Legendary",
-      "tier": 3,
-      "tier_suffix": "T3",
-      "name": null
-    },
-    {
-      "gear_id": "legs",
-      "rarity": "Legendary",
-      "tier": 4,
-      "tier_suffix": "T4",
-      "name": null
+      "name": "Dominus Chausses"
     },
     {
       "gear_id": "ring",
       "rarity": "Uncommon",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
+      "name": "Oakheart Ring"
     },
     {
       "gear_id": "ring",
       "rarity": "Rare",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
+      "name": "Ranger's Lament"
     },
     {
       "gear_id": "ring",
       "rarity": "Epic",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "ring",
-      "rarity": "Epic",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
+      "name": "Sunblossom Wreath"
     },
     {
       "gear_id": "ring",
       "rarity": "Mythic",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "ring",
-      "rarity": "Mythic",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
-    },
-    {
-      "gear_id": "ring",
-      "rarity": "Mythic",
-      "tier": 2,
-      "tier_suffix": "T2",
-      "name": null
-    },
-    {
-      "gear_id": "ring",
-      "rarity": "Legendary",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "ring",
-      "rarity": "Legendary",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
-    },
-    {
-      "gear_id": "ring",
-      "rarity": "Legendary",
-      "tier": 2,
-      "tier_suffix": "T2",
-      "name": null
-    },
-    {
-      "gear_id": "ring",
-      "rarity": "Legendary",
-      "tier": 3,
-      "tier_suffix": "T3",
-      "name": null
-    },
-    {
-      "gear_id": "ring",
-      "rarity": "Legendary",
-      "tier": 4,
-      "tier_suffix": "T4",
-      "name": null
+      "name": "Lionheart"
     },
     {
       "gear_id": "staff",
       "rarity": "Uncommon",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
+      "name": "Shortstaff"
     },
     {
       "gear_id": "staff",
       "rarity": "Rare",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
+      "name": "Pioneer's Quarterstaff"
     },
     {
       "gear_id": "staff",
       "rarity": "Epic",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "staff",
-      "rarity": "Epic",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
+      "name": "Regal Hunter's Rod"
     },
     {
       "gear_id": "staff",
       "rarity": "Mythic",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "staff",
-      "rarity": "Mythic",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
-    },
-    {
-      "gear_id": "staff",
-      "rarity": "Mythic",
-      "tier": 2,
-      "tier_suffix": "T2",
-      "name": null
-    },
-    {
-      "gear_id": "staff",
-      "rarity": "Legendary",
-      "tier": 0,
-      "tier_suffix": null,
-      "name": null
-    },
-    {
-      "gear_id": "staff",
-      "rarity": "Legendary",
-      "tier": 1,
-      "tier_suffix": "T1",
-      "name": null
-    },
-    {
-      "gear_id": "staff",
-      "rarity": "Legendary",
-      "tier": 2,
-      "tier_suffix": "T2",
-      "name": null
-    },
-    {
-      "gear_id": "staff",
-      "rarity": "Legendary",
-      "tier": 3,
-      "tier_suffix": "T3",
-      "name": null
-    },
-    {
-      "gear_id": "staff",
-      "rarity": "Legendary",
-      "tier": 4,
-      "tier_suffix": "T4",
-      "name": null
+      "name": "Dominus Baton"
     }
   ]
 }

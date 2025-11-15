@@ -31,7 +31,12 @@ DATA_DIR = Path("./data")
 OUT_SQL = Path("supabase/seed.sql")
 
 # Rich console for beautiful output
-console = Console()
+import sys
+
+console = Console(
+    file=sys.stderr if sys.stderr.encoding == "cp1252" else sys.stdout,
+    legacy_windows=False,
+)
 
 # Global state
 _slug_pattern = re.compile(r"[^a-z0-9]+")
@@ -592,6 +597,163 @@ def build_vip_levels_sql(vip_path: Path) -> str:
     return "".join(lines)
 
 
+def build_governor_gear_sql() -> str:
+    """Generate SQL for governor gear from multiple JSON files."""
+    console.print("[cyan]📖 Loading[/cyan] governor gear data...")
+
+    # Load all governor gear data files
+    gear_data = load_json(DATA_DIR / "governor_gear_gear.json")
+    levels_data = load_json(DATA_DIR / "governor_gear_levels.json")
+    names_data = load_json(DATA_DIR / "governor_gear_names.json")
+    charms_data = load_json(DATA_DIR / "governor_gear_charms.json")
+    charm_levels_data = load_json(DATA_DIR / "governor_gear_charm_levels.json")
+
+    lines = [
+        "\n-- ============================================================================\n",
+        "-- GOVERNOR GEAR\n",
+        "-- ============================================================================\n\n",
+    ]
+
+    # 1. Insert base gear pieces
+    lines.append("-- Base governor gear pieces\n")
+    lines.append("INSERT INTO governor_gear (\n")
+    lines.append("  gear_id,\n")
+    lines.append("  slot,\n")
+    lines.append("  troop_type,\n")
+    lines.append("  max_charms,\n")
+    lines.append("  description,\n")
+    lines.append("  default_bonus_keys\n")
+    lines.append(") VALUES\n")
+
+    gear_values = []
+    for gear in gear_data.get("gear_pieces", []):
+        gear_values.append(
+            f"  ({sql_q(gear['gear_id'])}, "
+            f"{sql_q(gear['slot'])}, "
+            f"{sql_q(gear['troop_type'])}, "
+            f"{sql_q(gear['max_charms'])}, "
+            f"{sql_q(gear.get('description'))}, "
+            f"{as_jsonb(gear.get('default_bonus_keys', []))})"
+        )
+
+    lines.append(",\n".join(gear_values))
+    lines.append("\n")
+    lines.append("ON CONFLICT (gear_id) DO UPDATE SET\n")
+    lines.append("  slot=EXCLUDED.slot,\n")
+    lines.append("  troop_type=EXCLUDED.troop_type,\n")
+    lines.append("  max_charms=EXCLUDED.max_charms,\n")
+    lines.append("  description=EXCLUDED.description,\n")
+    lines.append("  default_bonus_keys=EXCLUDED.default_bonus_keys,\n")
+    lines.append("  updated_at=NOW();\n\n")
+
+    console.print(f"[green]✓[/green] Generated {len(gear_values)} gear pieces")
+
+    # 2. Insert gear levels with names
+    # Build a lookup for names by rarity
+    names_by_rarity = {}
+    for name_entry in names_data.get("gear_names", []):
+        gear_id = name_entry["gear_id"]
+        rarity = name_entry["rarity"]
+        name = name_entry["name"]
+        if gear_id not in names_by_rarity:
+            names_by_rarity[gear_id] = {}
+        names_by_rarity[gear_id][rarity] = name
+
+    lines.append("-- Governor gear progression levels\n")
+    lines.append("INSERT INTO governor_gear_levels (\n")
+    lines.append("  level,\n")
+    lines.append("  rarity,\n")
+    lines.append("  tier,\n")
+    lines.append("  stars,\n")
+    lines.append("  name,\n")
+    lines.append("  bonuses\n")
+    lines.append(") VALUES\n")
+
+    level_values = []
+    for level_entry in levels_data.get("gear_levels", []):
+        level = level_entry["level"]
+        rarity = level_entry["rarity"]
+        tier = level_entry["tier"]
+        stars = level_entry["stars"]
+        bonuses = level_entry.get("bonuses", {})
+
+        # Get name from first gear piece (all pieces share same name per rarity)
+        # We'll use 'head' as the reference
+        name = names_by_rarity.get("head", {}).get(rarity)
+
+        level_values.append(
+            f"  ({level}, "
+            f"{sql_q(rarity)}, "
+            f"{tier}, "
+            f"{stars}, "
+            f"{sql_q(name)}, "
+            f"{as_jsonb(bonuses)})"
+        )
+
+    lines.append(",\n".join(level_values))
+    lines.append("\n")
+    lines.append("ON CONFLICT (level) DO UPDATE SET\n")
+    lines.append("  rarity=EXCLUDED.rarity,\n")
+    lines.append("  tier=EXCLUDED.tier,\n")
+    lines.append("  stars=EXCLUDED.stars,\n")
+    lines.append("  name=EXCLUDED.name,\n")
+    lines.append("  bonuses=EXCLUDED.bonuses,\n")
+    lines.append("  updated_at=NOW();\n\n")
+
+    console.print(f"[green]✓[/green] Generated {len(level_values)} gear levels")
+
+    # 3. Insert charm slots
+    lines.append("-- Governor gear charm slots\n")
+    lines.append("INSERT INTO governor_gear_charm_slots (\n")
+    lines.append("  gear_id,\n")
+    lines.append("  slot_index,\n")
+    lines.append("  troop_type,\n")
+    lines.append("  bonus_keys\n")
+    lines.append(") VALUES\n")
+
+    charm_slot_values = []
+    for slot in charms_data.get("charm_slots", []):
+        charm_slot_values.append(
+            f"  ({sql_q(slot['gear_id'])}, "
+            f"{slot['slot_index']}, "
+            f"{sql_q(slot['troop_type'])}, "
+            f"{as_jsonb(slot.get('bonus_keys', []))})"
+        )
+
+    lines.append(",\n".join(charm_slot_values))
+    lines.append("\n")
+    lines.append("ON CONFLICT (gear_id, slot_index) DO UPDATE SET\n")
+    lines.append("  troop_type=EXCLUDED.troop_type,\n")
+    lines.append("  bonus_keys=EXCLUDED.bonus_keys,\n")
+    lines.append("  updated_at=NOW();\n\n")
+
+    console.print(f"[green]✓[/green] Generated {len(charm_slot_values)} charm slots")
+
+    # 4. Insert charm levels
+    lines.append("-- Governor gear charm levels\n")
+    lines.append("INSERT INTO governor_gear_charm_levels (\n")
+    lines.append("  level,\n")
+    lines.append("  bonuses\n")
+    lines.append(") VALUES\n")
+
+    charm_level_values = []
+    for charm_level in charm_levels_data.get("charm_levels", []):
+        charm_level_values.append(
+            f"  ({charm_level['level']}, "
+            f"{as_jsonb(charm_level.get('bonuses', {}))})"
+        )
+
+    lines.append(",\n".join(charm_level_values))
+    lines.append("\n")
+    lines.append("ON CONFLICT (level) DO UPDATE SET\n")
+    lines.append("  bonuses=EXCLUDED.bonuses,\n")
+    lines.append("  updated_at=NOW();\n")
+
+    console.print(f"[green]✓[/green] Generated {len(charm_level_values)} charm levels")
+
+    return "".join(lines)
+
+
 def build_troops_sql(troops_path: Path) -> str:
     """Generate SQL for troops from troop-stats-normalized.json."""
     console.print("[cyan]📖 Loading[/cyan] troop-stats-normalized.json...")
@@ -745,11 +907,24 @@ def main() -> None:
         console.print("[yellow]⚠️  vip_levels.json not found[/yellow]")
 
     # Load and process troops
-    troops_path = DATA_DIR / "troop-stats-normalized.json"
+    troops_path = DATA_DIR / "troop-stats.json"
     if troops_path.exists():
         parts.append(build_troops_sql(troops_path))
     else:
-        console.print("[yellow]⚠️  troop-stats-normalized.json not found[/yellow]")
+        console.print("[yellow]⚠️  troop-stats.json not found[/yellow]")
+
+    # Load and process governor gear
+    governor_gear_files = [
+        "governor_gear_gear.json",
+        "governor_gear_levels.json",
+        "governor_gear_names.json",
+        "governor_gear_charms.json",
+        "governor_gear_charm_levels.json",
+    ]
+    if all((DATA_DIR / f).exists() for f in governor_gear_files):
+        parts.append(build_governor_gear_sql())
+    else:
+        console.print("[yellow]⚠️  Some governor gear files not found[/yellow]")
 
     # Write output
     parts.append(emit_footer())
@@ -768,4 +943,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    main()
     main()

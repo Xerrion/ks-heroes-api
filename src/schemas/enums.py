@@ -18,7 +18,7 @@ class HeroGeneration(int, Enum):
     GENERATION_3 = 3
 
 
-class HeroRarity(str, Enum):
+class Rarity(str, Enum):
     """Hero rarity levels.
 
     Maps to in-game display:
@@ -30,6 +30,19 @@ class HeroRarity(str, Enum):
     RARE = "Rare"
     EPIC = "Epic"
     MYTHIC = "Mythic"
+
+
+class GearRarity(str, Enum):
+    """Governor gear rarity levels.
+
+    Broader than hero rarity, includes Uncommon and Legendary.
+    """
+
+    UNCOMMON = "Uncommon"
+    RARE = "Rare"
+    EPIC = "Epic"
+    MYTHIC = "Mythic"
+    LEGENDARY = "Legendary"
 
 
 class HeroClass(str, Enum):
