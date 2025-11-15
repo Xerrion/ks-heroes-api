@@ -12,7 +12,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 # Module-level imports must come after path manipulation
-from db.storage import ensure_bucket_exists, upload_directory  # noqa: E402
+from src.db.storage import ensure_bucket_exists, upload_directory  # noqa: E402
 
 DEFAULT_PATTERNS: tuple[str, ...] = ("*.png", "*.jpg", "*.jpeg", "*.webp", "*.svg")
 

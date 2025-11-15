@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/supabase/migrations/20251106120414_init_types_and_functions.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/supabase/migrations/20251106120442_create_heroes.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/supabase/migrations/20251106173650_create_hero_stats.sql" dialect="GenericSQL" />
-    <file url="PROJECT" dialect="PostgreSQL" />
-  </component>
-</project>
