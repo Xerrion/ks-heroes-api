@@ -1,0 +1,471 @@
+{
+  "gear_levels": [
+    {
+      "level": 1,
+      "rarity": "Uncommon",
+      "tier": 0,
+      "stars": 0,
+      "bonuses": {
+        "attack_pct": 9.35,
+        "defense_pct": 9.35
+      }
+    },
+    {
+      "level": 2,
+      "rarity": "Uncommon",
+      "tier": 0,
+      "stars": 1,
+      "bonuses": {
+        "attack_pct": 12.75,
+        "defense_pct": 12.75
+      }
+    },
+    {
+      "level": 3,
+      "rarity": "Rare",
+      "tier": 0,
+      "stars": 0,
+      "bonuses": {
+        "attack_pct": 17.0,
+        "defense_pct": 17.0
+      }
+    },
+    {
+      "level": 4,
+      "rarity": "Rare",
+      "tier": 0,
+      "stars": 1,
+      "bonuses": {
+        "attack_pct": 21.25,
+        "defense_pct": 21.25
+      }
+    },
+    {
+      "level": 5,
+      "rarity": "Rare",
+      "tier": 0,
+      "stars": 2,
+      "bonuses": {
+        "attack_pct": 25.5,
+        "defense_pct": 25.5
+      }
+    },
+    {
+      "level": 6,
+      "rarity": "Rare",
+      "tier": 0,
+      "stars": 3,
+      "bonuses": {
+        "attack_pct": 29.75,
+        "defense_pct": 29.75
+      }
+    },
+    {
+      "level": 7,
+      "rarity": "Epic",
+      "tier": 0,
+      "stars": 0,
+      "bonuses": {
+        "attack_pct": 34.0,
+        "defense_pct": 34.0
+      }
+    },
+    {
+      "level": 8,
+      "rarity": "Epic",
+      "tier": 0,
+      "stars": 1,
+      "bonuses": {
+        "attack_pct": 36.89,
+        "defense_pct": 36.89
+      }
+    },
+    {
+      "level": 9,
+      "rarity": "Epic",
+      "tier": 0,
+      "stars": 2,
+      "bonuses": {
+        "attack_pct": 39.78,
+        "defense_pct": 39.78
+      }
+    },
+    {
+      "level": 10,
+      "rarity": "Epic",
+      "tier": 0,
+      "stars": 3,
+      "bonuses": {
+        "attack_pct": 42.67,
+        "defense_pct": 42.67
+      }
+    },
+    {
+      "level": 11,
+      "rarity": "Epic",
+      "tier": 1,
+      "stars": 0,
+      "bonuses": {
+        "attack_pct": 45.56,
+        "defense_pct": 45.56
+      }
+    },
+    {
+      "level": 12,
+      "rarity": "Epic",
+      "tier": 1,
+      "stars": 1,
+      "bonuses": {
+        "attack_pct": 48.45,
+        "defense_pct": 48.45
+      }
+    },
+    {
+      "level": 13,
+      "rarity": "Epic",
+      "tier": 1,
+      "stars": 2,
+      "bonuses": {
+        "attack_pct": 51.34,
+        "defense_pct": 51.34
+      }
+    },
+    {
+      "level": 14,
+      "rarity": "Epic",
+      "tier": 1,
+      "stars": 3,
+      "bonuses": {
+        "attack_pct": 54.23,
+        "defense_pct": 54.23
+      }
+    },
+    {
+      "level": 15,
+      "rarity": "Mythic",
+      "tier": 0,
+      "stars": 0,
+      "bonuses": {
+        "attack_pct": 56.78,
+        "defense_pct": 56.78
+      }
+    },
+    {
+      "level": 16,
+      "rarity": "Mythic",
+      "tier": 0,
+      "stars": 1,
+      "bonuses": {
+        "attack_pct": 59.33,
+        "defense_pct": 59.33
+      }
+    },
+    {
+      "level": 17,
+      "rarity": "Mythic",
+      "tier": 0,
+      "stars": 2,
+      "bonuses": {
+        "attack_pct": 61.88,
+        "defense_pct": 61.88
+      }
+    },
+    {
+      "level": 18,
+      "rarity": "Mythic",
+      "tier": 0,
+      "stars": 3,
+      "bonuses": {
+        "attack_pct": 64.43,
+        "defense_pct": 64.43
+      }
+    },
+    {
+      "level": 19,
+      "rarity": "Mythic",
+      "tier": 1,
+      "stars": 0,
+      "bonuses": {
+        "attack_pct": 66.98,
+        "defense_pct": 66.98
+      }
+    },
+    {
+      "level": 20,
+      "rarity": "Mythic",
+      "tier": 1,
+      "stars": 1,
+      "bonuses": {
+        "attack_pct": 69.53,
+        "defense_pct": 69.53
+      }
+    },
+    {
+      "level": 21,
+      "rarity": "Mythic",
+      "tier": 1,
+      "stars": 2,
+      "bonuses": {
+        "attack_pct": 72.08,
+        "defense_pct": 72.08
+      }
+    },
+    {
+      "level": 22,
+      "rarity": "Mythic",
+      "tier": 1,
+      "stars": 3,
+      "bonuses": {
+        "attack_pct": 74.63,
+        "defense_pct": 74.63
+      }
+    },
+    {
+      "level": 23,
+      "rarity": "Mythic",
+      "tier": 2,
+      "stars": 0,
+      "bonuses": {
+        "attack_pct": 77.18,
+        "defense_pct": 77.18
+      }
+    },
+    {
+      "level": 24,
+      "rarity": "Mythic",
+      "tier": 2,
+      "stars": 1,
+      "bonuses": {
+        "attack_pct": 79.73,
+        "defense_pct": 79.73
+      }
+    },
+    {
+      "level": 25,
+      "rarity": "Mythic",
+      "tier": 2,
+      "stars": 2,
+      "bonuses": {
+        "attack_pct": 82.28,
+        "defense_pct": 82.28
+      }
+    },
+    {
+      "level": 26,
+      "rarity": "Mythic",
+      "tier": 2,
+      "stars": 3,
+      "bonuses": {
+        "attack_pct": 85.0,
+        "defense_pct": 85.0
+      }
+    },
+    {
+      "level": 27,
+      "rarity": "Legendary",
+      "tier": 0,
+      "stars": 0,
+      "bonuses": {
+        "attack_pct": 89.25,
+        "defense_pct": 89.25
+      }
+    },
+    {
+      "level": 28,
+      "rarity": "Legendary",
+      "tier": 0,
+      "stars": 1,
+      "bonuses": {
+        "attack_pct": 93.5,
+        "defense_pct": 93.5
+      }
+    },
+    {
+      "level": 29,
+      "rarity": "Legendary",
+      "tier": 0,
+      "stars": 2,
+      "bonuses": {
+        "attack_pct": 97.75,
+        "defense_pct": 97.75
+      }
+    },
+    {
+      "level": 30,
+      "rarity": "Legendary",
+      "tier": 0,
+      "stars": 3,
+      "bonuses": {
+        "attack_pct": 102.0,
+        "defense_pct": 102.0
+      }
+    },
+    {
+      "level": 31,
+      "rarity": "Legendary",
+      "tier": 1,
+      "stars": 0,
+      "bonuses": {
+        "attack_pct": 106.25,
+        "defense_pct": 106.25
+      }
+    },
+    {
+      "level": 32,
+      "rarity": "Legendary",
+      "tier": 1,
+      "stars": 1,
+      "bonuses": {
+        "attack_pct": 110.5,
+        "defense_pct": 110.5
+      }
+    },
+    {
+      "level": 33,
+      "rarity": "Legendary",
+      "tier": 1,
+      "stars": 2,
+      "bonuses": {
+        "attack_pct": 114.75,
+        "defense_pct": 114.75
+      }
+    },
+    {
+      "level": 34,
+      "rarity": "Legendary",
+      "tier": 1,
+      "stars": 3,
+      "bonuses": {
+        "attack_pct": 119.0,
+        "defense_pct": 119.0
+      }
+    },
+    {
+      "level": 35,
+      "rarity": "Legendary",
+      "tier": 2,
+      "stars": 0,
+      "bonuses": {
+        "attack_pct": 123.25,
+        "defense_pct": 123.25
+      }
+    },
+    {
+      "level": 36,
+      "rarity": "Legendary",
+      "tier": 2,
+      "stars": 1,
+      "bonuses": {
+        "attack_pct": 127.5,
+        "defense_pct": 127.5
+      }
+    },
+    {
+      "level": 37,
+      "rarity": "Legendary",
+      "tier": 2,
+      "stars": 2,
+      "bonuses": {
+        "attack_pct": 131.75,
+        "defense_pct": 131.75
+      }
+    },
+    {
+      "level": 38,
+      "rarity": "Legendary",
+      "tier": 2,
+      "stars": 3,
+      "bonuses": {
+        "attack_pct": 136.0,
+        "defense_pct": 136.0
+      }
+    },
+    {
+      "level": 39,
+      "rarity": "Legendary",
+      "tier": 3,
+      "stars": 0,
+      "bonuses": {
+        "attack_pct": 140.25,
+        "defense_pct": 140.25
+      }
+    },
+    {
+      "level": 40,
+      "rarity": "Legendary",
+      "tier": 3,
+      "stars": 1,
+      "bonuses": {
+        "attack_pct": 144.5,
+        "defense_pct": 144.5
+      }
+    },
+    {
+      "level": 41,
+      "rarity": "Legendary",
+      "tier": 3,
+      "stars": 2,
+      "bonuses": {
+        "attack_pct": 148.75,
+        "defense_pct": 148.75
+      }
+    },
+    {
+      "level": 42,
+      "rarity": "Legendary",
+      "tier": 3,
+      "stars": 3,
+      "bonuses": {
+        "attack_pct": 153.0,
+        "defense_pct": 153.0
+      }
+    },
+    {
+      "level": 43,
+      "rarity": "Legendary",
+      "tier": 4,
+      "stars": 0,
+      "bonuses": {
+        "attack_pct": 161.5,
+        "defense_pct": 161.5
+      }
+    },
+    {
+      "level": 44,
+      "rarity": "Legendary",
+      "tier": 4,
+      "stars": 1,
+      "bonuses": {
+        "attack_pct": 170.0,
+        "defense_pct": 170.0
+      }
+    },
+    {
+      "level": 45,
+      "rarity": "Legendary",
+      "tier": 4,
+      "stars": 2,
+      "bonuses": {
+        "attack_pct": 178.5,
+        "defense_pct": 178.5
+      }
+    },
+    {
+      "level": 46,
+      "rarity": "Legendary",
+      "tier": 4,
+      "stars": 3,
+      "bonuses": {
+        "attack_pct": 187.0,
+        "defense_pct": 187.0
+      }
+    }
+  ],
+  "rarity_sequence": [
+    "Uncommon",
+    "Rare",
+    "Epic",
+    "Mythic",
+    "Legendary"
+  ]
+}

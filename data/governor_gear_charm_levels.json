@@ -1,0 +1,117 @@
+{
+  "charm_levels": [
+    {
+      "level": 1,
+      "bonuses": {
+        "troop_lethality_pct": 9.0,
+        "troop_health_pct": 9.0
+      }
+    },
+    {
+      "level": 2,
+      "bonuses": {
+        "troop_lethality_pct": 12.0,
+        "troop_health_pct": 12.0
+      }
+    },
+    {
+      "level": 3,
+      "bonuses": {
+        "troop_lethality_pct": 16.0,
+        "troop_health_pct": 16.0
+      }
+    },
+    {
+      "level": 4,
+      "bonuses": {
+        "troop_lethality_pct": 19.0,
+        "troop_health_pct": 19.0
+      }
+    },
+    {
+      "level": 5,
+      "bonuses": {
+        "troop_lethality_pct": 25.0,
+        "troop_health_pct": 25.0
+      }
+    },
+    {
+      "level": 6,
+      "bonuses": {
+        "troop_lethality_pct": 30.0,
+        "troop_health_pct": 30.0
+      }
+    },
+    {
+      "level": 7,
+      "bonuses": {
+        "troop_lethality_pct": 35.0,
+        "troop_health_pct": 35.0
+      }
+    },
+    {
+      "level": 8,
+      "bonuses": {
+        "troop_lethality_pct": 40.0,
+        "troop_health_pct": 40.0
+      }
+    },
+    {
+      "level": 9,
+      "bonuses": {
+        "troop_lethality_pct": 45.0,
+        "troop_health_pct": 45.0
+      }
+    },
+    {
+      "level": 10,
+      "bonuses": {
+        "troop_lethality_pct": 50.0,
+        "troop_health_pct": 50.0
+      }
+    },
+    {
+      "level": 11,
+      "bonuses": {
+        "troop_lethality_pct": 55.0,
+        "troop_health_pct": 55.0
+      }
+    },
+    {
+      "level": 12,
+      "bonuses": {
+        "troop_lethality_pct": 64.0,
+        "troop_health_pct": 64.0
+      }
+    },
+    {
+      "level": 13,
+      "bonuses": {
+        "troop_lethality_pct": 73.0,
+        "troop_health_pct": 73.0
+      }
+    },
+    {
+      "level": 14,
+      "bonuses": {
+        "troop_lethality_pct": 82.0,
+        "troop_health_pct": 82.0
+      }
+    },
+    {
+      "level": 15,
+      "bonuses": {
+        "troop_lethality_pct": 91.0,
+        "troop_health_pct": 91.0
+      }
+    },
+    {
+      "level": 16,
+      "bonuses": {
+        "troop_lethality_pct": 100.0,
+        "troop_health_pct": 100.0
+      }
+    }
+  ],
+  "max_level": 16
+}

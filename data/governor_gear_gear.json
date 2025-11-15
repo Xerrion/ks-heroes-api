@@ -1,0 +1,75 @@
+{
+  "gear_pieces": [
+    {
+      "gear_id": "head",
+      "slot": "Head",
+      "troop_type": "Cavalry",
+      "max_charms": 3,
+      "description": "Governor head gear - provides Cavalry bonuses",
+      "default_bonus_keys": [
+        "attack_pct",
+        "defense_pct"
+      ]
+    },
+    {
+      "gear_id": "amulet",
+      "slot": "Amulet",
+      "troop_type": "Cavalry",
+      "max_charms": 3,
+      "description": "Governor amulet - provides Cavalry bonuses",
+      "default_bonus_keys": [
+        "attack_pct",
+        "defense_pct"
+      ]
+    },
+    {
+      "gear_id": "chest",
+      "slot": "Chest",
+      "troop_type": "Infantry",
+      "max_charms": 3,
+      "description": "Governor chest armor - provides Infantry bonuses",
+      "default_bonus_keys": [
+        "attack_pct",
+        "defense_pct"
+      ]
+    },
+    {
+      "gear_id": "legs",
+      "slot": "Legs",
+      "troop_type": "Infantry",
+      "max_charms": 3,
+      "description": "Governor leg armor - provides Infantry bonuses",
+      "default_bonus_keys": [
+        "attack_pct",
+        "defense_pct"
+      ]
+    },
+    {
+      "gear_id": "ring",
+      "slot": "Ring",
+      "troop_type": "Archer",
+      "max_charms": 3,
+      "description": "Governor ring - provides Archer bonuses",
+      "default_bonus_keys": [
+        "attack_pct",
+        "defense_pct"
+      ]
+    },
+    {
+      "gear_id": "staff",
+      "slot": "Staff",
+      "troop_type": "Archer",
+      "max_charms": 3,
+      "description": "Governor staff - provides Archer bonuses",
+      "default_bonus_keys": [
+        "attack_pct",
+        "defense_pct"
+      ]
+    }
+  ],
+  "troop_types": [
+    "Archer",
+    "Cavalry",
+    "Infantry"
+  ]
+}

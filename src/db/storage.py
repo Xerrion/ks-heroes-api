@@ -9,8 +9,8 @@ from mimetypes import guess_type
 from pathlib import Path
 from typing import Iterable
 
-from settings import get_supabase_settings
-from db.supabase_client import get_supabase_client
+from src.settings import get_supabase_settings
+from src.db.supabase_client import get_supabase_client
 
 DEFAULT_BUCKET = "assets"
 _BUCKET_ENV_VAR = "SUPABASE_STORAGE_BUCKET"

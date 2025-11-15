@@ -22,6 +22,8 @@ except ImportError:  # pragma: no cover - optional dependency
 SUPPORTED_SUFFIXES = {".webp", ".png", ".jpg", ".jpeg", ".svg"}
 _SIZE_SUFFIX_RE = re.compile(r"-(\d+)(x\d+)?$", re.IGNORECASE)
 _SLUG_RE = re.compile(r"[^a-z0-9]+")
+KNOWN_BACKGROUND_COLORS: tuple[tuple[int, int, int], ...] = ((255, 248, 243),)
+DEFAULT_TRIM_AFTER_CROP = (1, 0, 1, 2)  # left, top, right, bottom
 
 
 def slugify(value: str | None) -> str:
@@ -107,6 +109,157 @@ def _exclusive_gear(raw: object) -> list[dict]:
     return list(_iter_collection(raw) or [])
 
 
+def _detect_background_color(image, tolerance: int) -> tuple[int, int, int] | None:
+    if Image is None:
+        return None
+    rgb_image = image.convert("RGB")
+    width, height = rgb_image.size
+    if width == 0 or height == 0:
+        return None
+
+    corner_coords = [
+        (0, 0),
+        (width - 1, 0),
+        (0, height - 1),
+        (width - 1, height - 1),
+    ]
+    colors: list[tuple[int, int, int]] = [
+        rgb_image.getpixel(coord) for coord in corner_coords
+    ]
+    r = sum(color[0] for color in colors) // len(colors)
+    g = sum(color[1] for color in colors) // len(colors)
+    b = sum(color[2] for color in colors) // len(colors)
+    avg_color: tuple[int, int, int] = (r, g, b)
+
+    for color in colors:
+        if not _within_tolerance(color, avg_color, tolerance):
+            return None
+    return avg_color
+
+
+def _within_tolerance(
+    color: tuple[int, int, int], reference: tuple[int, int, int], tolerance: int
+) -> bool:
+    return max(abs(a - b) for a, b in zip(color, reference)) <= tolerance
+
+
+def remove_solid_background(
+    image,
+    *,
+    tolerance: int = 12,
+    min_removed_ratio: float = 0.02,
+    max_removed_ratio: float = 0.92,
+):
+    """Make any uniformly colored screenshot background transparent before cropping.
+
+    The four corners are sampled to establish the probable background color. Runs
+    also consider known fills (e.g. #FFF8F3) when detection fails. Only pixels
+    reachable from the image borders (i.e. genuine background) whose RGB distance
+    from that color falls within ``tolerance`` are cleared, ensuring interior
+    colors inside the icon remain untouched. Ratios guard the operation to avoid
+    erasing most of the asset or leaving the background untouched when no solid
+    fill is detected.
+    """
+    if Image is None:
+        return image
+    rgba = image.convert("RGBA")
+    width, height = rgba.size
+    if width == 0 or height == 0:
+        return rgba
+
+    pixels = rgba.load()
+    total_pixels = width * height
+
+    candidate_backgrounds: list[tuple[int, int, int]] = []
+    detected = _detect_background_color(rgba, tolerance)
+    if detected is not None:
+        candidate_backgrounds.append(detected)
+    for color in KNOWN_BACKGROUND_COLORS:
+        if color not in candidate_backgrounds:
+            candidate_backgrounds.append(color)
+
+    def flood_from_edges(
+        background: tuple[int, int, int],
+    ) -> tuple[int, set[int]] | None:
+        visited = bytearray(total_pixels)
+        stack: list[tuple[int, int]] = []
+
+        for x in range(width):
+            pixel = pixels[x, 0]
+            if pixel[3] != 0 and _within_tolerance(pixel[:3], background, tolerance):
+                stack.append((x, 0))
+            pixel = pixels[x, height - 1]
+            if pixel[3] != 0 and _within_tolerance(pixel[:3], background, tolerance):
+                stack.append((x, height - 1))
+        for y in range(height):
+            pixel = pixels[0, y]
+            if pixel[3] != 0 and _within_tolerance(pixel[:3], background, tolerance):
+                stack.append((0, y))
+            pixel = pixels[width - 1, y]
+            if pixel[3] != 0 and _within_tolerance(pixel[:3], background, tolerance):
+                stack.append((width - 1, y))
+
+        if not stack:
+            return None
+
+        cleared: set[int] = set()
+        count = 0
+        while stack:
+            x, y = stack.pop()
+            idx = y * width + x
+            if visited[idx]:
+                continue
+            visited[idx] = 1
+            pixel = pixels[x, y]
+            if pixel[3] == 0 or not _within_tolerance(pixel[:3], background, tolerance):
+                continue
+            cleared.add(idx)
+            count += 1
+            if x > 0:
+                stack.append((x - 1, y))
+            if x + 1 < width:
+                stack.append((x + 1, y))
+            if y > 0:
+                stack.append((x, y - 1))
+            if y + 1 < height:
+                stack.append((x, y + 1))
+
+        if count == 0:
+            return None
+        return count, cleared
+
+    selected_background: tuple[int, int, int] | None = None
+    selected_indices: set[int] | None = None
+    removed_count = 0
+
+    for background in candidate_backgrounds:
+        result = flood_from_edges(background)
+        if result is None:
+            continue
+        count, indices = result
+        ratio = count / total_pixels
+        if min_removed_ratio <= ratio <= max_removed_ratio:
+            selected_background = background
+            selected_indices = indices
+            removed_count = count
+            break
+
+    if selected_background is None or not selected_indices:
+        return rgba
+
+    for idx in selected_indices:
+        x = idx % width
+        y = idx // width
+        r, g, b, _ = pixels[x, y]
+        pixels[x, y] = (r, g, b, 0)
+
+    ratio = removed_count / total_pixels
+    if ratio < min_removed_ratio or ratio > max_removed_ratio:
+        return rgba
+
+    return rgba
+
+
 @dataclass(slots=True)
 class AssetTarget:
     dest_base: Path
@@ -166,6 +319,9 @@ def build_asset_targets(data_dir: Path) -> tuple[list[AssetTarget], set[str]]:
     heroes_raw = _load_json(data_dir / "heroes.json") or []
     skills_raw = _load_json(data_dir / "hero_skills.json") or []
     gear_raw = _load_json(data_dir / "exclusive_gear.json") or []
+    governor_gear_raw = _load_json(data_dir / "governor_gear_gear.json") or {}
+    governor_levels_raw = _load_json(data_dir / "governor_gear_levels.json") or {}
+    governor_names_raw = _load_json(data_dir / "governor_gear_names.json") or {}
 
     hero_lookup = _hero_lookup(heroes_raw)
     skills_catalog = _skills_catalog(skills_raw)
@@ -295,6 +451,121 @@ def build_asset_targets(data_dir: Path) -> tuple[list[AssetTarget], set[str]]:
                 hero_id=hero_id,
             )
 
+        governor_pieces: dict[str, dict[str, str]] = {}
+        if isinstance(governor_gear_raw, dict):
+            for piece in governor_gear_raw.get("gear_pieces", []) or []:
+                gear_id_raw = piece.get("gear_id") or piece.get("slot")
+                gear_id = slugify(gear_id_raw)
+                if not gear_id:
+                    continue
+                governor_pieces[gear_id] = {
+                    "slot": piece.get("slot", ""),
+                    "troop_type": piece.get("troop_type", ""),
+                    "description": piece.get("description", ""),
+                }
+
+        governor_names: dict[tuple[str, str, int], str] = {}
+        if isinstance(governor_names_raw, dict):
+            for entry in governor_names_raw.get("gear_names", []) or []:
+                gear_id_raw = entry.get("gear_id") or entry.get("slot")
+                gear_id = slugify(gear_id_raw)
+                rarity = entry.get("rarity")
+                if not gear_id or not rarity:
+                    continue
+                tier_value = entry.get("tier")
+                try:
+                    tier = int(tier_value) if tier_value is not None else 0
+                except (TypeError, ValueError):
+                    tier = 0
+                name = entry.get("name")
+                if name:
+                    governor_names[(gear_id, str(rarity), tier)] = name
+
+        governor_combinations: list[tuple[str, int, int]] = []
+        seen_combinations: set[tuple[str, int, int]] = set()
+        if isinstance(governor_levels_raw, dict):
+            for entry in governor_levels_raw.get("gear_levels", []) or []:
+                rarity = entry.get("rarity")
+                if not rarity:
+                    continue
+                tier_value = entry.get("tier")
+                stars_value = entry.get("stars")
+                try:
+                    tier = int(tier_value) if tier_value is not None else 0
+                except (TypeError, ValueError):
+                    tier = 0
+                try:
+                    stars = int(stars_value) if stars_value is not None else 0
+                except (TypeError, ValueError):
+                    stars = 0
+                combination = (str(rarity), tier, stars)
+                if combination not in seen_combinations:
+                    seen_combinations.add(combination)
+                    governor_combinations.append(combination)
+
+        if governor_pieces and governor_combinations:
+            # Option A naming: <gear_id>-<rarity>[-t<tier>][-s<stars>].png stored under governor/gear/
+            for gear_id, piece_meta in governor_pieces.items():
+                slot_name = piece_meta.get("slot") or gear_id.replace("-", " ").title()
+                troop_type = piece_meta.get("troop_type")
+                for rarity, tier, stars in governor_combinations:
+                    filename_parts = [gear_id, slugify(rarity)]
+                    if tier > 0:
+                        filename_parts.append(f"t{tier}")
+                    if stars > 0:
+                        filename_parts.append(f"s{stars}")
+                    filename = "-".join(filename_parts)
+                    display_name = governor_names.get((gear_id, rarity, tier))
+
+                    description_parts = [rarity]
+                    if tier > 0:
+                        description_parts.append(f"T{tier}")
+                    if stars > 0:
+                        description_parts.append(f"{stars}★")
+                    description_detail = " ".join(description_parts)
+                    description = (
+                        f"Governor {slot_name.lower()} gear ({description_detail})"
+                    )
+
+                    token_values: list[str] = [
+                        "governor",
+                        "gear",
+                        gear_id,
+                        slot_name,
+                        rarity,
+                        f"{rarity} {gear_id}",
+                    ]
+                    if troop_type:
+                        token_values.append(troop_type)
+                    if tier > 0:
+                        token_values.extend(
+                            [
+                                f"tier {tier}",
+                                f"t{tier}",
+                                f"tier{tier}",
+                                f"{rarity} tier {tier}",
+                            ]
+                        )
+                    if stars > 0:
+                        token_values.extend(
+                            [
+                                f"{stars} star",
+                                f"{stars} stars",
+                                f"s{stars}",
+                                f"star {stars}",
+                            ]
+                        )
+                    if display_name:
+                        token_values.append(display_name)
+
+                    add_target(
+                        Path("governor/gear") / f"{filename}.png",
+                        filename,
+                        token_values,
+                        category="governor-gear",
+                        description=description,
+                    )
+
     return targets, hero_ids
 
 
@@ -316,6 +587,8 @@ def determine_destination(
 ) -> Path:
     if convert_format == "png":
         return output_dir / target.dest_base.with_suffix(".png")
+    if convert_format == "webp":
+        return output_dir / target.dest_base.with_suffix(".webp")
     return output_dir / target.dest_base.with_suffix(source_suffix.lower())
 
 
@@ -326,13 +599,40 @@ def ensure_pillow_available() -> None:
         )
 
 
-def auto_crop_image(image):
+def auto_crop_image(
+    image,
+    *,
+    trim: tuple[int, int, int, int] = (0, 0, 0, 0),
+):
     if image.mode != "RGBA":
         working = image.convert("RGBA")
     else:
         working = image
+
     bbox = working.getbbox()
-    return image.crop(bbox) if bbox else image
+    if not bbox:
+        return image
+
+    left, upper, right, lower = bbox
+    trim_left, trim_top, trim_right, trim_bottom = trim
+
+    if trim_left:
+        left = min(max(left + trim_left, 0), right)
+    if trim_top:
+        upper = min(max(upper + trim_top, 0), lower)
+    if trim_right:
+        right = max(min(right - trim_right, working.width), left)
+    if trim_bottom:
+        lower = max(min(lower - trim_bottom, working.height), upper)
+
+    if right <= left or lower <= upper:
+        cropped = working.crop(bbox)
+    else:
+        cropped = working.crop((left, upper, right, lower))
+
+    if image is working:
+        return cropped
+    return cropped.convert(image.mode)
 
 
 def resize_image(image, max_size: int = 300):
@@ -365,9 +665,21 @@ def convert_and_write(
     ensure_pillow_available()
     assert Image is not None  # for type checkers
     with Image.open(source) as image:
-        processed = resize_image(auto_crop_image(image))
+        working = remove_solid_background(image)
+        processed = resize_image(auto_crop_image(working, trim=DEFAULT_TRIM_AFTER_CROP))
+
         if convert_format == "png":
-            processed.save(destination, format="PNG", optimize=True)
+            output_image = processed.convert("RGBA")
+            output_image.save(destination, format="PNG", optimize=True)
+        elif convert_format == "webp":
+            # Preserve alpha when present; Pillow will drop it automatically for RGB
+            output_image = processed.convert("RGBA")
+            output_image.save(
+                destination,
+                format="WEBP",
+                quality=90,
+                method=6,
+            )
         else:
             processed.save(destination, optimize=True)
     if not keep_source and source != destination:
@@ -396,7 +708,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--convert-format",
-        choices=["png", "keep"],
+        choices=["png", "webp", "keep"],
         default="png",
         help="Convert images to this format (default: png).",
     )
