@@ -28,23 +28,26 @@ The Kingshot Hero API is a FastAPI-based application that interacts with a Supab
 
 # Do and Don'ts
 
-## Do
+## ALWAYS
 
-- Do use the repository pattern for database interactions to keep routes clean and focused on request handling.
-- Do validate incoming request data using Pydantic models.
-- Do write unit tests for new features and bug fixes.
-- Do use asynchronous programming practices to ensure scalability and performance.
-- Do document new endpoints and significant code changes in this file.
-- Do add filters and pagination to endpoints that return large datasets.
-- Do re read the Supabase documentation when unsure about database operations.
-- Do use the Context7 mcp for fetching documentation of libraries and frameworks.
+- ALWAYS use the repository pattern for database interactions to keep routes clean and focused on request handling.
+- ALWAYS validate incoming request data using Pydantic models.
+- ALWAYS write unit tests for new features and bug fixes.
+- ALWAYS use asynchronous programming practices to ensure scalability and performance.
+- ALWAYS document new endpoints and significant code changes in this file.
+- ALWAYS add filters and pagination to endpoints that return large datasets.
+- ALWAYS re read the Supabase documentation when unsure about database operations.
+- ALWAYS use the Context7 mcp for fetching documentation of libraries and frameworks.
+- ALWAYS follow security best practices, such as sanitizing inputs and using HTTPS.
+- ALWAYS use Python 3.13 compatible syntax and libraries.
+- ALWAYS fix linting errors and failing tests before continuing.
 
-## Don't
+## NEVER
 
-- Don't hardcode database queries in route handlers; always use repository methods.
-- Don't ignore error handling; always provide meaningful error messages to clients.
-- Don't expose sensitive information in API responses.
-- Don't forget to update documentation when making changes to the API.
+- NEVER hardcode database queries in route handlers; always use repository methods.
+- NEVER ignore error handling; always provide meaningful error messages to clients.
+- NEVER expose sensitive information in API responses.
+- NEVER forget to update documentation in the code when making changes to the API.
 
 # Example Code Snippets
 

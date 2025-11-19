@@ -3,7 +3,9 @@
 from typing import Any, Dict, List, Optional
 from uuid import UUID
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field, computed_field
+
+from src.db.storage import build_public_asset_url, resolve_asset_path
 
 
 class HeroExclusiveGearSkillResponse(BaseModel):
@@ -13,8 +15,7 @@ class HeroExclusiveGearSkillResponse(BaseModel):
     name: str = Field(..., description="Skill name")
     description: Optional[str] = Field(None, description="Skill description")
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroExclusiveGearLevelResponse(BaseModel):
@@ -38,8 +39,7 @@ class HeroExclusiveGearLevelResponse(BaseModel):
         None, description="Expedition skill effect payload"
     )
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroExclusiveGearResponse(BaseModel):
@@ -48,8 +48,23 @@ class HeroExclusiveGearResponse(BaseModel):
     name: str = Field(..., description="Exclusive gear name")
     hero_slug: Optional[str] = Field(None, description="Hero slug identifier")
     hero_name: Optional[str] = Field(None, description="Hero name")
-    image_path: Optional[str] = Field(None, description="Path or URL to gear icon")
-    image_url: Optional[str] = Field(None, description="Public URL to gear icon")
+    image_path: Optional[str] = Field(
+        None,
+        description="Path to gear icon in storage",
+        exclude=True,
+    )
+
+    @computed_field
+    @property
+    def image_url(self) -> str | None:
+        """Public URL for gear icon."""
+        path = resolve_asset_path(
+            self.image_path,
+            folder="exclusive/gear",
+            slug=self.hero_slug,
+        )
+        return build_public_asset_url(path)
+
     is_unlocked: bool = Field(
         default=False, description="Whether the gear has been unlocked"
     )
@@ -66,8 +81,7 @@ class HeroExclusiveGearResponse(BaseModel):
         None, description="Expedition skill metadata"
     )
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroExclusiveGearProgressionResponse(BaseModel):
@@ -116,8 +130,7 @@ class HeroExclusiveGearProgressionResponse(BaseModel):
         None, description="What unlocks at next level"
     )
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroExclusiveGearCreateRequest(BaseModel):
@@ -127,8 +140,7 @@ class HeroExclusiveGearCreateRequest(BaseModel):
     name: str = Field(..., description="Exclusive gear name")
     image_path: Optional[str] = Field(None, description="Path or URL to gear icon")
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroExclusiveGearLevelCreateRequest(BaseModel):
@@ -153,8 +165,7 @@ class HeroExclusiveGearLevelCreateRequest(BaseModel):
         None, description="Expedition skill effect payload"
     )
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroExclusiveGearSkillCreateRequest(BaseModel):
@@ -165,5 +176,13 @@ class HeroExclusiveGearSkillCreateRequest(BaseModel):
     name: str = Field(..., description="Skill name")
     description: str = Field(..., description="Skill description")
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
+
+
+class HeroExclusiveGearListResponse(BaseModel):
+    """Response for list of hero exclusive gear."""
+
+    gear: List[HeroExclusiveGearResponse]
+    total: int
+
+    model_config = ConfigDict(from_attributes=True)

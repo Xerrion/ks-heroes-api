@@ -23,7 +23,7 @@ router = APIRouter(prefix="/troops", tags=["troops"])
 
 
 @router.get("/", response_model=Union[TroopsGroupedByType, List[Troop]])
-async def get_all_troops(
+def get_all_troops(
     type: Optional[TroopType] = Query(None, description="Filter by troop type"),
     level: Optional[int] = Query(None, ge=1, le=11, description="Exact troop level"),
     min_level: Optional[int] = Query(
@@ -78,7 +78,7 @@ async def get_all_troops(
     final_min_tg = tg if tg is not None else (min_tg if min_tg is not None else 0)
     final_max_tg = tg if tg is not None else (max_tg if max_tg is not None else 5)
 
-    troops = await repo.get_all(
+    troops = repo.get_all(
         troop_type=type,
         min_level=final_min_level,
         max_level=final_max_level,
@@ -96,6 +96,7 @@ async def get_all_troops(
 
     for troop in troops:
         troop_stats = TroopStats(
+            troop_type=troop.troop_type,
             troop_level=troop.troop_level,
             true_gold_level=troop.true_gold_level,
             stats={
@@ -107,6 +108,25 @@ async def get_all_troops(
                 "load": troop.load,
                 "speed": troop.speed,
             },
+            training=(
+                {
+                    "training_time_seconds": troop.training_time_seconds,
+                    "training_power": troop.training_power,
+                }
+                if troop.training_time_seconds is not None
+                and troop.training_power is not None
+                else None
+            ),
+            costs=(
+                troop.training_costs
+                if troop.training_costs and len(troop.training_costs) > 0
+                else None
+            ),
+            events=(
+                troop.event_points
+                if troop.event_points and len(troop.event_points) > 0
+                else None
+            ),
         )
 
         if troop.troop_type == TroopType.infantry:
@@ -120,7 +140,7 @@ async def get_all_troops(
 
 
 @router.get("/{troop_type}/{troop_level}", response_model=Troop)
-async def get_troop_by_configuration(
+def get_troop_by_configuration(
     troop_type: TroopType = Path(..., description="Troop type"),
     troop_level: int = Path(..., ge=1, le=11, description="Troop level"),
     true_gold_level: int = Query(0, ge=0, le=10, description="True Gold level"),
@@ -139,7 +159,7 @@ async def get_troop_by_configuration(
     Raises:
         HTTPException: 404 if configuration not found
     """
-    troop = await repo.get_by_configuration(
+    troop = repo.get_by_configuration(
         troop_type=troop_type,
         troop_level=troop_level,
         true_gold_level=true_gold_level,

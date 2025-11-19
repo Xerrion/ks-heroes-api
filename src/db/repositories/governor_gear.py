@@ -45,6 +45,7 @@ class GovernorGearRepository:
 
         response = query.order("gear_id").execute()
         data = cast(List[Dict[str, Any]], response.data or [])
+
         return [GovernorGear.model_validate(item) for item in data]
 
     async def get_gear_by_id(self, gear_id: str) -> Optional[GovernorGear]:
@@ -122,6 +123,7 @@ class GovernorGearRepository:
 
         response = query.order("level").execute()
         data = cast(List[Dict[str, Any]], response.data or [])
+
         return [GovernorGearLevel.model_validate(item) for item in data]
 
     async def get_level_by_id(self, level: int) -> Optional[GovernorGearLevel]:
@@ -163,6 +165,7 @@ class GovernorGearRepository:
         )
 
         data = cast(List[Dict[str, Any]], response.data or [])
+
         return [GovernorGearLevel.model_validate(item) for item in data]
 
     # =========================================================================

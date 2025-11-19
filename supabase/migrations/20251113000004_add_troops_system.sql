@@ -44,6 +44,9 @@ CREATE TABLE troops (
     load INTEGER NOT NULL CHECK (load >= 0),
     speed INTEGER NOT NULL CHECK (speed >= 0),
     
+    -- Image
+    image_path TEXT,
+    
     -- Metadata
     created_at TIMESTAMPTZ DEFAULT NOW() NOT NULL,
     updated_at TIMESTAMPTZ DEFAULT NOW() NOT NULL,
@@ -68,6 +71,7 @@ COMMENT ON COLUMN troops.lethality IS 'Base lethality value (flat number)';
 COMMENT ON COLUMN troops.power IS 'Troop power - used for overall power calculations';
 COMMENT ON COLUMN troops.load IS 'Resource carrying capacity per troop';
 COMMENT ON COLUMN troops.speed IS 'March speed on the map';
+COMMENT ON COLUMN troops.image_path IS 'Path to troop icon in Supabase storage (e.g., troops/infantry_10.png)';
 
 -- =============================================================================
 -- INDEXES

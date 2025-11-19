@@ -1,0 +1,371 @@
+{
+  "infantry": {
+    "1": {
+      "bread": 36,
+      "wood": 27,
+      "stone": 7,
+      "iron": 2,
+      "training_time_seconds": 12,
+      "training_power": 3,
+      "hog_event_points": 90,
+      "kvk_event_points": 3,
+      "sg_event_points": 1
+    },
+    "2": {
+      "bread": 58,
+      "wood": 44,
+      "stone": 10,
+      "iron": 3,
+      "training_time_seconds": 17,
+      "training_power": 4,
+      "hog_event_points": 120,
+      "kvk_event_points": 4,
+      "sg_event_points": 2
+    },
+    "3": {
+      "bread": 92,
+      "wood": 69,
+      "stone": 17,
+      "iron": 4,
+      "training_time_seconds": 24,
+      "training_power": 6,
+      "hog_event_points": 180,
+      "kvk_event_points": 5,
+      "sg_event_points": 3
+    },
+    "4": {
+      "bread": 120,
+      "wood": 90,
+      "stone": 21,
+      "iron": 5,
+      "training_time_seconds": 32,
+      "training_power": 9,
+      "hog_event_points": 265,
+      "kvk_event_points": 8,
+      "sg_event_points": 5
+    },
+    "5": {
+      "bread": 156,
+      "wood": 117,
+      "stone": 27,
+      "iron": 6,
+      "training_time_seconds": 44,
+      "training_power": 13,
+      "hog_event_points": 385,
+      "kvk_event_points": 12,
+      "sg_event_points": 7
+    },
+    "6": {
+      "bread": 186,
+      "wood": 140,
+      "stone": 33,
+      "iron": 7,
+      "training_time_seconds": 60,
+      "training_power": 20,
+      "hog_event_points": 595,
+      "kvk_event_points": 18,
+      "sg_event_points": 11
+    },
+    "7": {
+      "bread": 279,
+      "wood": 210,
+      "stone": 49,
+      "iron": 11,
+      "training_time_seconds": 83,
+      "training_power": 28,
+      "hog_event_points": 830,
+      "kvk_event_points": 25,
+      "sg_event_points": 16
+    },
+    "8": {
+      "bread": 558,
+      "wood": 419,
+      "stone": 98,
+      "iron": 21,
+      "training_time_seconds": 113,
+      "training_power": 38,
+      "hog_event_points": 1130,
+      "kvk_event_points": 35,
+      "sg_event_points": 23
+    },
+    "9": {
+      "bread": 1394,
+      "wood": 1046,
+      "stone": 244,
+      "iron": 51,
+      "training_time_seconds": 131,
+      "training_power": 50,
+      "hog_event_points": 1485,
+      "kvk_event_points": 45,
+      "sg_event_points": 30
+    },
+    "10": {
+      "bread": 2788,
+      "wood": 2091,
+      "stone": 488,
+      "iron": 102,
+      "training_time_seconds": 152,
+      "training_power": 66,
+      "hog_event_points": 1960,
+      "kvk_event_points": 60,
+      "sg_event_points": 39
+    },
+    "11": {
+      "bread": 6970,
+      "wood": 5228,
+      "stone": 1220,
+      "iron": 253,
+      "training_time_seconds": 180,
+      "training_power": 80,
+      "hog_event_points": 0,
+      "kvk_event_points": 75,
+      "sg_event_points": 49
+    }
+  },
+  "cavalry": {
+    "1": {
+      "bread": 32,
+      "wood": 30,
+      "stone": 7,
+      "iron": 2,
+      "training_time_seconds": 12,
+      "training_power": 3,
+      "hog_event_points": 90,
+      "kvk_event_points": 3,
+      "sg_event_points": 1
+    },
+    "2": {
+      "bread": 51,
+      "wood": 48,
+      "stone": 10,
+      "iron": 3,
+      "training_time_seconds": 17,
+      "training_power": 4,
+      "hog_event_points": 120,
+      "kvk_event_points": 4,
+      "sg_event_points": 2
+    },
+    "3": {
+      "bread": 81,
+      "wood": 76,
+      "stone": 16,
+      "iron": 4,
+      "training_time_seconds": 24,
+      "training_power": 5,
+      "hog_event_points": 180,
+      "kvk_event_points": 5,
+      "sg_event_points": 3
+    },
+    "4": {
+      "bread": 105,
+      "wood": 99,
+      "stone": 21,
+      "iron": 5,
+      "training_time_seconds": 32,
+      "training_power": 9,
+      "hog_event_points": 265,
+      "kvk_event_points": 8,
+      "sg_event_points": 5
+    },
+    "5": {
+      "bread": 136,
+      "wood": 129,
+      "stone": 27,
+      "iron": 7,
+      "training_time_seconds": 44,
+      "training_power": 13,
+      "hog_event_points": 385,
+      "kvk_event_points": 12,
+      "sg_event_points": 7
+    },
+    "6": {
+      "bread": 163,
+      "wood": 154,
+      "stone": 32,
+      "iron": 8,
+      "training_time_seconds": 60,
+      "training_power": 20,
+      "hog_event_points": 595,
+      "kvk_event_points": 18,
+      "sg_event_points": 11
+    },
+    "7": {
+      "bread": 244,
+      "wood": 231,
+      "stone": 48,
+      "iron": 11,
+      "training_time_seconds": 83,
+      "training_power": 28,
+      "hog_event_points": 830,
+      "kvk_event_points": 25,
+      "sg_event_points": 16
+    },
+    "8": {
+      "bread": 488,
+      "wood": 461,
+      "stone": 95,
+      "iron": 22,
+      "training_time_seconds": 113,
+      "training_power": 38,
+      "hog_event_points": 1130,
+      "kvk_event_points": 35,
+      "sg_event_points": 23
+    },
+    "9": {
+      "bread": 1220,
+      "wood": 1151,
+      "stone": 237,
+      "iron": 55,
+      "training_time_seconds": 131,
+      "training_power": 50,
+      "hog_event_points": 1485,
+      "kvk_event_points": 45,
+      "sg_event_points": 30
+    },
+    "10": {
+      "bread": 2440,
+      "wood": 2301,
+      "stone": 474,
+      "iron": 109,
+      "training_time_seconds": 152,
+      "training_power": 66,
+      "hog_event_points": 1960,
+      "kvk_event_points": 60,
+      "sg_event_points": 39
+    },
+    "11": {
+      "bread": 6099,
+      "wood": 5751,
+      "stone": 1185,
+      "iron": 271,
+      "training_time_seconds": 180,
+      "training_power": 80,
+      "hog_event_points": 0,
+      "kvk_event_points": 75,
+      "sg_event_points": 49
+    }
+  },
+  "archer": {
+    "1": {
+      "bread": 23,
+      "wood": 34,
+      "stone": 6,
+      "iron": 2,
+      "training_time_seconds": 12,
+      "training_power": 3,
+      "hog_event_points": 90,
+      "kvk_event_points": 3,
+      "sg_event_points": 1
+    },
+    "2": {
+      "bread": 36,
+      "wood": 54,
+      "stone": 9,
+      "iron": 4,
+      "training_time_seconds": 17,
+      "training_power": 4,
+      "hog_event_points": 120,
+      "kvk_event_points": 4,
+      "sg_event_points": 2
+    },
+    "3": {
+      "bread": 58,
+      "wood": 86,
+      "stone": 15,
+      "iron": 5,
+      "training_time_seconds": 24,
+      "training_power": 5,
+      "hog_event_points": 180,
+      "kvk_event_points": 5,
+      "sg_event_points": 3
+    },
+    "4": {
+      "bread": 75,
+      "wood": 111,
+      "stone": 19,
+      "iron": 6,
+      "training_time_seconds": 32,
+      "training_power": 9,
+      "hog_event_points": 265,
+      "kvk_event_points": 8,
+      "sg_event_points": 5
+    },
+    "5": {
+      "bread": 97,
+      "wood": 144,
+      "stone": 24,
+      "iron": 8,
+      "training_time_seconds": 44,
+      "training_power": 13,
+      "hog_event_points": 385,
+      "kvk_event_points": 12,
+      "sg_event_points": 7
+    },
+    "6": {
+      "bread": 117,
+      "wood": 173,
+      "stone": 29,
+      "iron": 10,
+      "training_time_seconds": 60,
+      "training_power": 20,
+      "hog_event_points": 595,
+      "kvk_event_points": 18,
+      "sg_event_points": 11
+    },
+    "7": {
+      "bread": 175,
+      "wood": 258,
+      "stone": 44,
+      "iron": 14,
+      "training_time_seconds": 83,
+      "training_power": 28,
+      "hog_event_points": 830,
+      "kvk_event_points": 25,
+      "sg_event_points": 16
+    },
+    "8": {
+      "bread": 349,
+      "wood": 516,
+      "stone": 87,
+      "iron": 28,
+      "training_time_seconds": 113,
+      "training_power": 38,
+      "hog_event_points": 1130,
+      "kvk_event_points": 35,
+      "sg_event_points": 23
+    },
+    "9": {
+      "bread": 872,
+      "wood": 1290,
+      "stone": 217,
+      "iron": 70,
+      "training_time_seconds": 131,
+      "training_power": 50,
+      "hog_event_points": 1485,
+      "kvk_event_points": 45,
+      "sg_event_points": 30
+    },
+    "10": {
+      "bread": 1740,
+      "wood": 2579,
+      "stone": 433,
+      "iron": 140,
+      "training_time_seconds": 152,
+      "training_power": 66,
+      "hog_event_points": 1960,
+      "kvk_event_points": 60,
+      "sg_event_points": 39
+    },
+    "11": {
+      "bread": 4357,
+      "wood": 6448,
+      "stone": 1081,
+      "iron": 349,
+      "training_time_seconds": 180,
+      "training_power": 80,
+      "hog_event_points": 0,
+      "kvk_event_points": 75,
+      "sg_event_points": 49
+    }
+  }
+}

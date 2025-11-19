@@ -3,7 +3,10 @@
 from typing import List, Optional
 from uuid import UUID
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field, computed_field
+
+from src.db.storage import build_public_asset_url, resolve_asset_path
+from src.db.utils import slugify
 
 from .exclusive_gear import HeroExclusiveGearResponse
 from .skills import HeroSkillResponse
@@ -22,12 +25,24 @@ class HeroBasicResponse(BaseModel):
     class_: str = Field(
         ..., alias="class", description="Hero class: Infantry, Archer, Cavalry"
     )
-    image_path: Optional[str] = Field(None, description="Path or URL to hero image")
-    image_url: Optional[str] = Field(None, description="Public URL to hero image")
+    image_path: Optional[str] = Field(
+        None,
+        description="Path to hero image in storage",
+        exclude=True,
+    )
 
-    class Config:
-        populate_by_name = True
-        from_attributes = True
+    @computed_field
+    @property
+    def image_url(self) -> str | None:
+        """Public URL for hero image."""
+        path = resolve_asset_path(
+            self.image_path,
+            folder="heroes",
+            slug=self.hero_id_slug,
+        )
+        return build_public_asset_url(path)
+
+    model_config = ConfigDict(populate_by_name=True, from_attributes=True)
 
 
 class HeroListResponse(BaseModel):
@@ -36,8 +51,7 @@ class HeroListResponse(BaseModel):
     heroes: List[HeroBasicResponse]
     total: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroDetailResponse(HeroBasicResponse):
@@ -62,9 +76,6 @@ class HeroDetailResponse(HeroBasicResponse):
         None, description="Hero talents"
     )
 
-    class Config(HeroBasicResponse.Config):
-        pass
-
 
 class HeroCreateRequest(BaseModel):
     """Request model for creating a hero."""
@@ -78,8 +89,7 @@ class HeroCreateRequest(BaseModel):
     )
     image_path: Optional[str] = Field(None, description="Path or URL to hero image")
 
-    class Config:
-        populate_by_name = True
+    model_config = ConfigDict(populate_by_name=True)
 
 
 class HeroUpdateRequest(BaseModel):
@@ -91,5 +101,4 @@ class HeroUpdateRequest(BaseModel):
     class_: Optional[str] = Field(None, alias="class")
     image_path: Optional[str] = None
 
-    class Config:
-        populate_by_name = True
+    model_config = ConfigDict(populate_by_name=True)

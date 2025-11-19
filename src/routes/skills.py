@@ -4,22 +4,22 @@ Provides:
 - GET /skills - List all skills with optional filters
 """
 
-from typing import List, Optional
+from typing import Optional
 
 from fastapi import APIRouter, Depends, Query
 
 from src.db.repositories.skills import SkillsRepository
 from src.dependencies import get_skills_repository
 from src.schemas.enums import GameMode, SkillLevel, SkillType
-from src.schemas.skills import HeroSkillResponse
+from src.schemas.skills import HeroSkillListResponse, HeroSkillResponse
 
 router = APIRouter(prefix="/skills", tags=["skills"])
 
 
-@router.get("/", response_model=List[HeroSkillResponse])
+@router.get("/", response_model=HeroSkillListResponse)
 def list_skills(
     hero: Optional[str] = Query(
-        None, description="Filter by hero ID (e.g., 'jabel', 'olive')"
+        None, description="Filter by hero slug (e.g., 'jabel', 'olive')"
     ),
     level: Optional[SkillLevel] = Query(
         None, description="Filter by skill level (1-5)"
@@ -30,36 +30,41 @@ def list_skills(
     mode: Optional[GameMode] = Query(
         None, description="Filter by game mode (conquest, expedition)"
     ),
+    limit: int = Query(
+        50, ge=1, le=100, description="Maximum number of skills to return (max 100)"
+    ),
+    offset: int = Query(0, ge=0, description="Number of skills to skip"),
     skills_repo: SkillsRepository = Depends(get_skills_repository),
-) -> List[HeroSkillResponse]:
+) -> HeroSkillListResponse:
     """List all skills with optional filters.
 
     Query parameters:
-    - hero: Filter by hero ID (e.g., 'jabel', 'olive')
+    - hero: Filter by hero slug (e.g., 'jabel', 'olive')
     - level: Filter by skill level (1-5)
     - skill_type: Filter by type (Active, Passive)
     - mode: Filter by game mode (conquest, expedition)
+    - limit/offset: Pagination controls
 
-    Returns a list of skills matching the filters. Each skill includes all level details.
+    Returns a paginated list of skills matching the filters.
     """
-    # Get skills based on hero filter
-    if hero:
-        skills = skills_repo.list_by_hero_slug(hero)
-    else:
-        skills = skills_repo.list_all()
-
-    # Apply additional filters
-    if skill_type is not None:
-        skills = [s for s in skills if s.get("skill_type") == skill_type.value]
-
-    if mode is not None:
-        skills = [s for s in skills if s.get("battle_type") == mode.value.capitalize()]
+    battle_type = mode.value.capitalize() if mode else None
+    skills, total = skills_repo.list_filtered(
+        hero_slug=hero,
+        skill_type=skill_type.value if skill_type else None,
+        battle_type=battle_type,
+        limit=limit,
+        offset=offset,
+    )
 
     # Filter by level - this filters the levels array within each skill
     if level is not None:
+        filtered_skills = []
         for skill in skills:
-            levels = skill.get("levels", [])
-            skill["levels"] = [lv for lv in levels if lv.get("level") == level.value]
+            levels = skill.levels or []
+            skill.levels = [lv for lv in levels if lv.level == level.value]
+            if skill.levels:
+                filtered_skills.append(skill)
+        skills = filtered_skills
+        total = len(skills)
 
-    # Convert to response models
-    return [HeroSkillResponse(**skill) for skill in skills]
+    return HeroSkillListResponse(skills=skills, total=total)

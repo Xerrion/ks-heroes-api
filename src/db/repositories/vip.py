@@ -1,23 +1,24 @@
 """Repository for VIP levels data access."""
 
-from typing import Any, Dict, List, Optional, cast
+from typing import List, Optional
 
+from src.db.repository_base import BaseRepository
 from src.schemas.vip import VIPLevel
 from supabase import Client
 
 
-class VIPRepository:
+class VIPRepository(BaseRepository[VIPLevel]):
     """Repository for managing VIP levels data."""
 
-    def __init__(self, supabase: Client):
+    def __init__(self, client: Client):
         """Initialize VIP repository with Supabase client.
 
         Args:
-            supabase: Supabase client instance
+            client: Supabase client instance
         """
-        self.supabase = supabase
+        super().__init__(client, "vip_levels", VIPLevel)
 
-    async def get_all(self, min_level: int = 1, max_level: int = 12) -> List[VIPLevel]:
+    def get_all(self, min_level: int = 1, max_level: int = 12) -> List[VIPLevel]:
         """Get all VIP levels with optional range filtering.
 
         Args:
@@ -27,19 +28,12 @@ class VIPRepository:
         Returns:
             List of VIP levels ordered by level
         """
-        response = (
-            self.supabase.table("vip_levels")
-            .select("*")
-            .gte("level", min_level)
-            .lte("level", max_level)
-            .order("level")
-            .execute()
+        records, _ = self.get_filtered(
+            range_filters={"level": (min_level, max_level)}, order_by="level"
         )
+        return records
 
-        data = cast(List[Dict[str, Any]], response.data or [])
-        return [VIPLevel.model_validate(item) for item in data]
-
-    async def get_by_level(self, level: int) -> Optional[VIPLevel]:
+    def get_by_level(self, level: int) -> Optional[VIPLevel]:
         """Get specific VIP level data.
 
         Args:
@@ -48,11 +42,4 @@ class VIPRepository:
         Returns:
             VIP level data or None if not found
         """
-        response = (
-            self.supabase.table("vip_levels").select("*").eq("level", level).execute()
-        )
-
-        data = cast(List[Dict[str, Any]], response.data or [])
-        if data:
-            return VIPLevel.model_validate(data[0])
-        return None
+        return self.get_by_id("level", level)

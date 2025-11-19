@@ -14,6 +14,9 @@ from src.db.supabase_client import get_supabase_client
 
 DEFAULT_BUCKET = "assets"
 _BUCKET_ENV_VAR = "SUPABASE_STORAGE_BUCKET"
+_PROJECT_ROOT = Path(__file__).resolve().parents[2]
+_ASSET_IMAGE_ROOT = _PROJECT_ROOT / "assets" / "images"
+_DEFAULT_ASSET_EXTENSIONS = ("webp", "png", "jpg", "jpeg", "svg")
 
 
 def get_storage_bucket() -> str:
@@ -31,6 +34,17 @@ def _public_base_url() -> str | None:
     return f"{str(settings.url).rstrip('/')}/storage/v1/object/public"
 
 
+@lru_cache(maxsize=16)
+def _ensure_bucket(bucket_name: str) -> None:
+    """Ensure the target bucket exists (cached to avoid redundant calls)."""
+
+    try:
+        ensure_bucket_exists(bucket=bucket_name)
+    except Exception:
+        # Avoid crashing read paths when Supabase isn't configured.
+        return
+
+
 def build_public_asset_url(
     path: str | None, *, bucket: str | None = None
 ) -> str | None:
@@ -44,8 +58,62 @@ def build_public_asset_url(
         return None
 
     bucket_name = bucket or get_storage_bucket()
+    _ensure_bucket(bucket_name)
+
     normalized = path.lstrip("/")
     return f"{base_url}/{bucket_name}/{normalized}"
+
+
+def _asset_exists(relative_path: str) -> bool:
+    """Check whether an asset exists locally (used for fallback detection)."""
+
+    asset_dir = _ASSET_IMAGE_ROOT
+    if not asset_dir.is_dir():
+        return False
+    return (asset_dir / relative_path).exists()
+
+
+def resolve_asset_path(
+    image_path: str | None = None,
+    *,
+    folder: str | None = None,
+    slug: str | None = None,
+    fallback_name: str | None = None,
+    extensions: tuple[str, ...] = _DEFAULT_ASSET_EXTENSIONS,
+) -> str | None:
+    """Resolve a storage path for an asset with smart fallbacks.
+
+    Args:
+        image_path: Explicit storage path (returned as-is when provided).
+        folder: Base folder/prefix inside the bucket (e.g., "heroes").
+        slug: Optional slug used as the filename stem.
+        fallback_name: Alternate filename stem when ``slug`` is not appropriate.
+        extensions: Ordered tuple of extensions to probe for existing assets.
+    """
+
+    if image_path:
+        return image_path
+
+    if not folder:
+        return None
+
+    stem = fallback_name or slug
+    if not stem:
+        return None
+
+    cleaned_folder = folder.strip("/")
+    candidates = extensions or _DEFAULT_ASSET_EXTENSIONS
+
+    for ext in candidates:
+        candidate = f"{cleaned_folder}/{stem}.{ext}"
+        if _asset_exists(candidate):
+            return candidate
+
+    # Fall back to the first extension even if the file isn't present locally
+    first_ext = candidates[0] if candidates else None
+    if first_ext is None:
+        return None
+    return f"{cleaned_folder}/{stem}.{first_ext}"
 
 
 def ensure_bucket_exists(*, bucket: str | None = None, public: bool = True) -> None:

@@ -4,35 +4,39 @@ Provides:
 - GET /talents - List all talents with optional hero filter
 """
 
-from typing import List, Optional
+from typing import Optional
 
 from fastapi import APIRouter, Depends, Query
 
 from src.db.repositories.talent import TalentRepository
 from src.dependencies import get_talent_repository
-from src.schemas.talent import HeroTalentResponse
+from src.schemas.talent import HeroTalentListResponse
 
 router = APIRouter(prefix="/talents", tags=["talents"])
 
 
-@router.get("/", response_model=List[HeroTalentResponse])
+@router.get("/", response_model=HeroTalentListResponse)
 def list_talents(
     hero: Optional[str] = Query(
-        None, description="Filter by hero ID (e.g., 'jabel', 'olive')"
+        None, description="Filter by hero slug (e.g., 'jabel', 'olive')"
     ),
+    limit: int = Query(
+        50, ge=1, le=100, description="Maximum number of talents to return (max 100)"
+    ),
+    offset: int = Query(0, ge=0, description="Number of talents to skip"),
     talent_repo: TalentRepository = Depends(get_talent_repository),
-) -> List[HeroTalentResponse]:
+) -> HeroTalentListResponse:
     """List all hero talents with optional hero filter.
 
     Query parameters:
-    - hero: Filter by hero ID (e.g., 'jabel', 'olive')
+    - hero: Filter by hero slug (e.g., 'jabel', 'olive')
+    - limit/offset: Pagination controls
 
-    Returns a list of talents. Each hero typically has multiple talents
-    that provide various bonuses and effects.
+    Returns a paginated list of talents.
     """
-    if hero:
-        talents = talent_repo.list_by_hero_slug(hero)
-    else:
-        talents = talent_repo.list_all()
-
-    return [HeroTalentResponse(**talent) for talent in talents]
+    talents, total = talent_repo.list_filtered(
+        hero_slug=hero,
+        limit=limit,
+        offset=offset,
+    )
+    return HeroTalentListResponse(talents=talents, total=total)

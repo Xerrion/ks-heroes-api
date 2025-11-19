@@ -2,56 +2,49 @@
 
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional, cast
+from typing import Any, Dict, List, Optional, Tuple, cast
 
-from src.db.utils import attach_public_asset_url, slugify
+from src.db.repository_base import BaseRepository
+from src.schemas.hero import HeroBasicResponse
 from supabase import Client
 
 
-class HeroRepository:
+class HeroRepository(BaseRepository[HeroBasicResponse]):
     """Encapsulate hero data access."""
 
-    _BASE_COLUMNS = "id, hero_id_slug, name, rarity, generation, class, image_path"
-
     def __init__(self, client: Client) -> None:
-        self._client = client
+        super().__init__(client, "heroes", HeroBasicResponse)
 
-    @staticmethod
-    def _default_image_path(hero: Dict[str, Any]) -> str | None:
-        hero_slug = hero.get("hero_id_slug") or slugify(hero.get("name"))
-        return f"heroes/{hero_slug}.png" if hero_slug else None
-
-    def list_all(self) -> List[Dict[str, Any]]:
+    def list_all(self) -> List[HeroBasicResponse]:
         """Return all heroes with their basic attributes."""
+        return self.get_all(order_by="name")
 
-        query = self._client.table("heroes").select(self._BASE_COLUMNS).order("name")
-        response = query.execute()
-        records = cast(List[Dict[str, Any]], response.data or [])
-        for hero in records:
-            attach_public_asset_url(
-                hero,
-                path_field="image_path",
-                url_field="image_url",
-                default_path=self._default_image_path(hero),
-            )
-        return records
+    def list_filtered(
+        self,
+        *,
+        generation: Optional[int] = None,
+        rarity: Optional[str] = None,
+        hero_class: Optional[str] = None,
+        limit: int = 50,
+        offset: int = 0,
+    ) -> Tuple[List[HeroBasicResponse], int]:
+        """Return heroes filtered/paginated server-side following Supabase best practices."""
 
-    def get_by_slug(self, hero_slug: str) -> Optional[Dict[str, Any]]:
-        """Return a single hero by slug or None when it does not exist."""
+        filters = {}
+        if generation is not None:
+            filters["generation"] = generation
+        if rarity is not None:
+            filters["rarity"] = rarity
+        if hero_class is not None:
+            filters["class"] = hero_class
 
-        query = (
-            self._client.table("heroes")
-            .select(self._BASE_COLUMNS)
-            .eq("hero_id_slug", hero_slug)
-            .single()
+        return self.get_filtered(
+            filters=filters,
+            limit=limit,
+            offset=offset,
+            order_by="name",
         )
-        response = query.execute()
-        record = cast(Optional[Dict[str, Any]], response.data)
-        if record:
-            attach_public_asset_url(
-                record,
-                path_field="image_path",
-                url_field="image_url",
-                default_path=self._default_image_path(record),
-            )
-        return record
+
+    def get_by_slug(self, hero_slug: str) -> Optional[HeroBasicResponse]:
+        """Return a single hero by slug or None when it does not exist."""
+        return self.get_by_id("hero_id_slug", hero_slug)

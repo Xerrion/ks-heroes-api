@@ -2,18 +2,20 @@
 
 from fastapi import Depends, HTTPException
 
+from src.db.repositories.exclusive_gear import ExclusiveGearRepository
+from src.db.repositories.governor_gear import GovernorGearRepository
+from src.db.repositories.hero import HeroRepository
+from src.db.repositories.skills import SkillsRepository
+from src.db.repositories.stats import (
+    HeroConquestStatsRepository,
+    HeroExpeditionStatsRepository,
+)
+from src.db.repositories.talent import TalentRepository
+from src.db.repositories.troops import TroopsRepository
+from src.db.repositories.vip import VIPRepository
+from src.db.supabase_client import SupabaseClientError
+from src.db.supabase_client import get_supabase_client as _get_supabase_client
 from supabase import Client
-
-from .db.repositories.exclusive_gear import ExclusiveGearRepository
-from .db.repositories.governor_gear import GovernorGearRepository
-from .db.repositories.hero import HeroRepository
-from .db.repositories.skills import SkillsRepository
-from .db.repositories.stats import StatsRepository
-from .db.repositories.talent import TalentRepository
-from .db.repositories.troops import TroopsRepository
-from .db.repositories.vip import VIPRepository
-from .db.supabase_client import SupabaseClientError
-from .db.supabase_client import get_supabase_client as _get_supabase_client
 
 
 def get_supabase_client() -> Client:
@@ -61,11 +63,18 @@ def get_skills_repository(
     return SkillsRepository(supabase)
 
 
-def get_stats_repository(
+def get_conquest_stats_repository(
     supabase: Client = Depends(get_supabase_client),
-) -> StatsRepository:
-    """Dependency injection for Stats repository."""
-    return StatsRepository(supabase)
+) -> HeroConquestStatsRepository:
+    """Dependency injection for conquest stats repository."""
+    return HeroConquestStatsRepository(supabase)
+
+
+def get_expedition_stats_repository(
+    supabase: Client = Depends(get_supabase_client),
+) -> HeroExpeditionStatsRepository:
+    """Dependency injection for expedition stats repository."""
+    return HeroExpeditionStatsRepository(supabase)
 
 
 def get_talent_repository(

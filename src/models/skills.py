@@ -6,7 +6,7 @@ from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, computed_field
 
-from src.db.storage import build_public_asset_url
+from src.db.storage import build_public_asset_url, resolve_asset_path
 from src.db.utils import slugify
 
 
@@ -34,7 +34,12 @@ class HeroSkillBase(BaseModel):
             hero_slug = slugify(hero_id)
             skill_slug = slugify(self.name)
             if hero_slug and skill_slug:
-                self.icon_path = f"skills/{hero_slug}/{skill_slug}.png"
+                path = resolve_asset_path(
+                    folder=f"skills/{hero_slug}",
+                    fallback_name=skill_slug,
+                )
+                if path:
+                    self.icon_path = path
 
     def model_dump(self, **kwargs) -> dict:  # type: ignore[override]
         """Dump model excluding None values by default."""
@@ -43,7 +48,7 @@ class HeroSkillBase(BaseModel):
 
     @computed_field
     @property
-    def icon_url(self) -> str | None:
+    def image_url(self) -> str | None:
         """Public URL for the talent icon."""
         return build_public_asset_url(self.icon_path)
 

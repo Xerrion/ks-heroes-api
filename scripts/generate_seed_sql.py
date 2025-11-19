@@ -754,8 +754,8 @@ def build_governor_gear_sql() -> str:
     return "".join(lines)
 
 
-def build_troops_sql(troops_path: Path) -> str:
-    """Generate SQL for troops from troop-stats-normalized.json."""
+def build_troops_sql(troops_path: Path, training_path: Path) -> str:
+    """Generate SQL for troops from troop-stats-normalized.json and troop_training_data.json."""
     console.print("[cyan]📖 Loading[/cyan] troop-stats-normalized.json...")
 
     data = load_json(troops_path)
@@ -763,6 +763,9 @@ def build_troops_sql(troops_path: Path) -> str:
     if not data:
         console.print("[yellow]⚠️  No troop data found in file[/yellow]")
         return ""
+
+    console.print("[cyan]📖 Loading[/cyan] troop_training_data.json...")
+    training_data = load_json(training_path)
 
     lines = [
         "\n-- ============================================================================\n",
@@ -778,7 +781,9 @@ def build_troops_sql(troops_path: Path) -> str:
         "  lethality,\n",
         "  power,\n",
         "  load,\n",
-        "  speed\n",
+        "  speed,\n",
+        "  training_time_seconds,\n",
+        "  training_power\n",
         ") VALUES\n",
     ]
 
@@ -795,6 +800,11 @@ def build_troops_sql(troops_path: Path) -> str:
         # Iterate through troop levels (1-11)
         for level_str, tg_levels in sorted(levels.items(), key=lambda x: int(x[0])):
             level = int(level_str)
+
+            # Get training data for this level
+            training_info = training_data.get(troop_type, {}).get(level_str, {})
+            training_time = training_info.get("training_time_seconds")
+            training_power = training_info.get("training_power")
 
             # Iterate through True Gold levels (0-10)
             for tg_str, stats in sorted(tg_levels.items(), key=lambda x: int(x[0])):
@@ -816,7 +826,9 @@ def build_troops_sql(troops_path: Path) -> str:
                     f"{sql_q(stats.get('lethality', 0))}, "
                     f"{sql_q(stats.get('power', 0))}, "
                     f"{sql_q(stats.get('load', 0))}, "
-                    f"{sql_q(stats.get('speed', 0))})"
+                    f"{sql_q(stats.get('speed', 0))}, "
+                    f"{sql_q(training_time)}, "
+                    f"{sql_q(training_power)})"
                 )
                 count += 1
 
@@ -832,9 +844,133 @@ def build_troops_sql(troops_path: Path) -> str:
     lines.append("  power=EXCLUDED.power,\n")
     lines.append("  load=EXCLUDED.load,\n")
     lines.append("  speed=EXCLUDED.speed,\n")
+    lines.append("  training_time_seconds=EXCLUDED.training_time_seconds,\n")
+    lines.append("  training_power=EXCLUDED.training_power,\n")
     lines.append("  updated_at=NOW();\n")
 
     console.print(f"[green]✓[/green] Generated {count} troop configurations")
+    return "".join(lines)
+
+
+def build_resources_sql(training_path: Path) -> str:
+    """Generate SQL for resources and troop_training_costs."""
+    console.print("[cyan]📖 Loading[/cyan] troop_training_data.json for resources...")
+
+    training_data = load_json(training_path)
+
+    lines = [
+        "\n-- ============================================================================\n",
+        "-- RESOURCES\n",
+        "-- ============================================================================\n\n",
+        "INSERT INTO resources (resource_id, name, display_order, image_path) VALUES\n",
+        "  ('bread', 'Bread', 1, 'resources/bread.png'),\n",
+        "  ('wood', 'Wood', 2, 'resources/wood.png'),\n",
+        "  ('stone', 'Stone', 3, 'resources/stone.png'),\n",
+        "  ('iron', 'Iron', 4, 'resources/iron.png')\n",
+        "ON CONFLICT (resource_id) DO UPDATE SET\n",
+        "  name=EXCLUDED.name,\n",
+        "  display_order=EXCLUDED.display_order,\n",
+        "  image_path=EXCLUDED.image_path,\n",
+        "  updated_at=NOW();\n\n",
+        "-- ============================================================================\n",
+        "-- TROOP TRAINING COSTS\n",
+        "-- ============================================================================\n\n",
+        "INSERT INTO troop_training_costs (troop_type, troop_level, resource_id, cost) VALUES\n",
+    ]
+
+    values = []
+    count = 0
+
+    for troop_type in ["infantry", "cavalry", "archer"]:
+        if troop_type not in training_data:
+            continue
+
+        troop_type_enum = troop_type.capitalize()
+        levels = training_data[troop_type]
+
+        for level_str in sorted(levels.keys(), key=int):
+            level = int(level_str)
+            data = levels[level_str]
+
+            for resource in ["bread", "wood", "stone", "iron"]:
+                cost = data.get(resource)
+                if cost is not None:
+                    values.append(
+                        f"  ({sql_q(troop_type_enum)}, {level}, {sql_q(resource)}, {cost})"
+                    )
+                    count += 1
+
+    lines.append(",\n".join(values))
+    lines.append("\n")
+    lines.append("ON CONFLICT (troop_type, troop_level, resource_id) DO UPDATE SET\n")
+    lines.append("  cost=EXCLUDED.cost,\n")
+    lines.append("  updated_at=NOW();\n")
+
+    console.print(
+        f"[green]✓[/green] Generated 4 resources and {count} training cost entries"
+    )
+    return "".join(lines)
+
+
+def build_event_points_sql(training_path: Path) -> str:
+    """Generate SQL for event_types and troop_event_points."""
+    console.print(
+        "[cyan]📖 Loading[/cyan] troop_training_data.json for event points..."
+    )
+
+    training_data = load_json(training_path)
+
+    lines = [
+        "\n-- ============================================================================\n",
+        "-- EVENT TYPES\n",
+        "-- ============================================================================\n\n",
+        "INSERT INTO event_types (event_id, name, description, display_order) VALUES\n",
+        "  ('hog', 'Hall of Glory', 'Hall of Glory event points', 1),\n",
+        "  ('kvk', 'Kingdom vs Kingdom', 'Kingdom vs Kingdom event points', 2),\n",
+        "  ('sg', 'Server Glory', 'Server Glory event points (affected by True Gold)', 3)\n",
+        "ON CONFLICT (event_id) DO UPDATE SET\n",
+        "  name=EXCLUDED.name,\n",
+        "  description=EXCLUDED.description,\n",
+        "  display_order=EXCLUDED.display_order,\n",
+        "  updated_at=NOW();\n\n",
+        "-- ============================================================================\n",
+        "-- TROOP EVENT POINTS\n",
+        "-- ============================================================================\n\n",
+        "INSERT INTO troop_event_points (troop_type, troop_level, event_id, base_points) VALUES\n",
+    ]
+
+    values = []
+    count = 0
+
+    for troop_type in ["infantry", "cavalry", "archer"]:
+        if troop_type not in training_data:
+            continue
+
+        troop_type_enum = troop_type.capitalize()
+        levels = training_data[troop_type]
+
+        for level_str in sorted(levels.keys(), key=int):
+            level = int(level_str)
+            data = levels[level_str]
+
+            for event in ["hog", "kvk", "sg"]:
+                event_key = f"{event}_event_points"
+                points = data.get(event_key)
+                if points is not None:
+                    values.append(
+                        f"  ({sql_q(troop_type_enum)}, {level}, {sql_q(event)}, {points})"
+                    )
+                    count += 1
+
+    lines.append(",\n".join(values))
+    lines.append("\n")
+    lines.append("ON CONFLICT (troop_type, troop_level, event_id) DO UPDATE SET\n")
+    lines.append("  base_points=EXCLUDED.base_points,\n")
+    lines.append("  updated_at=NOW();\n")
+
+    console.print(
+        f"[green]✓[/green] Generated 3 event types and {count} event point entries"
+    )
     return "".join(lines)
 
 
@@ -908,10 +1044,18 @@ def main() -> None:
 
     # Load and process troops
     troops_path = DATA_DIR / "troop-stats.json"
-    if troops_path.exists():
-        parts.append(build_troops_sql(troops_path))
+    training_path = DATA_DIR / "troop_training_data.json"
+    if troops_path.exists() and training_path.exists():
+        # First insert resources and event types (referenced by foreign keys)
+        parts.append(build_resources_sql(training_path))
+        parts.append(build_event_points_sql(training_path))
+        # Then insert troops and their training costs/event points
+        parts.append(build_troops_sql(troops_path, training_path))
     else:
-        console.print("[yellow]⚠️  troop-stats.json not found[/yellow]")
+        if not troops_path.exists():
+            console.print("[yellow]⚠️  troop-stats.json not found[/yellow]")
+        if not training_path.exists():
+            console.print("[yellow]⚠️  troop_training_data.json not found[/yellow]")
 
     # Load and process governor gear
     governor_gear_files = [
@@ -943,5 +1087,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
     main()

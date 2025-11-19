@@ -3,7 +3,9 @@
 from typing import List, Optional
 from uuid import UUID
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field, computed_field
+
+from src.db.storage import build_public_asset_url
 
 
 class HeroTalentResponse(BaseModel):
@@ -13,11 +15,19 @@ class HeroTalentResponse(BaseModel):
     hero_id: UUID = Field(..., description="Foreign key to heroes table")
     name: str = Field(..., description="Talent name")
     description: str = Field(..., description="Talent description")
-    icon_path: Optional[str] = Field(None, description="Path or URL to talent icon")
-    icon_url: Optional[str] = Field(None, description="Public URL to talent icon")
+    icon_path: Optional[str] = Field(
+        None, description="Path to talent icon in storage", exclude=True
+    )
 
-    class Config:
-        from_attributes = True
+    @computed_field
+    @property
+    def image_url(self) -> str | None:
+        """Public URL for talent icon."""
+        if self.icon_path:
+            return build_public_asset_url(self.icon_path)
+        return None
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroTalentCreateRequest(BaseModel):
@@ -28,8 +38,7 @@ class HeroTalentCreateRequest(BaseModel):
     description: str = Field(..., description="Talent description")
     icon_path: Optional[str] = Field(None, description="Path or URL to talent icon")
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroTalentListResponse(BaseModel):
@@ -38,5 +47,4 @@ class HeroTalentListResponse(BaseModel):
     talents: List[HeroTalentResponse]
     total: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

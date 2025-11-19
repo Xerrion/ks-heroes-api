@@ -3,13 +3,17 @@
 from __future__ import annotations
 
 import json
-from typing import Any, Dict, List, Optional, cast
+from typing import Any, Dict, List, Optional, Tuple
 
-from src.db.utils import attach_public_asset_url, slugify
+from postgrest.types import CountMethod
+
+from src.db.repository_base import BaseRepository
+from src.db.utils import slugify
+from src.schemas.exclusive_gear import HeroExclusiveGearResponse
 from supabase import Client
 
 
-class ExclusiveGearRepository:
+class ExclusiveGearRepository(BaseRepository[HeroExclusiveGearResponse]):
     """Encapsulate hero exclusive gear data access with skill tier calculations."""
 
     _JSON_FIELDS = (
@@ -20,7 +24,7 @@ class ExclusiveGearRepository:
     )
 
     def __init__(self, client: Client) -> None:
-        self._client = client
+        super().__init__(client, "hero_exclusive_gear", HeroExclusiveGearResponse)
 
     _GEAR_COLUMNS = "name, image_path"
     _LEVEL_COLUMNS = "level, power, hero_attack, hero_defense, hero_health, troop_lethality_bonus, troop_health_bonus, conquest_skill_effect, expedition_skill_effect"
@@ -47,35 +51,56 @@ class ExclusiveGearRepository:
         f"skills:hero_exclusive_gear_skills({_SKILL_COLUMNS})"
     )
 
-    def list_all(self) -> List[Dict[str, Any]]:
-        """Return all hero exclusive gear with related levels and skills."""
+    def list_filtered(
+        self,
+        *,
+        hero_slug: Optional[str] = None,
+        limit: int = 25,
+        offset: int = 0,
+    ) -> Tuple[List[Dict[str, Any]], int]:
+        """Return hero exclusive gear filtered and paginated server-side."""
 
+        select_clause = (
+            self._SELECT_COLUMNS_WITH_HERO_INNER
+            if hero_slug
+            else self._SELECT_COLUMNS_WITH_HERO
+        )
         query = (
-            self._client.table("hero_exclusive_gear")
-            .select(self._SELECT_COLUMNS_WITH_HERO)
+            self.client.table(self.table_name)
+            .select(select_clause, count=CountMethod.exact)
             .order("name")
             .order("level", foreign_table="hero_exclusive_gear_levels")
             .order("battle_type", foreign_table="hero_exclusive_gear_skills")
         )
+
+        if hero_slug:
+            query = query.eq("hero.hero_id_slug", slugify(hero_slug))
+
+        upper_bound = max(offset + limit - 1, offset)
+        query = query.range(offset, upper_bound)
+
         response = query.execute()
-        records = cast(List[Dict[str, Any]], response.data or [])
-        return self._post_process(records)
+        records = self._cast_response(response)
+        processed = self._post_process(records)
+        total = int(response.count or 0)
+        return self._to_models(processed), total
 
     def list_by_hero_slug(self, hero_slug: str) -> List[Dict[str, Any]]:
         """Return exclusive gear for a specific hero by slug."""
 
         # Use join with !inner to filter by hero_id_slug
         query = (
-            self._client.table("hero_exclusive_gear")
+            self.client.table(self.table_name)
             .select(self._SELECT_COLUMNS_WITH_HERO_INNER)
-            .eq("hero.hero_id_slug", hero_slug)
+            .eq("hero.hero_id_slug", slugify(hero_slug))
             .order("name")
             .order("level", foreign_table="hero_exclusive_gear_levels")
             .order("battle_type", foreign_table="hero_exclusive_gear_skills")
         )
         response = query.execute()
-        records = cast(List[Dict[str, Any]], response.data or [])
-        return self._post_process(records)
+        records = self._cast_response(response)
+        processed = self._post_process(records)
+        return self._to_models(processed)
 
     def _post_process(self, records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         for gear in records:
@@ -109,20 +134,13 @@ class ExclusiveGearRepository:
             gear.setdefault("is_unlocked", False)
             gear.setdefault("current_level", 0)
 
-            attach_public_asset_url(
-                gear,
-                path_field="image_path",
-                url_field="image_url",
-                default_path=self._default_image_path(gear),
-            )
-
         return records
 
     def get_progression(self, hero_slug: str) -> Optional[Dict[str, Any]]:
         """Return summarized progression info for a hero's exclusive gear."""
 
         query = (
-            self._client.table("hero_exclusive_gear")
+            self.client.table(self.table_name)
             .select(
                 "id, hero_id, name, is_unlocked, current_level, "
                 "levels:hero_exclusive_gear_levels(level, power, hero_attack, hero_defense, hero_health), "
@@ -133,15 +151,21 @@ class ExclusiveGearRepository:
             .single()
         )
         response = query.execute()
-        gear = cast(Optional[Dict[str, Any]], response.data)
+        gear = response.data
         if not gear:
             return None
 
-        levels = sorted(gear.get("levels") or [], key=lambda entry: entry.get("level") or 0)
+        levels = sorted(
+            gear.get("levels") or [], key=lambda entry: entry.get("level") or 0
+        )
         skills = list(gear.get("skills") or [])
 
-        skill_one = next((s for s in skills if s.get("battle_type") == "Conquest"), None)
-        skill_two = next((s for s in skills if s.get("battle_type") == "Expedition"), None)
+        skill_one = next(
+            (s for s in skills if s.get("battle_type") == "Conquest"), None
+        )
+        skill_two = next(
+            (s for s in skills if s.get("battle_type") == "Expedition"), None
+        )
 
         max_level = levels[-1]["level"] if levels else 10
         current_level = gear.get("current_level") or 0
@@ -157,15 +181,15 @@ class ExclusiveGearRepository:
             "current_level": current_level,
             "max_level": max_level,
             "current_power": current_stats.get("power") if current_stats else None,
-            "current_hero_attack": current_stats.get("hero_attack")
-            if current_stats
-            else None,
-            "current_hero_defense": current_stats.get("hero_defense")
-            if current_stats
-            else None,
-            "current_hero_health": current_stats.get("hero_health")
-            if current_stats
-            else None,
+            "current_hero_attack": (
+                current_stats.get("hero_attack") if current_stats else None
+            ),
+            "current_hero_defense": (
+                current_stats.get("hero_defense") if current_stats else None
+            ),
+            "current_hero_health": (
+                current_stats.get("hero_health") if current_stats else None
+            ),
             "skill_1_name": skill_one.get("name") if skill_one else None,
             "skill_1_battle_type": skill_one.get("battle_type") if skill_one else None,
             "skill_1_current_tier": self._skill_tier_for_level(current_level, 1),
@@ -191,11 +215,6 @@ class ExclusiveGearRepository:
         )
 
         return progression
-
-    @staticmethod
-    def _default_image_path(gear: Dict[str, Any]) -> str | None:
-        gear_slug = slugify(gear.get("name"))
-        return f"exclusive/gear/{gear_slug}.png" if gear_slug else None
 
     @classmethod
     def _normalize_json_fields(cls, payload: Dict[str, Any]) -> None:

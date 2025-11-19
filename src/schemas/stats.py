@@ -4,7 +4,7 @@ from decimal import Decimal
 from typing import List, Optional
 from uuid import UUID
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class ConquestStatsResponse(BaseModel):
@@ -14,8 +14,7 @@ class ConquestStatsResponse(BaseModel):
     defense: int = Field(..., description="Defense stat")
     health: int = Field(..., description="Health stat")
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ExpeditionStatsResponse(BaseModel):
@@ -39,8 +38,7 @@ class HeroStatsBundleResponse(BaseModel):
         default_factory=list, description="Expedition stat entries"
     )
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroStatsCreateRequest(BaseModel):
@@ -51,8 +49,7 @@ class HeroStatsCreateRequest(BaseModel):
     defense: int = Field(..., ge=0, description="Defense stat")
     health: int = Field(..., ge=0, description="Health stat")
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroExpeditionStatsCreateRequest(BaseModel):
@@ -67,8 +64,7 @@ class HeroExpeditionStatsCreateRequest(BaseModel):
         None, description="Defense percentage bonus for the troop type"
     )
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroStatsListResponse(BaseModel):
@@ -77,8 +73,7 @@ class HeroStatsListResponse(BaseModel):
     stats: List[ConquestStatsResponse]
     total: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroExpeditionStatsListResponse(BaseModel):
@@ -87,5 +82,4 @@ class HeroExpeditionStatsListResponse(BaseModel):
     stats: List[ExpeditionStatsResponse]
     total: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

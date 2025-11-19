@@ -3,7 +3,9 @@
 from typing import Any, Dict, List, Optional
 from uuid import UUID
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field, computed_field
+
+from src.db.storage import build_public_asset_url
 
 
 class HeroSkillLevelResponse(BaseModel):
@@ -12,8 +14,7 @@ class HeroSkillLevelResponse(BaseModel):
     level: int = Field(..., description="Skill level (1-5)")
     effects: Dict[str, Any] = Field(..., description="Skill effects as key-value pairs")
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroSkillResponse(BaseModel):
@@ -25,14 +26,22 @@ class HeroSkillResponse(BaseModel):
     skill_type: str = Field(..., description="Skill type: Active, Passive")
     battle_type: str = Field(..., description="Battle type: Conquest, Expedition")
     description: str = Field(..., description="Skill description")
-    icon_path: Optional[str] = Field(None, description="Path or URL to skill icon")
-    icon_url: Optional[str] = Field(None, description="Public URL to skill icon")
+    icon_path: Optional[str] = Field(
+        None, description="Path to skill icon in storage", exclude=True
+    )
     levels: Optional[List[HeroSkillLevelResponse]] = Field(
         None, description="Skill levels with effects"
     )
 
-    class Config:
-        from_attributes = True
+    @computed_field
+    @property
+    def image_url(self) -> str | None:
+        """Public URL for skill icon."""
+        if self.icon_path:
+            return build_public_asset_url(self.icon_path)
+        return None
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroSkillCreateRequest(BaseModel):
@@ -45,8 +54,7 @@ class HeroSkillCreateRequest(BaseModel):
     description: str = Field(..., description="Skill description")
     icon_path: Optional[str] = Field(None, description="Path or URL to skill icon")
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroSkillLevelCreateRequest(BaseModel):
@@ -56,8 +64,7 @@ class HeroSkillLevelCreateRequest(BaseModel):
     level: int = Field(..., ge=1, le=5, description="Skill level (1-5)")
     effects: Dict[str, Any] = Field(..., description="Skill effects as key-value pairs")
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class HeroSkillListResponse(BaseModel):
@@ -66,5 +73,4 @@ class HeroSkillListResponse(BaseModel):
     skills: List[HeroSkillResponse]
     total: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

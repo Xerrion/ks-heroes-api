@@ -5,58 +5,76 @@ Provides:
 - GET /stats/expedition - List all expedition stats with optional hero filter
 """
 
-from typing import List, Optional
+from typing import Optional
 
 from fastapi import APIRouter, Depends, Query
 
-from src.db.repositories.stats import StatsRepository
-from src.dependencies import get_stats_repository
-from src.schemas.stats import ConquestStatsResponse, ExpeditionStatsResponse
+from src.db.repositories.stats import (
+    HeroConquestStatsRepository,
+    HeroExpeditionStatsRepository,
+)
+from src.dependencies import (
+    get_conquest_stats_repository,
+    get_expedition_stats_repository,
+)
+from src.schemas.stats import HeroExpeditionStatsListResponse, HeroStatsListResponse
 
 router = APIRouter(prefix="/stats", tags=["stats"])
 
 
-@router.get("/conquest", response_model=List[ConquestStatsResponse])
+@router.get("/conquest", response_model=HeroStatsListResponse)
 def list_conquest_stats(
     hero: Optional[str] = Query(
         None, description="Filter by hero ID (e.g., 'jabel', 'olive')"
     ),
-    stats_repo: StatsRepository = Depends(get_stats_repository),
-) -> List[ConquestStatsResponse]:
+    limit: int = Query(
+        50, ge=1, le=200, description="Maximum number of conquest stat rows to return"
+    ),
+    offset: int = Query(0, ge=0, description="Number of conquest stat rows to skip"),
+    conquest_repo: HeroConquestStatsRepository = Depends(get_conquest_stats_repository),
+) -> HeroStatsListResponse:
     """List all hero conquest stats.
 
     Query parameters:
     - hero: Filter by hero ID (e.g., 'jabel', 'olive')
+    - limit/offset: Pagination controls
 
     Returns a list of conquest stats (attack, defense, health).
     Note: Conquest stats have no level progression in the current data.
     """
-    if hero:
-        stats = stats_repo.list_conquest_by_hero_slug(hero)
-    else:
-        stats = stats_repo.list_all_conquest()
+    stats, total = conquest_repo.list_filtered(
+        hero_slug=hero,
+        limit=limit,
+        offset=offset,
+    )
+    return HeroStatsListResponse(stats=stats, total=total)
 
-    return [ConquestStatsResponse(**stat) for stat in stats]
 
-
-@router.get("/expedition", response_model=List[ExpeditionStatsResponse])
+@router.get("/expedition", response_model=HeroExpeditionStatsListResponse)
 def list_expedition_stats(
     hero: Optional[str] = Query(
         None, description="Filter by hero ID (e.g., 'jabel', 'olive')"
     ),
-    stats_repo: StatsRepository = Depends(get_stats_repository),
-) -> List[ExpeditionStatsResponse]:
+    limit: int = Query(
+        50, ge=1, le=200, description="Maximum number of expedition stat rows to return"
+    ),
+    offset: int = Query(0, ge=0, description="Number of expedition stat rows to skip"),
+    expedition_repo: HeroExpeditionStatsRepository = Depends(
+        get_expedition_stats_repository
+    ),
+) -> HeroExpeditionStatsListResponse:
     """List all hero expedition stats.
 
     Query parameters:
     - hero: Filter by hero ID (e.g., 'jabel', 'olive')
+    - limit/offset: Pagination controls
 
     Returns a list of expedition stats (percentage bonuses by troop type).
     Each hero typically has three entries (Infantry, Cavalry, Archer bonuses).
     """
-    if hero:
-        stats = stats_repo.list_expedition_by_hero_slug(hero)
-    else:
-        stats = stats_repo.list_all_expedition()
-
-    return [ExpeditionStatsResponse(**stat) for stat in stats]
+    stats, total = expedition_repo.list_filtered(
+        hero_slug=hero,
+        limit=limit,
+        offset=offset,
+    )
+    return HeroExpeditionStatsListResponse(stats=stats, total=total)

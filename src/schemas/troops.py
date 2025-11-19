@@ -3,7 +3,9 @@
 from enum import Enum
 from typing import Dict, List, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field, computed_field
+
+from src.db.storage import build_public_asset_url, resolve_asset_path
 
 
 class TroopType(str, Enum):
@@ -31,7 +33,7 @@ class TroopBase(BaseModel):
     true_gold_level: int = Field(
         default=0,
         ge=0,
-        le=10,
+        le=5,
         description="True Gold level (0 = no TG bonuses, 1-10 = TG tiers)",
     )
 
@@ -48,17 +50,56 @@ class TroopBase(BaseModel):
     load: int = Field(..., ge=0, description="Resource carrying capacity per troop")
     speed: int = Field(..., ge=0, description="March speed on the map")
 
+    # Training mechanics
+    training_time_seconds: Optional[int] = Field(
+        None, ge=0, description="Time to train one troop in seconds"
+    )
+    training_power: Optional[int] = Field(
+        None, ge=0, description="Power gained from training one troop"
+    )
+
+    # Flat resource costs (for backward compatibility and simple access)
+    bread: Optional[int] = Field(None, ge=0, description="Bread cost")
+    wood: Optional[int] = Field(None, ge=0, description="Wood cost")
+    stone: Optional[int] = Field(None, ge=0, description="Stone cost")
+    iron: Optional[int] = Field(None, ge=0, description="Iron cost")
+
+    # Flat event points (for backward compatibility and simple access)
+    hog_event_points: Optional[int] = Field(
+        None, ge=0, description="Hall of Glory points"
+    )
+    kvk_event_points: Optional[int] = Field(None, ge=0, description="KvK points")
+    sg_event_points: Optional[int] = Field(
+        None, ge=0, description="Server Glory points"
+    )
+
+    @computed_field
+    @property
+    def image_url(self) -> str | None:
+        """Public URL for troop icon."""
+        fallback_name = f"{self.troop_type.value.lower()}_{self.troop_level}"
+        path = resolve_asset_path(folder="troops", fallback_name=fallback_name)
+        return build_public_asset_url(path)
+
+    # Related data (populated from joins)
+    training_costs: Optional[Dict[str, int]] = Field(
+        None, description="Resource costs per troop (bread, wood, stone, iron)"
+    )
+    event_points: Optional[Dict[str, int]] = Field(
+        None, description="Event points per troop (hog, kvk, sg)"
+    )
+
 
 class Troop(TroopBase):
     """Troop schema with metadata for API responses"""
 
     id: int
-    created_at: Optional[str] = None
-    updated_at: Optional[str] = None
+    created_at: Optional[str] = Field(None, exclude=True)
+    updated_at: Optional[str] = Field(None, exclude=True)
 
-    class Config:
-        from_attributes = True
-        json_schema_extra = {
+    model_config = ConfigDict(
+        from_attributes=True,
+        json_schema_extra={
             "example": {
                 "id": 1,
                 "troop_type": "Cavalry",
@@ -71,8 +112,19 @@ class Troop(TroopBase):
                 "power": 132,
                 "load": 758,
                 "speed": 14,
+                "image_url": "https://example.com/storage/v1/object/public/assets/troops/cavalry_10.png",
+                "training_time_seconds": 152,
+                "training_power": 66,
+                "training_costs": {
+                    "bread": 2440,
+                    "wood": 2301,
+                    "stone": 474,
+                    "iron": 109,
+                },
+                "event_points": {"hog": 1960, "kvk": 60, "sg": 39},
             }
-        }
+        },
+    )
 
 
 class TroopCreate(TroopBase):
@@ -94,8 +146,8 @@ class TroopFilter(BaseModel):
         5, ge=0, le=10, description="Maximum True Gold level (default for current game)"
     )
 
-    class Config:
-        json_schema_extra = {
+    model_config = ConfigDict(
+        json_schema_extra={
             "example": {
                 "troop_type": "Infantry",
                 "min_level": 1,
@@ -104,11 +156,15 @@ class TroopFilter(BaseModel):
                 "max_tg": 5,
             }
         }
+    )
 
 
 class TroopStats(BaseModel):
     """Troop stats without type information (for grouped responses)"""
 
+    troop_type: Optional[TroopType] = Field(
+        None, description="Infantry, Cavalry, or Archer"
+    )
     troop_level: int = Field(
         ..., ge=1, le=11, description="Troop level (1-10 regular, 11 is Helios)"
     )
@@ -124,10 +180,34 @@ class TroopStats(BaseModel):
         description="Combat and other stats (attack, defense, health, lethality, power, load, speed)",
     )
 
-    class Config:
-        from_attributes = True
-        json_schema_extra = {
+    @computed_field
+    @property
+    def image_url(self) -> str | None:
+        """Public URL for troop icon."""
+        if not self.troop_type:
+            return None
+        fallback_name = f"{self.troop_type.value.lower()}_{self.troop_level}"
+        path = resolve_asset_path(folder="troops", fallback_name=fallback_name)
+        return build_public_asset_url(path)
+
+    training: Optional[Dict[str, int]] = Field(
+        None,
+        description="Training data (training_time_seconds, training_power)",
+    )
+    costs: Optional[Dict[str, int]] = Field(
+        None,
+        description="Resource costs (bread, wood, stone, iron)",
+    )
+    events: Optional[Dict[str, int]] = Field(
+        None,
+        description="Event points (hog, kvk, sg)",
+    )
+
+    model_config = ConfigDict(
+        from_attributes=True,
+        json_schema_extra={
             "example": {
+                "troop_type": "Infantry",
                 "troop_level": 5,
                 "true_gold_level": 2,
                 "stats": {
@@ -139,8 +219,25 @@ class TroopStats(BaseModel):
                     "load": 188,
                     "speed": 11,
                 },
+                "image_url": "https://example.com/storage/v1/object/public/assets/troops/infantry_5.png",
+                "training": {
+                    "training_time_seconds": 44,
+                    "training_power": 13,
+                },
+                "costs": {
+                    "bread": 136,
+                    "wood": 129,
+                    "stone": 27,
+                    "iron": 7,
+                },
+                "events": {
+                    "hog": 385,
+                    "kvk": 12,
+                    "sg": 7,
+                },
             }
-        }
+        },
+    )
 
 
 class TroopsGroupedByType(BaseModel):
@@ -150,8 +247,8 @@ class TroopsGroupedByType(BaseModel):
     Cavalry: List[TroopStats] = Field(default_factory=list)
     Archer: List[TroopStats] = Field(default_factory=list)
 
-    class Config:
-        json_schema_extra = {
+    model_config = ConfigDict(
+        json_schema_extra={
             "example": {
                 "Infantry": [
                     {
@@ -172,3 +269,4 @@ class TroopsGroupedByType(BaseModel):
                 "Archer": [],
             }
         }
+    )

@@ -1,0 +1,23 @@
+# Troop Images
+
+This directory contains troop icons for the API.
+
+## File naming convention:
+
+- `{troop_type}_{level}.png`
+- Example: `infantry_1.png`, `cavalry_10.png`, `archer_11.png`
+
+## Required files:
+
+- Infantry: infantry_1.png through infantry_11.png (11 files)
+- Cavalry: cavalry_1.png through cavalry_11.png (11 files)
+- Archer: archer_1.png through archer_11.png (11 files)
+
+Total: 33 image files
+
+## Image specifications:
+
+- Format: PNG with transparency
+- Recommended size: 128x128px or 256x256px
+- Should show the troop icon/avatar for each level
+- Level 11 represents Helios troops

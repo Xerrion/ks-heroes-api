@@ -17,7 +17,7 @@ router = APIRouter(prefix="/vip", tags=["vip"])
 
 
 @router.get("/", response_model=List[VIPLevel])
-async def get_all_vip_levels(
+def get_all_vip_levels(
     min_level: int = Query(1, ge=1, le=12, description="Minimum VIP level"),
     max_level: int = Query(12, ge=1, le=12, description="Maximum VIP level"),
     repo: VIPRepository = Depends(get_vip_repository),
@@ -34,11 +34,11 @@ async def get_all_vip_levels(
     Returns:
         List of VIP levels with complete bonus data
     """
-    return await repo.get_all(min_level=min_level, max_level=max_level)
+    return repo.get_all(min_level=min_level, max_level=max_level)
 
 
 @router.get("/{level}", response_model=VIPLevel)
-async def get_vip_level(
+def get_vip_level(
     level: int = Path(..., ge=1, le=12, description="VIP level"),
     repo: VIPRepository = Depends(get_vip_repository),
 ) -> VIPLevel:
@@ -53,7 +53,7 @@ async def get_vip_level(
     Raises:
         HTTPException: 404 if VIP level not found
     """
-    vip = await repo.get_by_level(level)
+    vip = repo.get_by_level(level)
 
     if not vip:
         raise HTTPException(

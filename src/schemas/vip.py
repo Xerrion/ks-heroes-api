@@ -3,7 +3,7 @@
 from decimal import Decimal
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class VIPLevelBase(BaseModel):
@@ -74,12 +74,12 @@ class VIPLevelBase(BaseModel):
 class VIPLevel(VIPLevelBase):
     """VIP level schema with metadata for API responses"""
 
-    created_at: Optional[str] = None
-    updated_at: Optional[str] = None
+    created_at: Optional[str] = Field(None, exclude=True)
+    updated_at: Optional[str] = Field(None, exclude=True)
 
-    class Config:
-        from_attributes = True
-        json_schema_extra = {
+    model_config = ConfigDict(
+        from_attributes=True,
+        json_schema_extra={
             "example": {
                 "level": 12,
                 "resource_production_speed_pct": 24.0,
@@ -93,4 +93,5 @@ class VIPLevel(VIPLevelBase):
                 "squads_lethality_pct": 16.0,
                 "custom_avatar_upload_cooldown_hours": -48,
             }
-        }
+        },
+    )

@@ -10,7 +10,7 @@ Provides:
 - GET /governor-gear/charms/levels/{level} - Get specific charm level
 """
 
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Path, Query, status
 
@@ -18,6 +18,9 @@ from src.db.repositories.governor_gear import GovernorGearRepository
 from src.dependencies import get_governor_gear_repository
 from src.schemas.enums import GearRarity, HeroClass
 from src.schemas.governor_gear import (
+    GearConfiguration,
+    GearStatsBreakdown,
+    GearStatsCalculation,
     GovernorGear,
     GovernorGearCharmLevel,
     GovernorGearCharmSlot,
@@ -220,3 +223,128 @@ async def get_charm_level_by_id(
         )
 
     return charm_level
+
+
+# =============================================================================
+# Governor Gear Calculator
+# =============================================================================
+
+
+@router.post("/calculate-stats", response_model=GearStatsCalculation)
+async def calculate_gear_stats(
+    config: List[GearConfiguration],
+    repo: GovernorGearRepository = Depends(get_governor_gear_repository),
+) -> GearStatsCalculation:
+    """Calculate total stats for a given gear configuration.
+
+    Args:
+        config: List of gear configurations (gear piece, rarity, stars, gems)
+
+    Returns:
+        Total calculated stats and breakdown
+    """
+    # Fetch all necessary data
+    # Note: In a production environment, these should be cached
+    all_gear = await repo.get_all_gear()
+    levels = await repo.get_all_levels()
+    charm_levels = await repo.get_all_charm_levels()
+    charm_slots = await repo.get_all_charm_slots()
+
+    # Create lookup maps
+    # gear_id -> GovernorGear
+    gear_map = {g.gear_id: g for g in all_gear}
+
+    # (rarity, tier, stars) -> GovernorGearLevel
+    levels_map = {(l.rarity, l.tier, l.stars): l for l in levels}
+
+    # level -> GovernorGearCharmLevel
+    charm_levels_map = {l.level: l for l in charm_levels}
+
+    # (gear_id, slot_index) -> GovernorGearCharmSlot
+    charm_slots_map = {(s.gear_id, s.slot_index): s for s in charm_slots}
+
+    total_bonuses: Dict[str, Dict[str, float]] = {}
+    breakdown: List[GearStatsBreakdown] = []
+
+    def add_to_total(key: str, val: float, t_type: Optional[HeroClass]) -> None:
+        """Helper to aggregate bonuses into nested structure."""
+        if key.startswith("troop_") and t_type:
+            group = t_type.value.lower()
+            stat = key.replace("troop_", "", 1)
+        else:
+            group = "general"
+            stat = key
+
+        if group not in total_bonuses:
+            total_bonuses[group] = {}
+        total_bonuses[group][stat] = total_bonuses[group].get(stat, 0.0) + val
+
+    for item in config:
+        current_gear_bonuses: Dict[str, float] = {}
+        current_gem_bonuses: Dict[str, float] = {}
+        errors: List[str] = []
+
+        # 1. Calculate Gear Bonuses
+        gear_level = levels_map.get((item.rarity, item.tier, item.stars))
+        gear_info = gear_map.get(item.gear_id)
+
+        if gear_level and gear_info:
+            for key, value in gear_level.bonuses.items():
+                # Normalize key for breakdown (e.g. attack_pct -> troop_attack_pct)
+                breakdown_key = key
+                if key in ["attack_pct", "defense_pct", "health_pct"]:
+                    breakdown_key = f"troop_{key}"
+
+                current_gear_bonuses[breakdown_key] = (
+                    current_gear_bonuses.get(breakdown_key, 0.0) + value
+                )
+
+                # Add to total bonuses
+                add_to_total(breakdown_key, value, gear_info.troop_type)
+        else:
+            if not gear_level:
+                errors.append(
+                    f"Level not found for {item.rarity} T{item.tier} {item.stars}*"
+                )
+            if not gear_info:
+                errors.append(f"Gear info not found for {item.gear_id}")
+
+        # 2. Calculate Gem Bonuses
+        for i, gem_level_val in enumerate(item.gem_levels):
+            slot_index = i + 1  # 1-based index
+
+            # Get slot definition
+            slot = charm_slots_map.get((item.gear_id, slot_index))
+            if not slot:
+                errors.append(f"Slot {slot_index} not found for {item.gear_id}")
+                continue
+
+            # Get gem level data
+            gem_data = charm_levels_map.get(gem_level_val)
+            if not gem_data:
+                errors.append(f"Gem level {gem_level_val} not found")
+                continue
+
+            # Apply bonuses based on slot keys
+            for key in slot.bonus_keys:
+                # We assume the gem data has the value for this key
+                # If not, we might need a fallback or it's 0
+                value = gem_data.bonuses.get(key, 0.0)
+                if value > 0:
+                    # Keep generic key for breakdown (e.g. troop_lethality_pct)
+                    current_gem_bonuses[key] = current_gem_bonuses.get(key, 0.0) + value
+
+                    # Add to total bonuses
+                    add_to_total(key, value, slot.troop_type)
+
+        breakdown.append(
+            GearStatsBreakdown(
+                gear_id=item.gear_id,
+                troop_type=gear_info.troop_type if gear_info else None,
+                gear_bonus=current_gear_bonuses,
+                gem_bonus=current_gem_bonuses,
+                errors=errors,
+            )
+        )
+
+    return GearStatsCalculation(total_bonuses=total_bonuses, breakdown=breakdown)
